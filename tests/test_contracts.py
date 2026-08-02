@@ -140,6 +140,13 @@ class OpportunityDossierContractTests(unittest.TestCase):
         rejected = json.loads((ROOT / "verification" / "system-one-v3-source-rejections-1.jsonl").read_text())
         self.assertFalse(rejected["retrieved_checksum"] == rejected["provider_checksum"])
 
+    def test_system_one_v3_v2_audit_does_not_promote_a_near_trio(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-v3-v2-audit.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-v3-v2-audit-1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertEqual("no-justified-trio", record["verdict"])
+        self.assertEqual(2, sum(item["disposition"] == "eligible-for-full-audit" for item in record["records"]))
+
 
 if __name__ == "__main__":
     unittest.main()
