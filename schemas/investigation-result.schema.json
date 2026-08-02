@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Governed investigation result",
+  "type": "object",
+  "required": ["investigation_id", "status", "source", "data_sha256", "implementation_commit", "validation_commit", "final_artifact_sha256", "primary_result", "interpretation", "limitations", "deviations", "external_scrutiny"],
+  "properties": {
+    "investigation_id": {"const": "ecoli-regression-2026"},
+    "status": {"enum": ["executed-with-open-verification-gaps", "complete"]},
+    "source": {"const": "Dryad 10.5061/dryad.4f4qrfjfs"},
+    "data_sha256": {"type": "object", "required": ["ancestor", "evolved"], "properties": {"ancestor": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "evolved": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "implementation_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "validation_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "final_artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "primary_result": {"type": "object", "required": ["published_style_mean", "cross_fit_mean", "cross_fit_bootstrap_95_interval", "preregistered_disposition"], "properties": {"published_style_mean": {"type": "number"}, "cross_fit_mean": {"type": "number"}, "cross_fit_bootstrap_95_interval": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}, "preregistered_disposition": {"const": "attenuated-or-uncertain"}}},
+    "interpretation": {"type": "string"},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "deviations": {"type": "array"},
+    "external_scrutiny": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

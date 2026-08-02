@@ -1,0 +1,14 @@
+{
+  "investigation_id": "ecoli-regression-2026",
+  "status": "executed-with-open-verification-gaps",
+  "source": "Dryad 10.5061/dryad.4f4qrfjfs",
+  "data_sha256": {"ancestor": "cca2444865e9f823882447a4b31cbe7c28b0227d4ab3f30b20aa0fd3471c57bb", "evolved": "11e2233ebe5d4b2560d475359f2682484bebc51d6d3ff0a38ebef6a3b02b9ed8"},
+  "implementation_commit": "62d5899bbe79ffa633f10ae330a35af3dff6de86",
+  "validation_commit": "c16ed176e9a404294b3747a6cdb835c26fe3ad29",
+  "final_artifact_sha256": "4919aaa54c8d24003175b12d5f1c80dd08dd3e51d8417ed27f6cb05cea695299",
+  "primary_result": {"published_style_mean": -0.6439220669492456, "cross_fit_mean": -0.1710661160290348, "cross_fit_bootstrap_95_interval": [-0.3563807550625874, 0.012788983605368313], "preregistered_disposition": "attenuated-or-uncertain"},
+  "interpretation": "The independent-block point estimate remains negative but is substantially attenuated relative to the published-style estimate, and its preregistered interval includes zero. The robustness stress test therefore does not support calling the published directional pattern robust to this measurement-artifact correction.",
+  "limitations": ["The source publication's assay-block exchangeability has not received independent domain-specialist review.", "The preregistered errors-in-variables weighted sensitivity was not implemented before final evaluation; any later implementation must be exploratory and cannot revise the final primary disposition.", "This computational result does not establish biological mechanism, causation, universal evolutionary predictability, or physical validation."],
+  "deviations": ["Preregistration v2 was a pre-final amendment that fixed the previously unspecified bootstrap and leave-out calculations; v1 remains preserved.", "No post-final model was used to alter the primary result."],
+  "external_scrutiny": ["No independent statistician or microbial-evolution specialist review occurred.", "No author contact or publication is authorized."]
+}

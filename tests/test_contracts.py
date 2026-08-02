@@ -40,6 +40,12 @@ class OpportunityDossierContractTests(unittest.TestCase):
             self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
             self.assertEqual("frozen-before-final-holdout-access", record["status"])
 
+    def test_ecoli_final_result_is_governed(self):
+        schema = json.loads((ROOT / "schemas" / "investigation-result.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "ecoli-final-result.json").read_text())
+        Draft202012Validator.check_schema(schema)
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+
 
 if __name__ == "__main__":
     unittest.main()
