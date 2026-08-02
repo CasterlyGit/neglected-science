@@ -4,6 +4,7 @@ from pathlib import Path
 
 from scripts import pipeline
 from scripts import ecoli_analysis
+from scripts import system_guards
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,6 +15,19 @@ def jsonl(path):
 
 
 class DeterministicPipelineTests(unittest.TestCase):
+    def test_closed_evidence_benchmark_rejects_any_failed_gate(self):
+        result = system_guards.check_benchmark()
+        self.assertEqual("pass", result["benchmark"])
+        self.assertEqual(5, result["cases"])
+
+    def test_ecoli_transaction_verifies_durable_inputs_and_result(self):
+        self.assertEqual("pass", system_guards.check_transaction()["transaction"])
+
+    def test_synthetic_shared_measurement_artifact_is_detected(self):
+        result = system_guards.synthetic_artifact_check()
+        self.assertTrue(result["pass"])
+        self.assertEqual(-1.0, result["naive"])
+        self.assertFalse(system_guards.promotion_allowed({"selection_quality":"partial", "execution_integrity":"partial"}))
     def test_ecoli_pearson_and_fisher_summary(self):
         self.assertAlmostEqual(1.0, ecoli_analysis.pearson([(1, 2), (2, 4), (3, 6)]))
         self.assertIsNone(ecoli_analysis.pearson([(1, 1), (1, 2), (1, 3)]))

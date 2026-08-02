@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["target_id","self_contained_interpretation","expert_dependency","verdict"],"properties":{"target_id":{"type":"string"},"self_contained_interpretation":{"type":"string","minLength":40},"expert_dependency":{"const":"none"},"verdict":{"const":"admitted"}},"additionalProperties":false}
