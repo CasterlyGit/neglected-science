@@ -12,10 +12,18 @@
 - Milestone 5 completed with 18 schema-valid dossiers, three weighting profiles, rank-sensitivity evidence, and three scientifically reviewed finalists.
 - Milestone 6 completed with 13 alternative-terminology/citation-search records, 7 variable-level dataset audits, and 3 schema-valid adversarial dossiers. All three finalists were rejected.
 
-## Next decision
+## Paused
 
+- The program is paused after Milestone 6.
 - No current finalist is eligible for Milestone 7.
-- The owner may authorize a bounded return to Milestone 5 to rerank or generate replacements using the new prior-art and data-adequacy evidence, or pause the pilot.
+- No reranking, replacement-candidate generation, roadmap amendment, or new corpus cycle is authorized while paused.
+- A side track is defining how to admit opportunity-bearing research domains without repeating the full pilot cost for weak territories.
+
+## Side-track decision
+
+- Provisional framework: `docs/DOMAIN_SELECTION_SIDE_TRACK.md`.
+- The roadmap remains unchanged until the owner accepts, revises, or rejects that framework.
+- After that decision, the owner may authorize a small domain-admission sprint, amend the roadmap, resume the project, or leave it paused.
 
 ## Gated
 
