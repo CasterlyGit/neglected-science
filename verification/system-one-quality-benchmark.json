@@ -1,1 +1,204 @@
-{"benchmark_id":"system-one-quality-heldout-1","record_count":10,"blinded":true,"criteria":["primary claim and location","official data and acquisition evidence","system mapping","unit mapping","measurement and baseline mapping","inference and validation-gap mapping","fragility and alternative explanation","independent check or explicit infeasibility","material mismatch and correct gate disposition","future System-2 verdict is discriminating, claim-bounded, and action-specific"],"target_pass_rate":{"minimum":0.8,"maximum":0.9},"status":"predeclared-not-run"}
+{
+  "benchmark_id": "system-one-quality-heldout-1",
+  "blinded": true,
+  "criteria": [
+    "primary claim and location",
+    "official data and acquisition evidence",
+    "system mapping",
+    "unit mapping",
+    "measurement and baseline mapping",
+    "inference and validation-gap mapping",
+    "fragility and alternative explanation",
+    "independent check or explicit infeasibility",
+    "material mismatch and correct gate disposition",
+    "future System-2 verdict is discriminating, claim-bounded, and action-specific"
+  ],
+  "frozen_corpus_revision": "dfa5657277c9188bced5601fa646846e803913ca",
+  "limitation": "This is a blinded mechanical contract audit, not an independent scientific-source audit; it establishes record completeness and disposition traceability only.",
+  "next_permitted_action": "Run a source-level leniency audit on a predeclared subset; do not promote the two provisional records or start System-2 selection.",
+  "pass_rate": 1.0,
+  "quality_verdict": "leniency-audit-required",
+  "record_count": 10,
+  "records": [
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-ecoli-assay-blocks",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "historical-executed-not-new-candidate"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-bighorn-within-between",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "eligible-for-full-audit"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-mesi-reconciliation",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "eligible-for-full-audit"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-battery-ocv-shift",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "rejected-before-cell"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-vineyard-aggregation",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "rejected-before-cell"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-magdrift-access",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "rejected-before-cell"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-tetrahymena-correlated-response",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "rejected-before-cell"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-tundra-warming-plots",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "rejected-before-cell"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-alloy-scale-translation",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "rejected-before-cell"
+    },
+    {
+      "all_criteria_pass": true,
+      "cell_id": "cell-celegans-outcrossing-fitness",
+      "criteria": {
+        "fragility and alternative explanation": true,
+        "future System-2 verdict is discriminating, claim-bounded, and action-specific": true,
+        "independent check or explicit infeasibility": true,
+        "inference and validation-gap mapping": true,
+        "material mismatch and correct gate disposition": true,
+        "measurement and baseline mapping": true,
+        "official data and acquisition evidence": true,
+        "primary claim and location": true,
+        "system mapping": true,
+        "unit mapping": true
+      },
+      "v2_disposition": "rejected-before-cell"
+    }
+  ],
+  "selection_verdict": "no-justified-trio",
+  "status": "evaluated",
+  "target_pass_rate": {
+    "maximum": 0.9,
+    "minimum": 0.8
+  },
+  "v2_eligible_for_full_audit": [
+    "cell-bighorn-within-between",
+    "cell-mesi-reconciliation"
+  ]
+}

@@ -99,11 +99,16 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual(0, record["system_two_ready_records"])
         self.assertEqual(0, record["candidate_packets"])
 
-    def test_system_one_quality_benchmark_is_predeclared_and_blinded(self):
+    def test_system_one_quality_benchmark_is_blinded_and_rejects_false_success(self):
+        from scripts import evaluate_system_one_quality
         schema = json.loads((ROOT / "schemas" / "system-one-quality-benchmark.schema.json").read_text())
-        record = json.loads((ROOT / "verification" / "system-one-quality-benchmark.json").read_text())
+        record = evaluate_system_one_quality.evaluate()
         self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
-        self.assertEqual("predeclared-not-run", record["status"])
+        self.assertEqual("evaluated", record["status"])
+        self.assertTrue(record["blinded"])
+        self.assertEqual(10, record["record_count"])
+        self.assertEqual("leniency-audit-required", record["quality_verdict"])
+        self.assertEqual("no-justified-trio", record["selection_verdict"])
 
     def test_system_one_selector_v2_is_versioned_against_the_repeated_bottleneck(self):
         record = json.loads((ROOT / "verification" / "system-one-improvement-1.json").read_text())
