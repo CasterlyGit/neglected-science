@@ -501,6 +501,7 @@ def validate_all():
         (TARGET_REVIEWS, ROOT / "schemas" / "target-review.schema.json"),
         (ROOT / "corpus" / "structural-cases.jsonl", ROOT / "schemas" / "structural-case.schema.json"),
         (ROOT / "corpus" / "research-cells.jsonl", ROOT / "schemas" / "research-cell.schema.json"),
+        (ROOT / "corpus" / "source-feasibility-intake.jsonl", ROOT / "schemas" / "source-feasibility.schema.json"),
     ]
     failures = []
     for data_path, schema_path in targets:

@@ -9,6 +9,7 @@ from scripts import closed_evidence_factory
 from scripts import build_structural_atlas
 from scripts import build_research_graph
 from scripts import screen_strategic_leads
+from scripts import screen_source_intake
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +63,12 @@ class DeterministicPipelineTests(unittest.TestCase):
         screened = screen_strategic_leads.screen(cell, upgrades_by_cell=upgrades)
         self.assertNotIn("official source files are not checksum-verified", screened["reasons"])
         self.assertFalse(screened["eligible_for_candidate_generation"])
+
+    def test_source_feasibility_intake_cannot_skip_cell_construction(self):
+        record = jsonl("corpus/source-feasibility-intake.jsonl")[0]
+        screened = screen_source_intake.screen(record)
+        self.assertTrue(screened["eligible_for_cell_construction"])
+        self.assertEqual("candidate generation", screened["prohibited_next_step"])
 
     def test_ecoli_transaction_verifies_durable_inputs_and_result(self):
         self.assertEqual("pass", system_guards.check_transaction()["transaction"])
