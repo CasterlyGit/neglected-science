@@ -69,7 +69,7 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual("continue-bounded-cycle", record["verdict"])
         self.assertTrue(record["evidence"]["investigation_transaction_valid"])
         self.assertEqual(0, record["evidence"]["current_ready_targets"])
-        self.assertEqual(3, record["systems"]["system_one"]["source_feasible_records"])
+        self.assertEqual(2, record["systems"]["system_one"]["source_feasible_records"])
         self.assertEqual("form-target-trio", record["systems"]["system_one"]["verdict"])
         self.assertFalse(record["systems"]["system_two"]["investigation_verdict_ready"])
 
@@ -218,6 +218,13 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual([], list(Draft202012Validator(screen_schema).iter_errors(screen)))
         self.assertEqual([], list(Draft202012Validator(packet_schema).iter_errors(packet)))
         self.assertIn("chronological split", packet["independent_check"])
+
+    def test_first_interview_preserves_killed_packet_and_primary_reserve(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-first-interview.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-first-interview-1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertEqual(2, sum(row["verdict"] == "admitted" for row in record["records"]))
+        self.assertEqual("two-survivors-ready-for-execution-readiness", record["verdict"])
 
 
 if __name__ == "__main__":
