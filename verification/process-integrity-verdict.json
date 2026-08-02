@@ -6,7 +6,7 @@
     "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
     "Retain rejected, blocked, null, and uncertain results as evidence."
   ],
-  "evaluated_at": "2026-08-02T17:01:49Z",
+  "evaluated_at": "2026-08-02T17:03:48Z",
   "evidence": {
     "construction_gate_enforced": true,
     "current_ready_targets": 0,
@@ -16,13 +16,13 @@
     "primary_and_reserve_required": true,
     "real_investigation_retained": true
   },
-  "next_permitted_action": "Run one source-and-fragility audit only for the current pre-admitted seed; retain all nontriviality-preview and full-audit rejections, and defer System-2 work beyond handoff checks.",
+  "next_permitted_action": "Retain the one interview-ready candidate packet and its rejection controls; construct two contrasting packets before running the exactly-three-target first-interview gauntlet, with no System-2 promotion yet.",
   "reward_target": "verified-final-method-verdict",
   "systems": {
     "system_one": {
       "candidate_generation_permitted": false,
       "source_feasible_records": 1,
-      "verdict": "seed-pre-admission"
+      "verdict": "form-target-trio"
     },
     "system_two": {
       "investigation_verdict_ready": false,
