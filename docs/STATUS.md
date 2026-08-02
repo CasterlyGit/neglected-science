@@ -17,13 +17,14 @@
 - The program is paused after Milestone 6.
 - No current finalist is eligible for Milestone 7.
 - No reranking, replacement-candidate generation, roadmap amendment, or new corpus cycle is authorized while paused.
-- A side track is defining how to admit opportunity-bearing research domains without repeating the full pilot cost for weak territories.
+- The redesign direction is decided: every future search cycle starts with exactly three concrete targets and an immediate adversarial first interview.
 
-## Side-track decision
+## Redesign decision
 
-- Provisional framework: `docs/DOMAIN_SELECTION_SIDE_TRACK.md`.
-- The roadmap remains unchanged until the owner accepts, revises, or rejects that framework.
-- After that decision, the owner may authorize a small domain-admission sprint, amend the roadmap, resume the project, or leave it paused.
+- Adopted direction: `docs/DOMAIN_SELECTION_SIDE_TRACK.md`.
+- Expensive discovery work requires two survivors from one trio: a primary and a reserve.
+- The roadmap remains unchanged and the program remains paused until the gauntlet is translated into milestone gates and governed records.
+- No target generation or interview cycle is authorized by this design decision alone.
 
 ## Gated
 

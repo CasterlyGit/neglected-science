@@ -1,180 +1,210 @@
-# Domain-selection side track
+# Three-target gauntlet
 
-Status: provisional decision framework. The main nine-milestone program remains paused after Milestone 6.
+Status: adopted redesign direction. The scientific program remains paused after Milestone 6 until this decision is translated into the roadmap and governed record contracts.
 
-## The problem exposed by the pilot
+## Decision
 
-The pilot selected a broad thematic territory—stress, memory, recovery, and phase transitions—then paid for corpus construction, candidate generation, and ranking before testing the strongest prior-art and dataset-protocol risks.
+Neglected Science will not begin by selecting a broad domain, building a corpus, generating many candidates, and discovering fatal defects near the end.
 
-Milestone 6 showed why that order is expensive:
+Every search cycle will begin with exactly three concrete target experiments. All three will face an immediate adversarial first interview. No broad corpus, discovery engine, ranking exercise, or preregistration may begin unless the trio produces both:
 
-1. an exact urban study already used the proposed instruments, event phase, outcome, and urban-form comparison;
-2. the battery concept had direct prior art, while the named NASA archive lacked the required rest-voltage and load-order protocol; and
-3. the cross-domain proposal shared vocabulary and generic curve shapes, but not a common measurement or perturbation contract.
+1. one primary survivor; and
+2. one reserve survivor.
 
-The corrective principle is:
+If fewer than two targets survive, the trio fails. It is closed with its rejection evidence and replaced by a new trio. The project does not “continue anyway” with the least-bad target.
 
-> Do not select a domain and hope it contains a neglected question. Admit a narrow research wedge only after showing that it contains an observable contrast, usable data, and plausible novelty headroom.
+## Why this replaces the previous approach
 
-## What counts as a research wedge
+The pilot paid for 56 sources, 65 claims, 18 candidates, and three ranked finalists before discovering that:
 
-A wedge is narrower than a discipline and more concrete than a theme. It combines:
+- one finalist was substantially answered by exact prior work;
+- another combined an answered idea with a dataset that did not record the required variables; and
+- the cross-domain finalist had shared vocabulary but no common measurement contract.
 
-- a system and population or unit of analysis;
-- an observed or imposed contrast;
-- a measured response;
-- a public dataset and actual protocol;
-- a falsifiable unresolved relationship; and
-- a credible independent check.
+Those were not late-stage scientific subtleties. They were first-interview failures. The system had the right adversarial questions, but asked them at Milestone 6 instead of at entry.
 
-For example, “ecological resilience” is a domain label. “Recovery of a named vegetation measure at repeatedly sampled plots before and after documented disturbances, compared with matched unexposed plots” is a research wedge. The example describes structure only; it is not an endorsed candidate.
+The redesign moves the kill test to the front. Later novelty review remains necessary, but it confirms and deepens a challenge already passed; it is no longer the first serious attempt to invalidate the work.
 
-## Hard admission gates
+## What a target is
 
-A wedge is rejected before broad corpus work if any hard gate fails.
+A target is not a field, theme, dataset, or vague question. It is a compact proposed experiment containing:
 
-### 1. Observable-contrast gate
+- a named system and stable unit of analysis;
+- a specific contrast or intervention;
+- a measured outcome;
+- a named public dataset or simulation source;
+- a baseline or closest prior experiment;
+- a falsifying result; and
+- a reason either a positive or negative result matters.
 
-The proposal must identify a real comparison already present in public evidence or data: intervention versus control, before versus after, reordered but cumulatively matched exposure, conflicting predictions, repeated units, threshold crossing, or another explicit contrast.
+If these cannot be stated before searching, the idea is not ready to occupy one of the three slots.
 
-A general association, visually interesting pattern, or shared metaphor is not enough.
+## The trio must be intentionally diverse
 
-### 2. Protocol-first data gate
+The three slots should not be minor variations of one idea. That creates correlated failure and disguises a single bet as a portfolio.
 
-Inspect the actual files, variable dictionary, sampling protocol, identifiers, missingness, units, and licensing before treating a dataset as available.
+Each trio should normally contain:
 
-The minimum evidence is:
+### Target A — Data-first
 
-- one downloaded or queryable sample;
-- confirmed variables for exposure, outcome, time or order, and major controls;
-- stable units of analysis and join keys;
-- a documented sampling or experimental protocol;
-- enough independent units for a falsifiable comparison; and
-- a plausible validation or holdout route.
+A concrete, unusually rich public dataset with protocol variation that appears scientifically underused.
 
-A portal, catalog, paper claim, or landing page alone fails this gate.
+The target must be based on inspected variables and protocol, not a repository landing page.
 
-### 3. Cheap novelty-kill gate
+### Target B — Contradiction-first
 
-Before building a corpus, run a bounded adversarial search using:
+Two primary results, models, or measurement regimes that make meaningfully different predictions under an identifiable shared condition.
 
-- the exact proposed question;
-- outcome plus instrument or dataset;
-- alternative terminology from adjacent disciplines;
-- the dataset name plus the proposed nonstandard use;
-- backward citations from the closest foundational work; and
-- forward citations that may already resolve the question.
+The disagreement must survive basic definition and boundary-condition checks.
 
-If an exact or substantively equivalent experiment exists, reject or sharply reframe the wedge immediately. Geographic repetition, another model family, or another benchmark score does not by itself create scientific novelty.
+### Target C — Boundary-or-replication-first
 
-### 4. Consequence gate
+An established result whose claimed scope can be tested on a consequential boundary, independent dataset, neglected population, scale, regime, or negative case.
 
-State what belief or decision changes under each plausible result, including a null result.
+Geographic repetition or another model architecture is insufficient unless the boundary changes the scientific claim.
 
-The wedge fails if its only contribution is “this has not been plotted,” “these domains have not been compared,” or “prediction improves slightly.” A useful result should discriminate explanations, validate or invalidate a measurement, expose a boundary condition, or change the adequacy of an accepted model or practice.
+Alternative trio compositions are allowed only with a written reason and comparable failure diversity.
 
-### 5. Independent-verification gate
+## The first interview
 
-Identify the check before admission: a second dataset, held-out units, another time period, a reproduced baseline, orthogonal measurement, negative control, or specialist-adjudicated protocol.
+The interview is a compact version of the strongest Milestone 6 attacks. It is conducted before broad ingestion. Search stops for a target as soon as one fatal answer is verified.
 
-If the same data both generate and confirm the claim, the wedge requires a written justification and receives a severe penalty.
+### Question 1 — What exact work already kills this?
 
-### 6. Expertise and execution gate
+Search the exact question, dataset plus outcome, instrument plus analysis, alternative terminology, and adjacent-discipline formulation. Trace the nearest paper backward to foundations and forward to later resolution.
 
-List the specialist judgments required and determine whether the evidence record can safely bound them. Reject wedges whose central interpretation depends on unavailable laboratory access, tacit protocol knowledge, restricted data, or several unrelated specialties.
+Fatal answer: a substantively equivalent experiment already answers the proposed question, or the remaining difference is only location, model family, visualization, or benchmark score.
 
-Also verify that acquisition, cleaning, baseline reproduction, and the decisive test fit the declared compute, time, and token budget.
+### Question 2 — Does the actual data record the experiment?
 
-## Cross-domain admission rule
+Inspect the variable dictionary, protocol, real sample, identifiers, units, missingness, intervention or exposure, outcome, controls, and validation route.
 
-Cross-domain work is not an automatic virtue and should not be a domain-selection requirement.
+Fatal answer: the required variable, ordering, intervention, repeated unit, or independent outcome is absent or inseparable from protocol confounding.
 
-Two wedges may be paired only when they independently pass all admission gates and share an experimental grammar:
+### Question 3 — Is the claim merely renamed, trivial, or structurally guaranteed?
 
-- equivalent perturbation classes, such as a pulse, step, cycle, or reordered exposure;
-- equivalent response geometry, such as repeated measurements on stable units;
-- a comparable estimand, not merely a similarly named feature;
-- compatible uncertainty and sampling treatment;
-- a falsifiable transfer claim; and
-- a reason the comparison changes scientific belief.
+Construct the simplest explanation and ask whether the proposed result follows from normalization, local linearization, leakage, static group differences, shared definitions, or another generic artifact.
 
-Shared terms such as *memory*, *resilience*, *recovery*, *hysteresis*, or *phase transition* are retrieval clues only. Shared curve shape after normalization is not sufficient.
+Fatal answer: the main result can occur without the proposed scientific mechanism and the data cannot discriminate the alternatives.
 
-The safest sequence is domain-first, transfer-second: establish one valid wedge in each domain, then ask whether a specific representation or prediction transfers. Do not begin with a universal cross-domain claim.
+### Question 4 — What would a specialist call obvious or invalid?
 
-## A lower-cost funnel
+Identify the domain judgments on which the experiment depends. Use available primary methods, official protocols, and specialist literature to anticipate the strongest objection. Record unavailable expert review explicitly.
 
-### Stage A — Landscape scan
+Fatal answer: the central interpretation requires missing tacit knowledge, incompatible measurement conventions, inaccessible infrastructure, or several unrelated specialties that cannot be bounded.
 
-Create 10–20 short wedge cards from diverse sources. Each card contains only the contrast, outcome, named dataset, closest known work, potential consequence, and obvious fatal risk.
+### Question 5 — What changes if the answer is positive, null, or contrary?
 
-No broad ingestion and no ranking model are needed. The goal is rejection speed.
+State the scientific consequence of all three outcomes and the independent check that would make them credible.
 
-### Stage B — Admission screen
+Fatal answer: the contribution is only that a comparison has not been made, a plot has not been drawn, or predictive performance might increase slightly.
 
-Run the six hard gates on each card using bounded searches and dataset metadata. Reject aggressively. A card that lacks an actual variable dictionary or sample does not advance.
+## Interview verdicts
 
-### Stage C — Micro-audit
+Each target receives exactly one verdict.
 
-For at most three survivors:
+### Killed
 
-1. inspect a real data sample;
-2. reconstruct the closest published baseline at the design level;
-3. trace the nearest citation neighborhood;
-4. write the strongest simpler explanation;
-5. identify one decisive analysis and one independent check; and
-6. estimate the full investigation cost.
+A fatal prior-art, data, construct, consequence, verification, or expertise defect is found. The evidence is retained. The target cannot be revived in the same form.
 
-This is still domain admission, not discovery-corpus construction.
+### Rewrite once
 
-### Stage D — Territory decision
+The interview exposes one precise repair that changes the scientific question rather than cosmetically narrowing it. The rewritten target is interviewed immediately in the same slot.
 
-Admit one bounded territory only if at least one wedge survives the micro-audit and at least one neighboring wedge provides enough breadth for a discovery program. If none survives, stop without building a corpus.
+Only one rewrite is allowed. If the rewritten target fails, it is killed. This prevents endless reframing from consuming a full cycle.
 
-Only after this gate should the project decide how Milestones 2–6 need to change.
+### Admitted
 
-## Provisional scorecard
+No fatal defect is found in the bounded interview. “Admitted” means worthy of deeper work, not novel, correct, or selected.
 
-Hard gates are pass/fail. Scores compare only wedges that pass every hard gate.
+The interview record must preserve the strongest unresolved risk and the exact evidence that would kill the target later.
 
-| Dimension | Question | Weight |
-|---|---|---:|
-| Contrast strength | Is there a real comparison capable of discriminating explanations? | 5 |
-| Protocol adequacy | Do actual variables and sampling support the estimand? | 5 |
-| Novelty headroom | Did the cheap kill search leave a specific unresolved boundary? | 5 |
-| Consequence | Would positive, null, and contrary results change belief or practice? | 4 |
-| Independent verification | Is there a credible holdout or orthogonal check? | 4 |
-| Execution fit | Can the baseline and decisive test be completed within budget? | 4 |
-| Expertise fit | Can specialist dependencies be bounded and reviewed? | 3 |
-| Cross-domain option | Does another independently viable wedge share the same experimental grammar? | 1 |
+There is no indefinite “gated” verdict at this stage. A target that requires unavailable information to pass is killed for the current cycle and may be reconsidered only when the external state changes.
 
-The low cross-domain weight is deliberate. Transfer potential is a bonus after scientific viability, not a substitute for it.
+## Trio pass rule
 
-## Promising source archetypes
+The trio passes only when at least two targets are admitted.
 
-The next scan should favor data regimes rather than fashionable disciplines:
+- The stronger survivor becomes the primary.
+- The other becomes the reserve.
+- If all three survive, the third remains an alternate.
+- If zero or one survives, close the trio and generate three new targets.
 
-- controlled multi-condition experiments with repeated units and unused protocol variation;
-- long-term monitoring with documented shocks and stable identifiers;
-- natural experiments with explicit policy, instrument, or environmental discontinuities;
-- multi-site or multi-lab datasets with standardized measurements and known heterogeneity;
-- public replication packages where an unresolved boundary condition remains testable;
-- datasets containing negative, failed, or censored outcomes that conventional analyses omit; and
-- instrument archives with rich quality variables and an independently measurable target.
+The reserve is mandatory. It prevents a later, genuinely subtle failure from sending the project back to an empty pipeline after another expensive evidence cycle.
 
-Avoid admitting:
+Primary and reserve are not chosen by a total score alone. The decision must compare:
 
-- broad portals without an identified product and protocol;
-- static property catalogs for dynamic questions;
-- heavily reused benchmarks unless the proposed estimand is genuinely different;
-- questions whose novelty depends on a particular phrase not appearing;
-- cross-domain analogies without compatible units and interventions; and
-- projects whose only validation is model performance on random splits.
+- severity of unresolved novelty risk;
+- protocol and variable adequacy;
+- strength of the decisive test;
+- independent verification;
+- consequence of null and contrary results;
+- execution cost; and
+- specialist dependency.
 
-## What to do next
+## Hard bounds for one trio
 
-Do not resume Milestone 5 or start Milestone 7.
+The first interview is deliberately shallow but adversarial.
 
-The next owner decision is whether this framework captures the right selection philosophy. If accepted, the smallest useful action is a capped domain-admission sprint: produce a diverse set of wedge cards, apply the hard gates, and return only the rejection ledger plus at most three micro-audit candidates. That sprint should have an explicit cost cap and stop if no wedge passes.
+Per target, it may inspect:
 
-Only after seeing that result should the project amend the roadmap. Likely changes would place protocol inspection and cheap novelty killing before corpus construction, but this document does not make that amendment.
+- the closest primary paper and its immediate citation neighborhood;
+- official dataset documentation and one real data sample;
+- a small number of primary sources needed for alternative terminology or the strongest objection; and
+- no more evidence once a fatal defect is verified.
+
+It may not:
+
+- build a broad corpus;
+- extract a general claim graph;
+- run discovery engines;
+- train or compare predictive models;
+- download large archives after a smaller protocol record has already invalidated the target;
+- perform exhaustive novelty review; or
+- treat missing evidence as survival.
+
+The output is three interview records and one trio verdict, not a literature review.
+
+## Cross-domain rule
+
+Cross-domain work may emerge from the trio but cannot bypass it.
+
+A cross-domain target occupies one slot only if each participating domain independently has:
+
+- a valid measured contrast;
+- adequate variables and protocol;
+- a meaningful within-domain question;
+- an independent check; and
+- compatible experimental grammar.
+
+Shared words or curve shapes are not enough. The cross-domain claim must predict something that could fail after transfer.
+
+The preferred path is to admit two strong within-domain targets first. A transfer target may then be formed from them only if the comparison adds a falsifiable consequence. Cross-domain leverage never rescues a weak domain target.
+
+## How this changes the program
+
+The roadmap is still paused and has not yet been rewritten. When it is amended, the intended order is:
+
+1. generate one diverse trio;
+2. conduct the first interviews;
+3. require a primary and reserve survivor;
+4. build a bounded evidence corpus around those survivors and their strongest killers;
+5. deepen candidate generation and ranking without losing the reserve;
+6. conduct a later confirmation-grade novelty challenge;
+7. select and preregister only after at least one target survives that confirmation.
+
+The old Milestones 2–6 should not simply receive another preliminary checklist. Their order and gates must be changed so that target generation and adversarial admission precede territory-scale corpus work.
+
+## Next action, still paused
+
+The next task is not to generate the first trio.
+
+First, translate this decision into:
+
+- revised roadmap milestones and completion gates;
+- a machine-checkable target-interview record;
+- a trio-level pass/fail contract;
+- a strict retrieval and token budget; and
+- tests proving that one survivor cannot advance without a reserve.
+
+Only after those controls are verified should the owner authorize the first three-target cycle.

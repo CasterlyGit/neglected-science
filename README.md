@@ -17,7 +17,7 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 - Remote: https://github.com/CasterlyGit/neglected-science
 - Program state: paused after Milestone 6
 - Completed milestones: 1–6
-- Side track: design a domain-admission process before deciding whether to revise or resume the roadmap
+- Redesign decision: adopt a three-target first-interview gauntlet before any new corpus or ranking cycle
 - Milestone 7: gated; no eligible finalist
 - Scientific findings: none
 - Selected investigation: none
@@ -43,7 +43,7 @@ docs/            durable project status and decisions
 
 No broad corpus ingestion or final scientific selection begins until Milestones 1 and 2 pass their completion gates. No result is called novel without an adversarial prior-art search and appropriate expert scrutiny.
 
-The pilot is paused after Milestone 6. Do not rerank, generate replacement candidates, amend the roadmap, or begin another corpus cycle until the owner accepts or replaces the provisional domain-admission framework in `docs/DOMAIN_SELECTION_SIDE_TRACK.md`.
+The pilot is paused after Milestone 6. The three-target gauntlet in `docs/DOMAIN_SELECTION_SIDE_TRACK.md` is adopted as the redesign direction, but the roadmap has not yet been amended and no new target cycle is authorized.
 
 The public repository documents the program and its evidence; it does not constitute a scientific publication or a claim that any result is novel.
 

@@ -6,7 +6,8 @@ Neglected Science is a scientific metaresearch and validation program. Treat `VI
 - Keep every factual scientific claim traceable to a source and source location.
 - Separate observation, statistical relationship, inference, causal hypothesis, and speculation.
 - Actively seek evidence against novelty and importance before recommending a candidate.
-- Do not select Phoenix thermal memory or any other domain in advance of the opportunity-ranking process.
+- Do not admit Phoenix thermal memory or any other target without passing the three-target first-interview gauntlet.
+- Generate and challenge targets in trios; no broad corpus or opportunity-ranking cycle begins without both a primary and reserve survivor.
 - Do not generalize into an autonomous discovery platform until one selected investigation has been executed and the method evaluated.
 - Retain negative results, failed hypotheses, uncertainty, and verification gaps.
 - Never fabricate references, datasets, credentials, experiments, findings, expert review, or novelty.
