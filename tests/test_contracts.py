@@ -69,7 +69,7 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual("continue-bounded-cycle", record["verdict"])
         self.assertTrue(record["evidence"]["investigation_transaction_valid"])
         self.assertEqual(0, record["evidence"]["current_ready_targets"])
-        self.assertEqual(2, record["systems"]["system_one"]["source_feasible_records"])
+        self.assertEqual(3, record["systems"]["system_one"]["source_feasible_records"])
         self.assertEqual("form-target-trio", record["systems"]["system_one"]["verdict"])
         self.assertFalse(record["systems"]["system_two"]["investigation_verdict_ready"])
 
@@ -209,6 +209,15 @@ class OpportunityDossierContractTests(unittest.TestCase):
         packet = json.loads((ROOT / "verification" / "system-one-seed-candidate-packet-2.json").read_text())
         self.assertEqual([], list(Draft202012Validator(screen_schema).iter_errors(screen)))
         self.assertEqual([], list(Draft202012Validator(packet_schema).iter_errors(packet)))
+
+    def test_third_candidate_packet_is_time_ordered_and_nonpromoting(self):
+        screen_schema = json.loads((ROOT / "schemas" / "system-one-sensor-seed-screen.schema.json").read_text())
+        packet_schema = json.loads((ROOT / "schemas" / "system-one-candidate-packet-v3.schema.json").read_text())
+        screen = json.loads((ROOT / "verification" / "system-one-seed-pre-admission-4.json").read_text())
+        packet = json.loads((ROOT / "verification" / "system-one-seed-candidate-packet-3.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(screen_schema).iter_errors(screen)))
+        self.assertEqual([], list(Draft202012Validator(packet_schema).iter_errors(packet)))
+        self.assertIn("chronological split", packet["independent_check"])
 
 
 if __name__ == "__main__":

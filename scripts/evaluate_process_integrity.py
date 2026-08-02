@@ -36,6 +36,7 @@ def evaluate(now=None):
     seed_audit = read("verification/system-one-seed-full-audit-1.json")
     seed_packet = read("verification/system-one-seed-candidate-packet-1.json")
     seed_packet_two = read("verification/system-one-seed-candidate-packet-2.json")
+    seed_packet_three = read("verification/system-one-seed-candidate-packet-3.json")
     current_ready = sum(row["eligible_for_candidate_generation"] for row in screen)
     execution = improvement["integrity_gates"]["execution_integrity"]
     transaction_valid = check_transaction()["transaction"] == "pass"
@@ -58,7 +59,7 @@ def evaluate(now=None):
         "evidence": evidence,
         "systems": {
             "system_one": {
-                "source_feasible_records": sum(packet["disposition"] == "interview-ready-domain-specific-candidate-packet" for packet in [seed_packet, seed_packet_two]),
+                "source_feasible_records": sum(packet["disposition"] == "interview-ready-domain-specific-candidate-packet" for packet in [seed_packet, seed_packet_two, seed_packet_three]),
                 "candidate_generation_permitted": False,
                 "verdict": "form-target-trio" if seed_packet["disposition"] == "interview-ready-domain-specific-candidate-packet" else "seed-pre-admission",
             },
@@ -74,7 +75,7 @@ def evaluate(now=None):
             "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
             "Retain rejected, blocked, null, and uncertain results as evidence.",
         ],
-        "next_permitted_action": "Retain the one interview-ready candidate packet and its rejection controls; construct two contrasting packets before running the exactly-three-target first-interview gauntlet, with no System-2 promotion yet.",
+        "next_permitted_action": "Run the exactly-three-packet first-interview gauntlet once for the current candidate batch; retain every disposition and do not promote a packet to System 2.",
     }
 
 
