@@ -1,0 +1,34 @@
+{
+  "anti_gaming": [
+    "Do not reward candidate count, candidate survival, or positive findings.",
+    "Do not convert metadata, a score, or an analogy into a research target.",
+    "Do not select without exactly three ready targets and a primary plus reserve.",
+    "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
+    "Retain rejected, blocked, null, and uncertain results as evidence."
+  ],
+  "evaluated_at": "2026-08-02T16:27:58Z",
+  "evidence": {
+    "construction_gate_enforced": true,
+    "current_ready_targets": 0,
+    "execution_integrity": "partial",
+    "investigation_transaction_valid": true,
+    "negative_evidence_retained": true,
+    "primary_and_reserve_required": true,
+    "real_investigation_retained": true
+  },
+  "next_permitted_action": "Run the predeclared blinded System-1 corpus-quality benchmark after one versioned selector improvement; retain all rejections and defer System-2 work beyond shadow handoff checks.",
+  "reward_target": "verified-final-method-verdict",
+  "systems": {
+    "system_one": {
+      "candidate_generation_permitted": false,
+      "source_feasible_records": 6,
+      "verdict": "no-justified-trio"
+    },
+    "system_two": {
+      "investigation_verdict_ready": false,
+      "structural_verdict": "LIMITED SUPPORT \u2014 NO NEW TARGET TRIO"
+    }
+  },
+  "verdict": "continue-bounded-cycle",
+  "verdict_id": "process-integrity-cycle-2"
+}

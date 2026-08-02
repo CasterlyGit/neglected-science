@@ -1,0 +1,66 @@
+{
+  "batch_id": "system-one-batch-1",
+  "input_intake_ids": [
+    "intake-celegans-outcrossing",
+    "intake-brassica-drought",
+    "intake-fatigue-residual-stress"
+  ],
+  "audits": [
+    {
+      "intake_id": "intake-celegans-outcrossing",
+      "disposition": "rejected-before-cell",
+      "failed_gate": "actual-data-fit",
+      "evidence": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4055231/",
+          "location": "Results: Adaptation—evolution of population-wide fitness; Discussion: competitive population-wide assay",
+          "finding": "The paper models six replicate populations with population as a random effect, and states that the GFP scoring procedure requires an assumption about random mating when estimating the population-wide fitness surrogate."
+        },
+        {
+          "url": "https://zenodo.org/records/4934009",
+          "location": "README.txt: Population_fitness.txt; retrieved table header pop, generation, w",
+          "finding": "The supplied population-fitness table has 108 repeated fitness observations from six populations at four generations, but it does not contain outcrossing frequency, genotype, or the heterozygote information needed to test the paper's key inference or its stated scoring assumption."
+        }
+      ],
+      "reason": "A new analysis of the supplied table would only revisit a population-level trajectory already fitted with the correct population random effect; it cannot independently test whether increased outcrossing caused adaptation or correct the stated unobserved mating structure."
+    },
+    {
+      "intake_id": "intake-brassica-drought",
+      "disposition": "rejected-before-cell",
+      "failed_gate": "prior-art",
+      "evidence": [
+        {
+          "url": "https://academic.oup.com/evolut/article/76/2/262/6728474",
+          "location": "Experimental design; Statistical analysis",
+          "finding": "The study created 24 populations with eight replicates per regime and fitted generalized linear mixed-effects models with replicate nested within regime as a random effect for the relevant trait analyses."
+        },
+        {
+          "url": "https://zenodo.org/records/5726265",
+          "location": "README: test generation and individual-data workbook; workbook data and description sheets",
+          "finding": "The workbook contains individual-level phenotypes nested in population, regime, replicate, maternal line, and test treatment, matching the hierarchy already handled in the reported mixed models."
+        }
+      ],
+      "reason": "The obvious unit-of-analysis robustness question is already addressed by the published model. The supplied phenotype workbook cannot test a different genomic or mechanistic account without substituting a claim and data that are absent from this record."
+    },
+    {
+      "intake_id": "intake-fatigue-residual-stress",
+      "disposition": "rejected-before-cell",
+      "failed_gate": "nontrivial-consequence",
+      "evidence": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5717669/",
+          "location": "Background section 2; thermoelastic stress analysis section 2.1",
+          "finding": "The primary study deliberately combines thermoelastic stress analysis and synchrotron X-ray diffraction to determine whether fatigue crack growth redistributes residual stress, and describes the calibration requirement for the thermoelastic measurement."
+        },
+        {
+          "url": "https://zenodo.org/records/5011231",
+          "location": "SXRD data.rar and CT plastic zone code.rar archive inventories",
+          "finding": "The checksum-verified archives contain specimen-specific stress and strain workbooks, uncertainty files, and analysis code, but no separately declared calibration-audit protocol or independent validation outcome that would distinguish a new scientific conclusion from replotting the original comparison."
+        }
+      ],
+      "reason": "A generic agreement or calibration reanalysis repeats the central dual-method experiment. Without a predeclared independent calibration failure and a consequence beyond the original residual-stress conclusion, it is not a nontrivial new question."
+    }
+  ],
+  "verdict": "no-justified-trio",
+  "next_permitted_action": "Retain the three rejections and begin a new bounded System-1 source-feasibility batch; do not carry any rejected record into candidate generation."
+}

@@ -1,0 +1,12 @@
+{
+  "batches": [
+    "system-one-batch-1",
+    "system-one-batch-2"
+  ],
+  "candidate_packets": 0,
+  "next_permitted_action": "Stop further intake under this proof program and redesign System-1 selection around pre-specified artifact and consequence signals before any new batch.",
+  "plain_language": "Across two fixed, diverse System-1 batches, every record had a traceable failed gate before structural promotion. There is no mapped record with a distinct domain consequence for System 2 to compare, so no target trio exists.",
+  "review_id": "system-two-shadow-proof-1",
+  "system_two_ready_records": 0,
+  "verdict": "LIMITED SUPPORT \u2014 NO TARGET TRIO"
+}

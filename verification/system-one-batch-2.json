@@ -1,0 +1,66 @@
+{
+  "batch_id": "system-one-batch-2",
+  "input_intake_ids": [
+    "intake-snow-occupancy",
+    "intake-frost-warming",
+    "intake-biodiversity-stability"
+  ],
+  "audits": [
+    {
+      "intake_id": "intake-snow-occupancy",
+      "disposition": "rejected-before-cell",
+      "failed_gate": "prior-art",
+      "evidence": [
+        {
+          "url": "https://doi.org/10.1111/acv.12140",
+          "location": "Abstract; model comparison and power-analysis methods",
+          "finding": "The paper directly compares occupancy models with spatial correlation in detection probability, reports strong serial correlation for all six species, and evaluates spatial-versus-temporal replication trade-offs."
+        },
+        {
+          "url": "https://zenodo.org/records/4938581",
+          "location": "README_for_Banff_2012.txt; Banff_2012.csv header",
+          "finding": "The dataset supplies the same nested cell and segment identifiers, repeated survey dates, lagged detections, and snow covariates used to model serial correlation in the primary analysis."
+        }
+      ],
+      "reason": "A proposal to add serial-correlation handling, compare spatial with temporal replication, or quantify detection bias repeats the central published model comparison and power analysis rather than creating a distinct consequential question."
+    },
+    {
+      "intake_id": "intake-frost-warming",
+      "disposition": "rejected-before-cell",
+      "failed_gate": "nontrivial-consequence",
+      "evidence": [
+        {
+          "url": "https://doi.org/10.1111/1365-2745.13239",
+          "location": "Abstract and experimental-design description",
+          "finding": "The study uses replicated in-situ transplant and night-warming experiments to evaluate frost and soil effects on native and alien seedling survival, and interprets the warming survival contrast as evidence about forest–grassland boundaries."
+        },
+        {
+          "url": "https://zenodo.org/records/4989732",
+          "location": "experimental warming survival CSV header",
+          "finding": "The data record treatment, plot, species, habitat, days to death, and event status, but no independent measurement or distinct consequence that would turn a reanalysis of survival into a new test of the boundary mechanism."
+        }
+      ],
+      "reason": "The obvious treatment-by-survival analysis repeats the paper's causal experiment. A new claim about ecosystem-scale alternate states would require independent spatial or microclimate evidence not present in this record."
+    },
+    {
+      "intake_id": "intake-biodiversity-stability",
+      "disposition": "rejected-before-cell",
+      "failed_gate": "prior-art",
+      "evidence": [
+        {
+          "url": "https://doi.org/10.1111/1365-2745.12897",
+          "location": "Methods: evidence selection and meta-analysis; Results",
+          "finding": "The paper defines a constrained set of 28 studies, calculates diversity-by-extreme interaction effects, runs bootstrap uncertainty and stated sensitivity analyses, and reports a near-zero interaction for biomass resistance."
+        },
+        {
+          "url": "https://zenodo.org/records/4941000",
+          "location": "DeBoecketalDryad.xlsx header",
+          "finding": "The workbook contains the published source-level effect sizes, interaction estimate, weights, extreme class, ecosystem, and composition fields, but no new primary-study extraction layer or independent outcome."
+        }
+      ],
+      "reason": "Recomputing the same source-level interaction and sensitivity analyses would reproduce the primary meta-analysis. The record does not support a distinct reconciliation or validation question without adding evidence beyond the bounded corpus."
+    }
+  ],
+  "verdict": "no-justified-trio",
+  "next_permitted_action": "Retain the second three-record defeat and begin a third bounded System-1 source-feasibility batch using the accumulated exclusion pattern; do not promote a reanalysis that restates the source conclusion."
+}
