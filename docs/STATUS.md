@@ -13,6 +13,11 @@
 - Milestone 6 completed with 13 alternative-terminology/citation-search records, 7 variable-level dataset audits, and 3 schema-valid adversarial dossiers. All three finalists were rejected.
 - A replacement manual-priority cycle completed the redesigned sequence through confirmation-grade Milestone 6: seven ranked leads, three governed target reviews, two cautious survivors, and one reframed alternate.
 
+## Program boundary
+
+- The current proof target is narrow: can provenance-first, adversarial selection identify overlooked, publicly testable robustness or reconciliation questions?
+- Milestones 1–9 are evidence for that narrow target only. They do not yet establish an autonomous cross-domain discovery system or validate broader generalization.
+
 ## Active with evidence-access gate
 
 - `target-ecoli-regression` is selected for the first investigation and preregistered in `experiments/ecoli-regression/` before source-file download or final-holdout access.

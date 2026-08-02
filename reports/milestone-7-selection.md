@@ -12,6 +12,8 @@ Status: complete locally on 2026-08-02.
 
 The preregistration does not promise a positive result. It prohibits causal, biological-mechanism, universal-predictability, physical-validation, absolute-novelty, and expert-review claims.
 
+In plain language, the published experiment found that E. coli populations beginning fitter appeared to gain less fitness. That may reflect a real diminishing-returns pattern, or partly a mathematical artifact because the same noisy baseline enters the change score. Separate public assay blocks allow a preregistered robustness test that estimates baseline and later gain from different blocks. Persistence, attenuation/null, and reversal are all informative; none alone proves a biological mechanism or universal evolutionary law.
+
 ## Next gate
 
 Milestone 8 may begin only when the public raw files can be acquired and their listed Dryad SHA-256 digests verified. The final-holdout block must remain unused until a validated implementation is frozen in a later local commit.

@@ -4,6 +4,8 @@
 
 A scientifically strong, data-shaped question can still fail as an investigation if its public inputs cannot be acquired, verified, partitioned, or operated reproducibly when execution begins. A prior row-level inspection is evidence of possible analytical fit; it is not evidence of current execution readiness. This protocol makes that distinction a noncompensatory gate.
 
+The gate serves the program's narrow initial thesis: whether provenance-first, adversarial selection can identify overlooked, publicly testable robustness or reconciliation questions. It does not validate an autonomous discovery system, a cross-domain generalization, or a scientific finding merely because an investigation can run.
+
 ## Milestone 6.5 — execution-readiness certification
 
 Milestone 6.5 sits after confirmation-grade novelty review and before Milestone 7 selection. Both the proposed primary and reserve must independently pass every check below. A score, prior success, cached copy, landing page, or plausible substitute cannot compensate for a failed check.
@@ -36,8 +38,11 @@ The E. coli target was selected and preregistered before this new gate existed. 
 | 8: exploratory choices leak into final evaluation | Separate exploration, validation, and final code paths; commit the validation-frozen implementation before final evaluation | Commit hash, partition access log, and one final-evaluation receipt. |
 | 8: result is driven by one block, unit, model, or undocumented dependency | Predeclare robustness checks, use leave-unit/block checks, pin environment, and retain null/contrary outcomes | Reproducible report, environment lock, robustness table, deviations, and negative results. |
 | 8: computational association is inflated into mechanism or causation | Claim linting against the preregistered claim boundary; record specialist gaps | Claim-to-evidence table and explicit prohibited inferences. |
+| 8: a robustness test is described as a new biological law | State whether the result is persistence, attenuation/null, or reversal of a published pattern; prohibit mechanism and universality claims | Plain-language claim boundary plus source-to-result evidence table. |
 | 9: one successful run is generalized into a discovery platform | Evaluate question quality separately from result direction; compare selected and reserve, failed leads, cost, automation contribution, and expert dependencies | Method-evaluation report with misses, counterfactuals, unsafe automations, and limits. |
 | 9: method evaluation hides selection bias or unavailable expertise | Preserve all triage exclusions, failed access checks, revisions, deviations, and unresolved specialist objections | Auditable negative ledger and a bounded next-architecture decision. |
+
+Milestone 9 must also ask the narrow question: did this process surface a better robustness or reconciliation question than ordinary review would have? It must not use one run to claim general autonomous cross-domain discovery.
 
 ## Immediate-workaround policy
 

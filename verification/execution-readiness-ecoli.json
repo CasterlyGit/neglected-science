@@ -1,0 +1,29 @@
+{
+  "target_id": "target-ecoli-regression",
+  "certified_at": "2026-08-02T21:05:00Z",
+  "status": "passed-before-final-evaluation",
+  "source": "Dryad 10.5061/dryad.4f4qrfjfs, version 4",
+  "acquisition": {
+    "method": "owner-downloaded official Dryad archive",
+    "files": {
+      "data_set-full.anc.txt": "cca2444865e9f823882447a4b31cbe7c28b0227d4ab3f30b20aa0fd3471c57bb",
+      "data_set-full.ev.change.txt": "11e2233ebe5d4b2560d475359f2682484bebc51d6d3ff0a38ebef6a3b02b9ed8"
+    },
+    "verification": "Both locally computed SHA-256 digests match the public Dryad version-file manifest."
+  },
+  "structural_fit": {
+    "nonfinal_ancestor_rows": 187,
+    "nonfinal_evolved_rows": 532,
+    "comparisons": 16,
+    "ancestor_complete_three_block_cells": 59,
+    "ancestor_total_cells": 64,
+    "result": "All 16 declared strain-by-environment comparisons are eligible for the cross-fitted analysis."
+  },
+  "partition_safety": "Exploration uses blocks 1–2; validation uses block 3 with blocks 1–2 as independent baseline estimates; final code path is not run before this validation-freeze commit.",
+  "baseline_viability": "The published R Markdown source identifies the evolved input, grouping variables, r.anc.strain baseline, and r.change response. The reconstructed published-style pattern is recorded in the validation-freeze report.",
+  "limitations": [
+    "Five of 64 ancestor genotype-environment cells lack one non-final block, though none prevents an eligible comparison.",
+    "Assay-block exchangeability remains an unresolved specialist-review dependency.",
+    "This certificate establishes operational feasibility, not a scientific finding."
+  ]
+}

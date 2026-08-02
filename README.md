@@ -49,6 +49,12 @@ The original pilot remains a truthful negative result. A replacement cycle used 
 
 The public repository documents the program and its evidence; it does not constitute a scientific publication or a claim that any result is novel.
 
+## Current investigation, in plain language
+
+We are revisiting a published evolution experiment in which E. coli populations that began fitter appeared to gain less fitness—“diminishing returns.” That pattern may be real, or partly a measurement artifact because the same noisy baseline measurement is mathematically embedded in the fitness-change score. The public experiment has separate assay blocks. We preregistered a test that estimates baseline fitness and later fitness change from different blocks, then asks whether the negative relationship still holds.
+
+We do not know the final answer. Persistence would strengthen the reported pattern; attenuation or a null result would show artifact sensitivity; reversal would challenge it. This is a computational robustness test of a published dataset—not proof of a biological mechanism or universal evolutionary law.
+
 ## Verification
 
 Create the isolated development environment once, then run the repository contract checks:

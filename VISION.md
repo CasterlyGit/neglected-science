@@ -4,6 +4,10 @@
 
 Build a disciplined computational instrument that identifies neglected, important, and falsifiable scientific questions from public knowledge and data, then proves its usefulness by completing real scientific investigations.
 
+## Initial thesis and boundary
+
+The initial, testable thesis is narrower: **can a provenance-first, adversarial selection process reliably identify overlooked, publicly testable robustness or reconciliation questions?** Neglected Science is not yet an autonomous cross-domain discovery system. The nine milestones are the proof path for this thesis: Milestones 1–6 establish and adversarially test candidate selection, 6.5 verifies execution readiness, 7 freezes one question, 8 executes it reproducibly, and 9 evaluates whether the method surfaced a question better than ordinary review. Broader claims about cross-domain unknowns, autonomous discovery, or generalization remain gated on one or more completed investigations.
+
 ## Long-term outcome
 
 Neglected Science should make it possible for a technically capable outsider, assisted by AI, to:

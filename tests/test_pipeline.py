@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from scripts import pipeline
+from scripts import ecoli_analysis
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +14,15 @@ def jsonl(path):
 
 
 class DeterministicPipelineTests(unittest.TestCase):
+    def test_ecoli_pearson_and_fisher_summary(self):
+        self.assertAlmostEqual(1.0, ecoli_analysis.pearson([(1, 2), (2, 4), (3, 6)]))
+        self.assertIsNone(ecoli_analysis.pearson([(1, 1), (1, 2), (1, 3)]))
+        self.assertAlmostEqual(0.0, ecoli_analysis.fisher_mean([-0.5, 0.5]))
+
+    def test_ecoli_partition_definitions_are_disjoint_from_final_outcomes(self):
+        self.assertNotIn("4", ecoli_analysis.PARTITIONS["exploration"][0])
+        self.assertNotIn("4", ecoli_analysis.PARTITIONS["validation"][0])
+        self.assertIn("4", ecoli_analysis.PARTITIONS["final"][0])
     def test_normalization_and_concept_detection(self):
         self.assertEqual("tree cooling", pipeline.normalize_title("Tree—Cooling!"))
         self.assertIn("memory-path-dependence", pipeline.concepts_for("history-dependent battery response"))
