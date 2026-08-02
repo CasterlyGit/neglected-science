@@ -1,0 +1,33 @@
+{
+  "evaluation_id": "system-one-method-evaluation-1",
+  "status": "bounded-method-learning-complete",
+  "scope": "System 1 corpus construction and investigation handoff; System 2 remains a non-promoting shadow review.",
+  "evidence": {
+    "construction": {
+      "formal_first_interview": "verification/system-one-first-interview-1.json",
+      "primary": "sensor temporal calibration transfer",
+      "reserve": "virus held-block transfer",
+      "retained_failure": "verification/system-one-execution-readiness-1.json"
+    },
+    "executed_investigation": "verification/system-one-reconstruction-final-verdict-1.json",
+    "primary_result": "The preregistered chronological validation improvement did not persist on the frozen later-time holdout: linear MAE 1.4767 versus raw-sensor MAE 1.4101.",
+    "reserve_result": "The independently specified fixed-effect reconstruction had held-block MAE from 1.1287 to 1.8602; stable transfer was not established."
+  },
+  "verdict": "System 1 produced an investigation-ready, evidence-traceable corpus pair and a reproducible bounded method-learning result. Its gates correctly prevented a validation-only gain and an unavailable published runtime from becoming a final positive claim.",
+  "redesign_decision": {
+    "required_before_next_batch": "Keep runtime preflight and frozen independent reconstruction as seed-admission requirements; require an executable primary and reserve before final-outcome work.",
+    "not_a_success_metric": [
+      "candidate survival rate",
+      "positive scientific finding",
+      "a desired cross-domain conclusion",
+      "record volume"
+    ]
+  },
+  "limits": [
+    "This does not establish System 1 as generally reliable across domains.",
+    "This does not certify either reconstruction as equivalent to its published workflow.",
+    "This does not promote a System-2 cross-domain target or verdict.",
+    "All rejected candidates and runtime failures remain part of the corpus."
+  ],
+  "next_permitted_action": "Run a new bounded, contrasting seed batch only after the redesigned runtime-preflight contract is applied; evaluate construction and handoff quality independently."
+}
