@@ -49,6 +49,13 @@ class DeterministicPipelineTests(unittest.TestCase):
         self.assertEqual(9, len(rows))
         self.assertEqual(0, sum(row["eligible_for_candidate_generation"] for row in rows))
 
+    def test_access_blocked_acquisition_receipt_is_a_noncompensatory_failure(self):
+        attempts = {row["cell_id"]: row for row in jsonl("verification/atlas-acquisition-attempts.jsonl")}
+        cell = next(row for row in jsonl("corpus/research-cells.jsonl") if row["cell_id"] == "cell-tetrahymena-correlated-response")
+        screened = screen_strategic_leads.screen(cell, attempts)
+        self.assertFalse(screened["eligible_for_candidate_generation"])
+        self.assertIn("fresh official-file retrieval is access-blocked", screened["reasons"])
+
     def test_ecoli_transaction_verifies_durable_inputs_and_result(self):
         self.assertEqual("pass", system_guards.check_transaction()["transaction"])
 

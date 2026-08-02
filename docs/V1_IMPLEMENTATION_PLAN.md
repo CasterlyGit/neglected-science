@@ -9,7 +9,7 @@ A local, evidence-grounded research-navigation system. It represents public stud
 | Step | Deliverable | Completion evidence | Current state |
 | --- | --- | --- | --- |
 | 1. Research-cell language | Schema and contract for source, system, design, measurement, inference, validation, fragility, provenance, and decision blocks | Schema validation and unit tests | Complete for V1 seed |
-| 2. Initial corpus | Exactly nine diverse cells, including adverse and blocked cases | Public source/data locations and explicit acquisition states | Complete as a seed; three records remain inventory-only |
+| 2. Initial corpus | Exactly nine diverse cells, including adverse and blocked cases | Public source/data locations and explicit acquisition states | Complete as a seed; three new records are documented access-blocked after fresh retrieval attempts |
 | 3. Conservative graph | Typed structural roles and edges that retain mismatches | Deterministic graph with no topic-word edges | Complete for seed |
 | 4. Owner-facing atlas | Readable comparison report with one verdict | Generated report and no hidden promotion | Complete for seed |
 | 5. Strategic-lead screen | Explain which cells may enter candidate generation and why | Machine-readable acceptance/rejection ledger | Complete for seed |

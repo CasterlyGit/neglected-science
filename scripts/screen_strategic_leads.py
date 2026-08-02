@@ -11,12 +11,15 @@ except ModuleNotFoundError:  # direct script invocation
 ROOT = Path(__file__).resolve().parents[1]
 CELLS = ROOT / "corpus" / "research-cells.jsonl"
 OUT = ROOT / "verification" / "strategic-lead-screen-v1.jsonl"
+ATTEMPTS = ROOT / "verification" / "atlas-acquisition-attempts.jsonl"
 
 
-def screen(cell):
+def screen(cell, attempts_by_cell=None):
     reasons = []
     if cell["provenance"]["acquisition_status"] != "checksum-verified":
         reasons.append("official source files are not checksum-verified")
+    if attempts_by_cell and cell["cell_id"] in attempts_by_cell:
+        reasons.append("fresh official-file retrieval is access-blocked")
     if cell["measurement"]["data_granularity"] != "row-level":
         reasons.append("public evidence is not row-level")
     if cell["decision"]["role"] != "gated":
@@ -27,7 +30,8 @@ def screen(cell):
 
 
 def main():
-    rows = [screen(cell) for cell in read_jsonl(CELLS)]
+    attempts_by_cell = {row["cell_id"]: row for row in read_jsonl(ATTEMPTS)}
+    rows = [screen(cell, attempts_by_cell) for cell in read_jsonl(CELLS)]
     OUT.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in rows))
     print(json.dumps({"screened": len(rows), "eligible": sum(row["eligible_for_candidate_generation"] for row in rows)}))
 
