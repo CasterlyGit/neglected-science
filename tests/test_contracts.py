@@ -32,6 +32,13 @@ class OpportunityDossierContractTests(unittest.TestCase):
         )
         self.assertGreaterEqual(len(errors), 5)
 
+    def test_ecoli_preregistration_is_valid_and_frozen(self):
+        schema = json.loads((ROOT / "schemas" / "preregistration.schema.json").read_text())
+        Draft202012Validator.check_schema(schema)
+        record = json.loads((ROOT / "experiments" / "ecoli-regression" / "preregistration-v1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertEqual("frozen-before-final-holdout-access", record["status"])
+
 
 if __name__ == "__main__":
     unittest.main()

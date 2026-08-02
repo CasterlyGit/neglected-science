@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Versioned computational preregistration",
+  "type": "object",
+  "required": ["preregistration_id", "version", "status", "target_id", "registered_at", "data", "partitions", "hypotheses", "baseline", "primary_analysis", "falsification", "claim_boundary", "deviations"],
+  "properties": {
+    "preregistration_id": {"type": "string", "pattern": "^prereg-"},
+    "version": {"type": "string", "pattern": "^v[0-9]+$"},
+    "status": {"const": "frozen-before-final-holdout-access"},
+    "target_id": {"const": "target-ecoli-regression"},
+    "registered_at": {"type": "string", "format": "date-time"},
+    "data": {"type": "object", "required": ["source", "files", "access_rule"], "properties": {"source": {"const": "Dryad 10.5061/dryad.4f4qrfjfs"}, "files": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "access_rule": {"const": "final assay block remains unread until code and validation decisions are frozen"}}},
+    "partitions": {"type": "object", "required": ["exploration", "validation", "final_holdout"], "properties": {"exploration": {"const": ["1", "2"]}, "validation": {"const": ["3"]}, "final_holdout": {"const": ["4"]}}},
+    "hypotheses": {"type": "object", "required": ["artifact", "persistence"], "properties": {"artifact": {"type": "string"}, "persistence": {"type": "string"}}},
+    "baseline": {"type": "object", "required": ["model", "success_rule"], "properties": {"model": {"type": "string"}, "success_rule": {"type": "string"}}},
+    "primary_analysis": {"type": "object", "required": ["cross_fit", "estimand", "model", "decision_rule"], "properties": {"cross_fit": {"type": "string"}, "estimand": {"type": "string"}, "model": {"type": "string"}, "decision_rule": {"type": "string"}}},
+    "falsification": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "claim_boundary": {"type": "string"},
+    "deviations": {"type": "array"}
+  },
+  "additionalProperties": false
+}

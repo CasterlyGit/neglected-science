@@ -1,0 +1,35 @@
+{
+  "preregistration_id": "prereg-ecoli-regression-2026-08-02",
+  "version": "v1",
+  "status": "frozen-before-final-holdout-access",
+  "target_id": "target-ecoli-regression",
+  "registered_at": "2026-08-02T20:30:00Z",
+  "data": {
+    "source": "Dryad 10.5061/dryad.4f4qrfjfs",
+    "files": ["data_set-full.anc.txt", "data_set-full.ev.change.txt"],
+    "access_rule": "final assay block remains unread until code and validation decisions are frozen"
+  },
+  "partitions": {"exploration": ["1", "2"], "validation": ["3"], "final_holdout": ["4"]},
+  "hypotheses": {
+    "artifact": "The reported negative ancestral-fitness versus fitness-change association is materially induced by shared measurement error in a change score and attenuates under independent-block estimation.",
+    "persistence": "The negative association persists with compatible direction and uncertainty after independent-block cross-fitting, beyond the shared-error artifact."
+  },
+  "baseline": {
+    "model": "For each strain-by-evolution-environment comparison, compute the published-style Pearson correlation between per-evolutionary-unit ancestral fitness and fitness gain using only the exploration blocks, after the published aggregation rule is reconstructed from the source files.",
+    "success_rule": "The reconstruction is accepted only if all joins, unit counts, and variable definitions match the source documentation and its sign pattern is documented without tuning; disagreement is a reported baseline failure, not a reason to alter later tests."
+  },
+  "primary_analysis": {
+    "cross_fit": "Estimate ancestral fitness from block 1 and gain from block 2, then reverse the roles; average the two Fisher-z correlations within each comparison. Use block 3 only to validate the frozen implementation. Evaluate the identical algorithm once on block 4 after validation is frozen.",
+    "estimand": "The mean Fisher-z-transformed cross-fitted correlation across the 16 strain-by-evolution-environment comparisons, with comparison-level uncertainty and a random-intercept sensitivity for strain and environment.",
+    "model": "A measurement-error-aware sensitivity regresses independently estimated gain on independently estimated ancestral fitness, weighting by reported standard errors where available; no causal interpretation is permitted.",
+    "decision_rule": "Report the final-holdout estimate and 95% interval. Call the published directional pattern robust only if the point estimate is negative and its 95% interval excludes zero; call it attenuated/uncertain if the interval includes zero; call it directionally contrary if the point estimate is non-negative."
+  },
+  "falsification": [
+    "The final cross-fitted estimate is non-negative or its interval includes zero.",
+    "Block-pair estimates disagree in direction beyond their stated uncertainty.",
+    "The published-style baseline cannot be reconstructed from documented variables without an unresolved data-definition discrepancy.",
+    "Leave-one-evolutionary-replicate-out or leave-one-comparison-out checks show the result is driven by a single unit or comparison."
+  ],
+  "claim_boundary": "This is a computational robustness analysis of one public dataset. It cannot establish a biological mechanism, universal evolutionary predictability, causal diminishing returns, absolute novelty, or physical validation. Assay-block exchangeability remains an unresolved specialist-review dependency.",
+  "deviations": []
+}
