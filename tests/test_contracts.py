@@ -196,6 +196,12 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual("interview-ready-domain-specific-candidate-packet", packet["disposition"])
         self.assertIn("exactly-three candidate trio", packet["plain_language_verdict"])
 
+    def test_pattern_search_preserves_local_and_prior_art_rejections(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-pattern-search.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-pattern-search-2.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertEqual(1, sum(row["disposition"] == "eligible-for-seven-condition-pre-admission" for row in record["records"]))
+
 
 if __name__ == "__main__":
     unittest.main()
