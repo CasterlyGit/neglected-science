@@ -16,6 +16,10 @@ A source may enter a full source-and-fragility audit only when preliminary evide
 
 Failure of any condition is a pre-admission rejection, not a full-audit candidate. A source that passes all seven becomes a *pre-admitted seed*, not an interview-ready target; it must still pass the existing source-and-fragility, prior-art, and three-target gates.
 
+## Nontriviality preview
+
+The seven conditions measure whether a design is investigation-ready; they do not prove that a proposed investigation is distinct from the paper's own answer. Before spending a full audit, System 1 therefore records a separate **nontriviality preview**: the proposed consequence must not merely reproduce the source's stated solution or its already-run robustness check. This is a selector safeguard, not an eighth quality-credit condition and not a reward for candidate survival.
+
 ## Initial design library
 
 The library has five seed patterns: replicated baseline/change measurement; repeated-unit within-versus-between decomposition; independently assembled evidence-table reconciliation; cluster-randomized intervention with repeated outcomes; and specimen-level calibration or condition shift with a held-unit check. E. coli is a positive design reference only. Previous source failures are selector negative controls only.

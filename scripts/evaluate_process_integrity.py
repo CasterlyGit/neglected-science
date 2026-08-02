@@ -32,7 +32,7 @@ def evaluate(now=None):
     atlas = read("verification/structural-atlas-verdict.json")
     batch = latest_batch()
     active_cycle = read("verification/system-one-cycle.json")
-    seed_screen = read("verification/system-one-seed-pre-admission-1.json")
+    seed_screen = read("verification/system-one-seed-pre-admission-2.json")
     seed_audit = read("verification/system-one-seed-full-audit-1.json")
     current_ready = sum(row["eligible_for_candidate_generation"] for row in screen)
     execution = improvement["integrity_gates"]["execution_integrity"]
@@ -58,7 +58,7 @@ def evaluate(now=None):
             "system_one": {
                 "source_feasible_records": seed_screen["summary"]["pre_admitted_count"],
                 "candidate_generation_permitted": False,
-                "verdict": "seed-full-audit" if seed_audit["disposition"] == "failed-gate-rejection-receipt" else "seed-pre-admission",
+                "verdict": "seed-pre-admission" if seed_screen["summary"]["pre_admitted_count"] else "seed-full-audit",
             },
             "system_two": {
                 "structural_verdict": atlas["verdict"],
@@ -72,7 +72,7 @@ def evaluate(now=None):
             "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
             "Retain rejected, blocked, null, and uncertain results as evidence.",
         ],
-        "next_permitted_action": "Retain the pre-admission and full-audit rejection receipts; search only a contrasting design pattern for complete seven-condition seeds, and defer System-2 work beyond handoff checks.",
+        "next_permitted_action": "Run one source-and-fragility audit only for the current pre-admitted seed; retain all nontriviality-preview and full-audit rejections, and defer System-2 work beyond handoff checks.",
     }
 
 
