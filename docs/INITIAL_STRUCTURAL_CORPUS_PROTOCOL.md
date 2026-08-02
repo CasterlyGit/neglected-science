@@ -26,8 +26,8 @@ Reject a prospective case before detailed reading unless all of the following ar
 
 1. One primary paper with an explicit published inference and a precise location.
 2. One official public-data record linked to that paper.
-3. A file inventory or a clean retrieval result—not landing-page metadata alone.
-4. A named possible structural fragility: measurement reuse, unit mismatch, calibration shift, provenance reconciliation, or data closure.
+3. A file inventory or a clean retrieval result—not landing-page metadata alone. A verified inventory is distinct from row-level inspection and checksum verification.
+4. A named possible structural fragility: measurement reuse, unit mismatch, calibration shift, scale translation, provenance reconciliation, or data closure.
 5. A plausible independent partition, replication, or a documented reason the case is a data-closure counterexample.
 6. A claim that can remain self-contained: no mechanism, causality, or specialist interpretation beyond the cited record.
 

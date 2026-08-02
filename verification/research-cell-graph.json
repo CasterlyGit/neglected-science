@@ -1,0 +1,130 @@
+{
+  "edges": [
+    {
+      "from": "cell-bighorn-within-between",
+      "material_mismatch": [
+        "unit",
+        "claim"
+      ],
+      "shared_roles": [
+        "validation",
+        "fragility"
+      ],
+      "to": "cell-tundra-warming-plots"
+    },
+    {
+      "from": "cell-vineyard-aggregation",
+      "material_mismatch": [
+        "unit",
+        "claim"
+      ],
+      "shared_roles": [
+        "validation",
+        "fragility"
+      ],
+      "to": "cell-magdrift-access"
+    }
+  ],
+  "nodes": [
+    {
+      "decision": "historical-demonstration",
+      "domain": "evolutionary biology",
+      "id": "cell-ecoli-assay-blocks",
+      "roles": {
+        "claim": "association",
+        "fragility": "measurement-reuse",
+        "unit": "repeated-unit",
+        "validation": "independent-measurement"
+      }
+    },
+    {
+      "decision": "gated",
+      "domain": "wildlife disease ecology",
+      "id": "cell-bighorn-within-between",
+      "roles": {
+        "claim": "association",
+        "fragility": "unit-mismatch",
+        "unit": "repeated-unit",
+        "validation": "held-unit-evaluation"
+      }
+    },
+    {
+      "decision": "gated",
+      "domain": "global-change evidence synthesis",
+      "id": "cell-mesi-reconciliation",
+      "roles": {
+        "claim": "pooled-effect",
+        "fragility": "provenance-reconciliation",
+        "unit": "source-record",
+        "validation": "reconciliation"
+      }
+    },
+    {
+      "decision": "excluded",
+      "domain": "battery diagnostics",
+      "id": "cell-battery-ocv-shift",
+      "roles": {
+        "claim": "prediction",
+        "fragility": "calibration-shift",
+        "unit": "physical-specimen",
+        "validation": "held-unit-evaluation"
+      }
+    },
+    {
+      "decision": "excluded",
+      "domain": "plant disease management",
+      "id": "cell-vineyard-aggregation",
+      "roles": {
+        "claim": "controlled-comparison",
+        "fragility": "data-closure",
+        "unit": "aggregate-summary",
+        "validation": "unavailable"
+      }
+    },
+    {
+      "decision": "deferred",
+      "domain": "materials fatigue engineering",
+      "id": "cell-magdrift-access",
+      "roles": {
+        "claim": "prediction",
+        "fragility": "data-closure",
+        "unit": "physical-specimen",
+        "validation": "unavailable"
+      }
+    },
+    {
+      "decision": "gated",
+      "domain": "experimental evolution",
+      "id": "cell-tetrahymena-correlated-response",
+      "roles": {
+        "claim": "association",
+        "fragility": "measurement-reuse",
+        "unit": "repeated-unit",
+        "validation": "independent-measurement"
+      }
+    },
+    {
+      "decision": "gated",
+      "domain": "field ecosystem experiment",
+      "id": "cell-tundra-warming-plots",
+      "roles": {
+        "claim": "controlled-comparison",
+        "fragility": "unit-mismatch",
+        "unit": "clustered-unit",
+        "validation": "held-unit-evaluation"
+      }
+    },
+    {
+      "decision": "gated",
+      "domain": "materials fatigue engineering",
+      "id": "cell-alloy-scale-translation",
+      "roles": {
+        "claim": "controlled-comparison",
+        "fragility": "scale-translation",
+        "unit": "physical-specimen",
+        "validation": "independent-measurement"
+      }
+    }
+  ],
+  "rule": "An edge requires two shared roles, including fragility or validation; every edge retains its material mismatches."
+}

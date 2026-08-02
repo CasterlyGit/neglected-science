@@ -2,19 +2,20 @@
   "candidate_status_counts": {
     "deferred": 1,
     "excluded": 2,
-    "gated": 2,
+    "gated": 5,
     "historical-demonstration": 1
   },
-  "case_count": 6,
+  "case_count": 9,
   "claim_boundary": "The atlas describes evidence-supported similarities in research design, not a universal theory or a shared mechanism across domains.",
-  "domain_count": 6,
+  "domain_count": 8,
   "next_required_action": "Add only new checksum-acquirable paper\u2013data cases that can fill a documented structural gap; then rerun the closed-evidence factory. Do not promote a case merely because it resembles another domain.",
   "patterns": {
     "calibration-shift": 1,
     "data-closure": 2,
-    "measurement-reuse": 1,
+    "measurement-reuse": 2,
     "provenance-reconciliation": 1,
-    "unit-mismatch": 3
+    "scale-translation": 1,
+    "unit-mismatch": 4
   },
   "plain_language": "Different fields in this seed set share recurring research-design failures: reused measurements, mismatched units, shifting calibration, evidence-table reconciliation, and missing usable data. This does not show that the fields share a scientific mechanism, and it does not yet produce three new interview-ready targets.",
   "verdict": "LIMITED SUPPORT \u2014 NO NEW TARGET TRIO"

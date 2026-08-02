@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence-grounded research cell",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["cell_id", "domain", "title", "source", "system", "design", "measurement", "inference", "validation", "fragility", "provenance", "decision"],
+  "properties": {
+    "cell_id": {"type": "string", "pattern": "^cell-[a-z0-9-]+$"},
+    "domain": {"type": "string", "minLength": 3},
+    "title": {"type": "string", "minLength": 12},
+    "source": {"$ref": "#/$defs/source"},
+    "system": {"$ref": "#/$defs/system"},
+    "design": {"$ref": "#/$defs/design"},
+    "measurement": {"$ref": "#/$defs/measurement"},
+    "inference": {"$ref": "#/$defs/inference"},
+    "validation": {"$ref": "#/$defs/validation"},
+    "fragility": {"$ref": "#/$defs/fragility"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "decision": {"$ref": "#/$defs/decision"}
+  },
+  "$defs": {
+    "source": {"type": "object", "additionalProperties": false, "required": ["primary_url", "claim_location", "evidence_statement"], "properties": {"primary_url": {"type": "string", "format": "uri"}, "claim_location": {"type": "string", "minLength": 5}, "evidence_statement": {"type": "string", "minLength": 20}}},
+    "system": {"type": "object", "additionalProperties": false, "required": ["phenomenon", "scope_boundary"], "properties": {"phenomenon": {"type": "string", "minLength": 10}, "scope_boundary": {"type": "string", "minLength": 15}}},
+    "design": {"type": "object", "additionalProperties": false, "required": ["unit_description", "unit_role", "exposure_or_comparator", "outcome", "time_structure"], "properties": {"unit_description": {"type": "string", "minLength": 10}, "unit_role": {"enum": ["repeated-unit", "clustered-unit", "aggregate-summary", "source-record", "physical-specimen"]}, "exposure_or_comparator": {"type": "string", "minLength": 10}, "outcome": {"type": "string", "minLength": 8}, "time_structure": {"type": "string", "minLength": 8}}},
+    "measurement": {"type": "object", "additionalProperties": false, "required": ["measurement_rule", "data_granularity", "measurement_uncertainty"], "properties": {"measurement_rule": {"type": "string", "minLength": 15}, "data_granularity": {"enum": ["row-level", "aggregate-only", "unavailable"]}, "measurement_uncertainty": {"type": "string", "minLength": 10}}},
+    "inference": {"type": "object", "additionalProperties": false, "required": ["claim_type", "published_claim", "scope_boundary"], "properties": {"claim_type": {"enum": ["observation", "association", "prediction", "pooled-effect", "controlled-comparison"]}, "published_claim": {"type": "string", "minLength": 15}, "scope_boundary": {"type": "string", "minLength": 15}}},
+    "validation": {"type": "object", "additionalProperties": false, "required": ["validation_role", "published_baseline", "independent_check"], "properties": {"validation_role": {"enum": ["independent-measurement", "held-unit-evaluation", "reconciliation", "unavailable"]}, "published_baseline": {"type": "string", "minLength": 10}, "independent_check": {"type": "string", "minLength": 10}}},
+    "fragility": {"type": "object", "additionalProperties": false, "required": ["pattern", "mechanism", "alternative_explanation", "decisive_test"], "properties": {"pattern": {"enum": ["measurement-reuse", "unit-mismatch", "calibration-shift", "scale-translation", "provenance-reconciliation", "data-closure"]}, "mechanism": {"type": "string", "minLength": 15}, "alternative_explanation": {"type": "string", "minLength": 15}, "decisive_test": {"type": "string", "minLength": 15}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["data_url", "data_location", "acquisition_status"], "properties": {"data_url": {"type": "string", "format": "uri"}, "data_location": {"type": "string", "minLength": 5}, "acquisition_status": {"enum": ["checksum-verified", "row-level-inspected", "file-inventory-verified", "aggregate-only", "access-blocked"]}}},
+    "decision": {"type": "object", "additionalProperties": false, "required": ["role", "plain_language", "limitations"], "properties": {"role": {"enum": ["historical-demonstration", "gated", "excluded", "deferred"]}, "plain_language": {"type": "string", "minLength": 20}, "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 12}}}}
+  }
+}

@@ -1,0 +1,9 @@
+{"cell_id": "cell-ecoli-assay-blocks", "eligible_for_candidate_generation": false, "reasons": ["cell is not an unresolved gated lead"]}
+{"cell_id": "cell-bighorn-within-between", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified", "self-contained interpretation is not established"]}
+{"cell_id": "cell-mesi-reconciliation", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified", "self-contained interpretation is not established"]}
+{"cell_id": "cell-battery-ocv-shift", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified", "cell is not an unresolved gated lead"]}
+{"cell_id": "cell-vineyard-aggregation", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified", "public evidence is not row-level", "cell is not an unresolved gated lead"]}
+{"cell_id": "cell-magdrift-access", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified", "public evidence is not row-level", "cell is not an unresolved gated lead"]}
+{"cell_id": "cell-tetrahymena-correlated-response", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified", "self-contained interpretation is not established"]}
+{"cell_id": "cell-tundra-warming-plots", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified"]}
+{"cell_id": "cell-alloy-scale-translation", "eligible_for_candidate_generation": false, "reasons": ["official source files are not checksum-verified"]}

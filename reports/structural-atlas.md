@@ -16,6 +16,9 @@ Different fields in this seed set share recurring research-design failures: reus
 | battery diagnostics | calibration-shift | A diagnostic method can look accurate until the reference curve changes with the thing being diagnosed. | excluded |
 | plant disease management | data-closure, unit-mismatch | The question may be important, but the public table is too compressed to test it properly. | excluded |
 | materials fatigue engineering | unit-mismatch, data-closure | A persuasive validation question cannot be checked until the actual public files can be acquired. | deferred |
+| experimental evolution | measurement-reuse | This is a promising independent check of whether a cross-environment pattern survives when its starting measurement is not reused. | gated |
+| field ecosystem experiment | unit-mismatch | The field experiment is useful only if repeated plots, years, and outcomes are kept distinct rather than treated as interchangeable observations. | gated |
+| materials fatigue engineering | scale-translation | A shared fatigue curve does not mean the same mechanism survives when the specimen scale changes. | gated |
 
 ## What this does and does not mean
 
@@ -30,3 +33,6 @@ Different fields in this seed set share recurring research-design failures: reus
 - `struct-battery-ocv-shift`: https://doi.org/10.1149/1945-7111/ad6938 (Aged-cell analysis; Summary and Conclusions); data: https://zenodo.org/records/13142016 (Experimental CSV files, condition-specific OCV curves, and MATLAB inventory).
 - `struct-vineyard-aggregation`: https://doi.org/10.1002/ps.8140 (Methods and reported epidemic-by-treatment analysis); data: https://zenodo.org/records/15101430 (NT_UCSC_BCA_DiseaseSeverity.csv and Readme.txt).
 - `struct-magdrift-access`: https://doi.org/10.1038/s41467-026-70290-w (Fatigue-life evaluation method); data: https://doi.org/10.5061/dryad.1rn8pk13t (Official file metadata and failed content retrieval receipt).
+- `struct-tetrahymena-correlated-response`: https://doi.org/10.5061/dryad.vx0k6djzb (Abstract; README file description); data: https://doi.org/10.5061/dryad.vx0k6djzb (Dryad file inventory and README, lines 25–62).
+- `struct-tundra-warming-plots`: https://doi.org/10.5061/dryad.9ghx3ffxx (Dataset description and abstract); data: https://doi.org/10.5061/dryad.9ghx3ffxx (Dryad dataset description).
+- `struct-alloy-scale-translation`: https://doi.org/10.5061/dryad.vq83bk48n (Abstract; README file structure and methods); data: https://doi.org/10.5061/dryad.vq83bk48n (Dryad file inventory and README, lines 35–149).

@@ -7,6 +7,8 @@ from scripts import ecoli_analysis
 from scripts import system_guards
 from scripts import closed_evidence_factory
 from scripts import build_structural_atlas
+from scripts import build_research_graph
+from scripts import screen_strategic_leads
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,11 +31,23 @@ class DeterministicPipelineTests(unittest.TestCase):
     def test_structural_atlas_has_a_plain_language_nonpromotion_verdict(self):
         cases = jsonl("corpus/structural-cases.jsonl")
         result = build_structural_atlas.build(cases)
-        self.assertEqual(6, result["case_count"])
-        self.assertEqual(6, result["domain_count"])
+        self.assertEqual(9, result["case_count"])
+        self.assertEqual(8, result["domain_count"])
         self.assertEqual("LIMITED SUPPORT — NO NEW TARGET TRIO", result["verdict"])
         self.assertIn("does not", result["plain_language"])
         self.assertGreaterEqual(len(result["patterns"]), 4)
+
+    def test_research_cells_have_only_conservative_structural_edges(self):
+        cells = jsonl("corpus/research-cells.jsonl")
+        graph = build_research_graph.build(cells)
+        self.assertEqual(9, len(graph["nodes"]))
+        self.assertTrue(all("fragility" in edge["shared_roles"] or "validation" in edge["shared_roles"] for edge in graph["edges"]))
+        self.assertTrue(all(edge["material_mismatch"] for edge in graph["edges"]))
+
+    def test_seed_strategic_screen_does_not_promote_inventory_only_cells(self):
+        rows = [screen_strategic_leads.screen(cell) for cell in jsonl("corpus/research-cells.jsonl")]
+        self.assertEqual(9, len(rows))
+        self.assertEqual(0, sum(row["eligible_for_candidate_generation"] for row in rows))
 
     def test_ecoli_transaction_verifies_durable_inputs_and_result(self):
         self.assertEqual("pass", system_guards.check_transaction()["transaction"])
