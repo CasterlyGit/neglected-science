@@ -125,6 +125,12 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual(0, sum(item["disposition"] == "eligible-for-full-audit" for item in record["records"]))
         self.assertTrue(all(item["failed_gate"] == "actual-data-fit" for item in record["records"]))
 
+    def test_system_one_selector_v3_requires_real_content_before_screening(self):
+        record = json.loads((ROOT / "verification" / "system-one-improvement-2.json").read_text())
+        self.assertEqual("system-one-selector-v3", record["improvement_id"])
+        self.assertEqual(["system-one-v2-preaudit-1"], record["based_on_batches"])
+        self.assertIn("real official-file retrieval", record["change"])
+
 
 if __name__ == "__main__":
     unittest.main()
