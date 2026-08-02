@@ -13,8 +13,8 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 ## Current status
 
 - Maturity: experimental
-- Visibility: local-only
-- Remote: none
+- Visibility: public source repository
+- Remote: https://github.com/CasterlyGit/neglected-science
 - Program state: paused after Milestone 6
 - Completed milestones: 1–6
 - Side track: design a domain-admission process before deciding whether to revise or resume the roadmap
@@ -44,6 +44,8 @@ docs/            durable project status and decisions
 No broad corpus ingestion or final scientific selection begins until Milestones 1 and 2 pass their completion gates. No result is called novel without an adversarial prior-art search and appropriate expert scrutiny.
 
 The pilot is paused after Milestone 6. Do not rerank, generate replacement candidates, amend the roadmap, or begin another corpus cycle until the owner accepts or replaces the provisional domain-admission framework in `docs/DOMAIN_SELECTION_SIDE_TRACK.md`.
+
+The public repository documents the program and its evidence; it does not constitute a scientific publication or a claim that any result is novel.
 
 ## Verification
 

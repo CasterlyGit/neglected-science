@@ -10,4 +10,4 @@ Neglected Science is a scientific metaresearch and validation program. Treat `VI
 - Do not generalize into an autonomous discovery platform until one selected investigation has been executed and the method evaluated.
 - Retain negative results, failed hypotheses, uncertainty, and verification gaps.
 - Never fabricate references, datasets, credentials, experiments, findings, expert review, or novelty.
-- Keep the project local-only unless the owner explicitly authorizes a remote or publication.
+- Keep the project local-first. Any remote, publication, or public-claim change requires explicit owner authorization.

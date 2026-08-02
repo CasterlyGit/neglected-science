@@ -28,7 +28,7 @@
 ## Gated
 
 - No final discovery territory or experiment is selected.
-- No remote, publication, release, or public claim is authorized.
+- The source repository is public. No scientific publication, release, or scientific public claim is authorized.
 - No experiment may be selected or preregistered from the rejected finalist set.
 
 ## Milestone 6 evidence
