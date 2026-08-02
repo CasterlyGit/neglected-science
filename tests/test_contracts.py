@@ -236,6 +236,11 @@ class OpportunityDossierContractTests(unittest.TestCase):
         record = json.loads((ROOT / "verification" / "system-one-runtime-preflight-learning-1.json").read_text())
         self.assertIn("operational reproducibility only", record["scope"])
 
+    def test_sensor_reconstruction_rehearsal_is_checksum_matched_and_outcome_free(self):
+        record = json.loads((ROOT / "verification" / "sensor-reconstruction-rehearsal-1.json").read_text())
+        self.assertTrue(record["checksum_match"])
+        self.assertFalse(record["structural_receipt"]["outcome_values_read"])
+
 
 if __name__ == "__main__":
     unittest.main()
