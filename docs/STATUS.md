@@ -11,13 +11,14 @@
 - Milestone 4 completed with 18 deduplicated candidates across explicit, contradiction, translation, and data-use engines; bounded evaluation met the declared useful-lead, duplicate, and provenance thresholds.
 - Milestone 5 completed with 18 schema-valid dossiers, three weighting profiles, rank-sensitivity evidence, and three scientifically reviewed finalists.
 - Milestone 6 completed with 13 alternative-terminology/citation-search records, 7 variable-level dataset audits, and 3 schema-valid adversarial dossiers. All three finalists were rejected.
+- A replacement manual-priority cycle completed the redesigned sequence through confirmation-grade Milestone 6: seven ranked leads, three governed target reviews, two cautious survivors, and one reframed alternate.
 
 ## Paused
 
-- The program is paused after Milestone 6.
-- No current finalist is eligible for Milestone 7.
-- No reranking, replacement-candidate generation, or new corpus cycle is authorized while paused.
-- The redesign is implemented: every future cycle forges exactly three interview-ready targets and immediately subjects them to an adversarial first interview.
+- The program is paused for the owner's decision after confirmation-grade Milestone 6.
+- `target-ecoli-regression` is the provisional primary and `target-bighorn-within-between` is the reserve; both are eligible for consideration, not selected.
+- `target-mesi-reconciliation` remains a reframed alternate with an author-overlap and specialist-review gate.
+- No experiment, preregistration, final holdout access, or Milestone 7 analysis has begun.
 
 ## Redesign decision
 
@@ -25,13 +26,14 @@
 - Expensive discovery work requires two survivors from one trio: a primary and a reserve.
 - A raw lead must pass five uncompensated construction checks before it can occupy one of the three slots.
 - The historical finalists were replayed through this gate: zero qualified, no trio would have formed, and the old flow would not have reached confirmation-grade Milestone 6.
-- No new target-generation or interview cycle is authorized by this implementation alone.
+- For this cycle, the owner authorized manual candidate prioritization instead of an automatic generator. The seven-lead queue preserves excluded and deferred alternatives.
 
 ## Gated
 
-- No final discovery territory or experiment is selected.
+- No final experiment is selected.
 - The source repository is public. No scientific publication, release, or scientific public claim is authorized.
 - No experiment may be selected or preregistered from the rejected finalist set.
+- Specialist review remains unresolved for assay-block exchangeability, longitudinal wildlife inference, and MESI estimand equivalence/overlap.
 
 ## Milestone 6 evidence
 
@@ -45,3 +47,7 @@
 - `verification/candidate-admissions.jsonl`: retrospective construction-gate records for the three pilot finalists.
 - `verification/gauntlet-replays.jsonl`: deterministic decision showing the failed historical batch cannot advance.
 - `reports/three-target-replay.md`: comparative replay and interpretation.
+- `opportunities/candidate-priority-list.jsonl`: manual high-probability queue and selection evidence.
+- `verification/target-reviews.jsonl`: construction, first-interview, dataset, citation, and confirmation records for the new trio.
+- `verification/cycle-result.json`: comparative dispositions and deferred selection decision.
+- `reports/manual-cycle-milestone-6.md`: complete replacement-cycle report.

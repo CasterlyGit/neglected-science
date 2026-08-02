@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lead_id", "rank", "title", "slot_type", "question", "priority_rationale", "dataset", "closest_prior", "data_status", "selection_status", "selection_rationale", "evidence"],
+  "properties": {
+    "lead_id": {"type": "string", "pattern": "^lead-[a-z0-9-]+$"},
+    "rank": {"type": "integer", "minimum": 1},
+    "title": {"type": "string", "minLength": 10},
+    "slot_type": {"enum": ["data-first", "contradiction-first", "boundary-replication-first"]},
+    "question": {"type": "string", "minLength": 25},
+    "priority_rationale": {"type": "string", "minLength": 30},
+    "dataset": {"type": "string", "minLength": 10},
+    "closest_prior": {"type": "string", "minLength": 10},
+    "data_status": {"enum": ["row-level-inspected", "documentation-only", "aggregate-only", "blocked"]},
+    "selection_status": {"enum": ["selected", "reserve", "excluded", "deferred"]},
+    "selection_rationale": {"type": "string", "minLength": 20},
+    "evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence"}}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "location", "finding"],
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "location": {"type": "string", "minLength": 3},
+        "finding": {"type": "string", "minLength": 10}
+      }
+    }
+  }
+}

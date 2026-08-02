@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["cycle_id", "method", "target_ids", "first_interview_survivors", "primary_id", "reserve_id", "confirmation_dispositions", "milestone_6_complete", "milestone_7_eligible_ids", "selection_deferred", "conclusion"],
+  "properties": {
+    "cycle_id": {"type": "string", "pattern": "^cycle-[a-z0-9-]+$"},
+    "method": {"const": "manual-priority-list"},
+    "target_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+    "first_interview_survivors": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+    "primary_id": {"type": "string"}, "reserve_id": {"type": "string"},
+    "confirmation_dispositions": {"type": "object", "minProperties": 3, "maxProperties": 3, "additionalProperties": {"enum": ["rejected", "reframed", "gated", "surviving"]}},
+    "milestone_6_complete": {"type": "boolean"},
+    "milestone_7_eligible_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "selection_deferred": {"const": true},
+    "conclusion": {"type": "string", "minLength": 40}
+  }
+}

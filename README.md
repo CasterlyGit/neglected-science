@@ -15,10 +15,10 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 - Maturity: experimental
 - Visibility: public source repository
 - Remote: https://github.com/CasterlyGit/neglected-science
-- Program state: paused after Milestone 6
+- Program state: paused for owner decision after a completed replacement-cycle Milestone 6
 - Completed milestones: 1–6
-- Redesign state: three-target candidate factory and first-interview gauntlet implemented; no new cycle authorized
-- Milestone 7: gated; no eligible finalist
+- Redesign state: manual priority queue exercised through first interview and confirmation-grade novelty challenge
+- Milestone 7: gated pending owner choice; two confirmation survivors are eligible for consideration
 - Scientific findings: none
 - Selected investigation: none
 
@@ -43,7 +43,7 @@ docs/            durable project status and decisions
 
 No broad corpus ingestion or final scientific selection begins until Milestones 1 and 2 pass their completion gates. No result is called novel without an adversarial prior-art search and appropriate expert scrutiny.
 
-The pilot is paused after Milestone 6. The revised flow first upgrades raw leads into exactly three interview-ready targets using five uncompensated construction checks, then requires a primary and reserve survivor from an immediate adversarial interview. The roadmap and governed replay contracts implement this design, but no new target cycle is authorized.
+The original pilot remains a truthful negative result. A replacement cycle used a manually curated priority queue, upgraded exactly three leads through five uncompensated construction checks, required a primary and reserve at first interview, and completed confirmation-grade novelty review. Two questions survived cautiously and one was reframed. The owner must decide whether either survivor should enter Milestone 7; no experiment is selected.
 
 The public repository documents the program and its evidence; it does not constitute a scientific publication or a claim that any result is novel.
 
@@ -66,5 +66,6 @@ python3 -m venv .venv
 - 18 schema-valid dossiers ranked under balanced, rigor-first, and impact-first profiles.
 - Three finalists adversarially challenged: all rejected; none is eligible for experiment selection.
 - Retrospective replay: none of those finalists would qualify as a target under the revised candidate factory, so the new flow stops before broad corpus, ranking, or confirmation-grade novelty work.
+- Replacement cycle: seven manually prioritized leads, three interview-ready targets, two confirmation survivors, and one reframed alternate. No scientific result or novelty claim is asserted.
 
-See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, `reports/milestone-5-ranking.md`, `reports/milestone-6-novelty.md`, and `reports/three-target-replay.md`.
+See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, `reports/milestone-5-ranking.md`, `reports/milestone-6-novelty.md`, `reports/three-target-replay.md`, and `reports/manual-cycle-milestone-6.md`.

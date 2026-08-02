@@ -35,6 +35,9 @@ DATASET_AUDITS = ROOT / "verification" / "dataset-audits.jsonl"
 NOVELTY_CHALLENGES = ROOT / "verification" / "novelty-challenges.jsonl"
 CANDIDATE_ADMISSIONS = ROOT / "verification" / "candidate-admissions.jsonl"
 GAUNTLET_REPLAYS = ROOT / "verification" / "gauntlet-replays.jsonl"
+CANDIDATE_PRIORITY = ROOT / "opportunities" / "candidate-priority-list.jsonl"
+TARGET_REVIEWS = ROOT / "verification" / "target-reviews.jsonl"
+CYCLE_RESULT = ROOT / "verification" / "cycle-result.json"
 
 GAP_PATTERNS = re.compile(r"\b(remain(?:s|ed)? unknown|not (?:well )?understood|future (?:work|research)|knowledge gap|lack(?:s|ing)?|challenge|uncertain|unresolved|poorly understood)\b", re.I)
 LIMIT_PATTERNS = re.compile(r"\b(limitation|however|despite|uncertaint|bias|confound|caveat|difficult|inconsistent)\b", re.I)
@@ -494,6 +497,8 @@ def validate_all():
         (NOVELTY_CHALLENGES, ROOT / "schemas" / "novelty-challenge.schema.json"),
         (CANDIDATE_ADMISSIONS, ROOT / "schemas" / "candidate-admission.schema.json"),
         (GAUNTLET_REPLAYS, ROOT / "schemas" / "gauntlet-replay.schema.json"),
+        (CANDIDATE_PRIORITY, ROOT / "schemas" / "candidate-priority.schema.json"),
+        (TARGET_REVIEWS, ROOT / "schemas" / "target-review.schema.json"),
     ]
     failures = []
     for data_path, schema_path in targets:
@@ -518,6 +523,11 @@ def validate_all():
     admission_rows = read_jsonl(CANDIDATE_ADMISSIONS)
     admission_by_id = {row["admission_id"]: row for row in admission_rows}
     replay_rows = read_jsonl(GAUNTLET_REPLAYS)
+    priority_rows = read_jsonl(CANDIDATE_PRIORITY)
+    priority_by_id = {row["lead_id"]: row for row in priority_rows}
+    target_rows = read_jsonl(TARGET_REVIEWS)
+    target_by_id = {row["target_id"]: row for row in target_rows}
+    cycle_result = read_json(CYCLE_RESULT)
     if len(search_by_id) != len(search_rows):
         failures.append("verification/novelty-searches.jsonl: duplicate search_id")
     if len(audit_by_id) != len(audit_rows):
@@ -528,6 +538,12 @@ def validate_all():
         failures.append("verification/candidate-admissions.jsonl: duplicate admission_id")
     if len({row["replay_id"] for row in replay_rows}) != len(replay_rows):
         failures.append("verification/gauntlet-replays.jsonl: duplicate replay_id")
+    if len(priority_by_id) != len(priority_rows):
+        failures.append("opportunities/candidate-priority-list.jsonl: duplicate lead_id")
+    if sorted(row["rank"] for row in priority_rows) != list(range(1, len(priority_rows) + 1)):
+        failures.append("opportunities/candidate-priority-list.jsonl: ranks must be unique and contiguous")
+    if len(target_by_id) != len(target_rows):
+        failures.append("verification/target-reviews.jsonl: duplicate target_id")
     if {row["finalist_id"] for row in challenge_rows} != finalist_ids:
         failures.append("verification/novelty-challenges.jsonl: challenge coverage must equal finalist set")
     for finalist_id in finalist_ids:
@@ -578,6 +594,38 @@ def validate_all():
             failures.append(f"verification/gauntlet-replays.jsonl:{number}: trio_created requires exactly three interview-ready targets")
         if not trio_created and (replay["broad_pipeline_authorized"] or replay["would_reach_confirmation_milestone_6"]):
             failures.append(f"verification/gauntlet-replays.jsonl:{number}: failed construction batch cannot advance")
+    selected_leads = {row["lead_id"] for row in priority_rows if row["selection_status"] == "selected"}
+    if len(selected_leads) != TRIO_SIZE:
+        failures.append("opportunities/candidate-priority-list.jsonl: exactly three leads must be selected")
+    if {row["lead_id"] for row in target_rows} != selected_leads:
+        failures.append("verification/target-reviews.jsonl: reviews must cover exactly the selected leads")
+    if len(target_rows) != TRIO_SIZE:
+        failures.append("verification/target-reviews.jsonl: exactly three targets are required")
+    for number, target in enumerate(target_rows, 1):
+        if not all(check["status"] == "pass" for check in target["construction_checks"].values()):
+            failures.append(f"verification/target-reviews.jsonl:{number}: selected target failed a construction check")
+        if target["first_interview"]["verdict"] != "admitted":
+            failures.append(f"verification/target-reviews.jsonl:{number}: selected trio must record an admitted first-interview verdict")
+    cycle_schema = read_json(ROOT / "schemas" / "cycle-result.schema.json")
+    cycle_validator = Draft202012Validator(cycle_schema, format_checker=FormatChecker())
+    for error in cycle_validator.iter_errors(cycle_result):
+        failures.append(f"verification/cycle-result.json: {error.message}")
+    cycle_target_ids = cycle_result.get("target_ids", [])
+    if set(cycle_target_ids) != set(target_by_id):
+        failures.append("verification/cycle-result.json: target_ids must match target reviews")
+    admitted_ids = {row["target_id"] for row in target_rows if row["first_interview"]["verdict"] == "admitted"}
+    if set(cycle_result.get("first_interview_survivors", [])) != admitted_ids:
+        failures.append("verification/cycle-result.json: first-interview survivors must match target reviews")
+    dispositions = {row["target_id"]: row["confirmation_challenge"]["disposition"] for row in target_rows}
+    if cycle_result.get("confirmation_dispositions") != dispositions:
+        failures.append("verification/cycle-result.json: confirmation dispositions must match target reviews")
+    eligible = {identifier for identifier, disposition in dispositions.items() if disposition == "surviving"}
+    if set(cycle_result.get("milestone_7_eligible_ids", [])) != eligible:
+        failures.append("verification/cycle-result.json: eligible IDs must be confirmation survivors")
+    if cycle_result.get("primary_id") not in eligible or cycle_result.get("reserve_id") not in eligible:
+        failures.append("verification/cycle-result.json: primary and reserve must be confirmation survivors")
+    if cycle_result.get("milestone_6_complete") != (len(dispositions) == TRIO_SIZE and bool(eligible)):
+        failures.append("verification/cycle-result.json: Milestone 6 completion must require three dispositions and a survivor")
     if failures:
         print("\n".join(failures), file=sys.stderr)
         raise SystemExit(1)

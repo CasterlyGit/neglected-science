@@ -1,0 +1,17 @@
+{
+  "cycle_id": "cycle-manual-2026-08",
+  "method": "manual-priority-list",
+  "target_ids": ["target-ecoli-regression", "target-bighorn-within-between", "target-mesi-reconciliation"],
+  "first_interview_survivors": ["target-ecoli-regression", "target-bighorn-within-between", "target-mesi-reconciliation"],
+  "primary_id": "target-ecoli-regression",
+  "reserve_id": "target-bighorn-within-between",
+  "confirmation_dispositions": {
+    "target-ecoli-regression": "surviving",
+    "target-bighorn-within-between": "surviving",
+    "target-mesi-reconciliation": "reframed"
+  },
+  "milestone_6_complete": true,
+  "milestone_7_eligible_ids": ["target-ecoli-regression", "target-bighorn-within-between"],
+  "selection_deferred": true,
+  "conclusion": "The manual queue produced a primary and reserve that survive confirmation-grade novelty challenge, plus one valuable reframed alternate. No experiment is selected or preregistered; the owner must choose whether to enter Milestone 7."
+}

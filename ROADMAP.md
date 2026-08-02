@@ -66,36 +66,46 @@ Milestones 1–2 can be accelerated through careful specification. Milestones 3�
 
 The numbered milestones above remain the truthful history of the completed pilot. They are not the order for a replacement cycle.
 
-### A. Forge exactly three interview-ready targets — implemented, awaiting execution
+### A. Form exactly three interview-ready targets — complete for manual cycle
 
 Inspect raw leads cheaply and require every emitted target to pass prior-art distance, actual variable/protocol fit, nontrivial three-outcome value, a decisive test, and bounded expertise. The three targets must satisfy the diversity rule.
 
 Completion gate: exactly three schema-valid targets pass every construction check. A failed lead is replaced before the trio exists; a score cannot rescue it.
 
-### B. Conduct the adversarial first interview — not-started
+Cycle result: seven leads were prioritized manually; three row-level, experiment-shaped targets passed. Automatic candidate generation is deferred until the manual judgments can be evaluated after a real investigation.
+
+### B. Conduct the adversarial first interview — complete
 
 Attack exact and renamed prior art, data fit, trivial explanations, specialist objections, and scientific consequence. Allow at most one substantive rewrite per slot.
 
 Completion gate: at least two targets are admitted, yielding a primary and reserve. Fewer than two closes the trio without broad ingestion.
 
-### C. Build survivor-bounded evidence — not-started
+Cycle result: all three were admitted; MESI used its one allowed substantive rewrite after a 2026 conference abstract partly answered the original question.
+
+### C. Build survivor-bounded evidence — complete
 
 Retrieve evidence around the survivors, their closest killers, and the variables needed for their decisive tests. Do not rebuild a territory-wide corpus.
 
 Completion gate: source and claim provenance, contrary evidence, coverage, and stopping rules pass for both primary and reserve.
 
-### D. Deepen and compare the surviving targets — not-started
+Cycle result: bounded primary and official-dataset evidence was recorded for the E. coli, bighorn, and MESI targets without rebuilding a territory-wide corpus.
+
+### D. Deepen and compare the surviving targets — complete
 
 Develop competing hypotheses, baselines, confounders, feasibility, negative-result value, and specialist dependencies without dropping the reserve.
 
 Completion gate: both dossiers remain testable; comparative review identifies a provisional primary without selecting an experiment.
 
-### E. Run confirmation-grade novelty challenge — not-started
+Cycle result: E. coli is the provisional primary, bighorn is the reserve, and MESI is the alternate. This is not experiment selection.
+
+### E. Run confirmation-grade novelty challenge — complete
 
 Repeat and deepen the adversarial search using citation tracing, adjacent disciplines, protocol audits, and specialist scrutiny. This is the successor to Milestone 6, not the first kill test.
 
 Completion gate: at least one target survives with an evidence-backed novelty boundary and no unresolved fatal data defect. Otherwise start a new three-target cycle.
 
-### F. Select, preregister, execute, and evaluate — gated
+Cycle result: E. coli and bighorn survived cautiously; MESI was reframed. All unresolved specialist gaps remain explicit in `reports/manual-cycle-milestone-6.md`.
+
+### F. Select, preregister, execute, and evaluate — gated pending owner decision
 
 Only a confirmation survivor may enter historical Milestones 7–9. The reserve remains available until final selection.

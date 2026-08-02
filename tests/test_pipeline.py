@@ -76,6 +76,21 @@ class DeterministicPipelineTests(unittest.TestCase):
         self.assertEqual(3, pipeline.TRIO_SIZE)
         self.assertEqual(2, pipeline.MINIMUM_INTERVIEW_SURVIVORS)
 
+    def test_manual_priority_cycle_reaches_confirmation_with_primary_and_reserve(self):
+        leads = jsonl("opportunities/candidate-priority-list.jsonl")
+        reviews = jsonl("verification/target-reviews.jsonl")
+        result = json.loads((ROOT / "verification" / "cycle-result.json").read_text())
+        selected = {row["lead_id"] for row in leads if row["selection_status"] == "selected"}
+        self.assertEqual(3, len(selected))
+        self.assertEqual(selected, {row["lead_id"] for row in reviews})
+        self.assertTrue(all(all(check["status"] == "pass" for check in row["construction_checks"].values()) for row in reviews))
+        self.assertTrue(all(row["first_interview"]["verdict"] == "admitted" for row in reviews))
+        self.assertEqual(2, sum(row["confirmation_challenge"]["disposition"] == "surviving" for row in reviews))
+        self.assertTrue(result["milestone_6_complete"])
+        self.assertIn(result["primary_id"], result["milestone_7_eligible_ids"])
+        self.assertIn(result["reserve_id"], result["milestone_7_eligible_ids"])
+        self.assertTrue(result["selection_deferred"])
+
 
 if __name__ == "__main__":
     unittest.main()
