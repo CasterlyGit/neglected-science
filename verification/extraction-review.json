@@ -1,0 +1,14 @@
+{
+  "method": "Deterministic one-in-five sample of abstract/title extractions, checked against cached source text and evidence hashes.",
+  "sample_size": 11,
+  "evidence_location_and_hash_pass": 11,
+  "topical_concept_pass": 11,
+  "initial_classifier_field_pass": 9,
+  "review_corrections": 2,
+  "post_correction_pass": 11,
+  "corrections": [
+    {"claim_id":"doi-10.3389-fevo.2019.00275-a4","field":"polarity","from":"positive","to":"uncertain","reason":"The positive wording described clarity, not the direction of a recovery result."},
+    {"claim_id":"doi-10.1038-s41467-021-23689-6-a2","field":"polarity","from":"negative","to":"uncertain","reason":"The word failure named the research topic, not a negative empirical association."}
+  ],
+  "decision": "Accept deterministic extraction for candidate generation only. Unreviewed polarity cannot establish a contradiction or scientific conclusion."
+}

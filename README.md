@@ -15,8 +15,8 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 - Maturity: experimental
 - Visibility: local-only
 - Remote: none
-- Completed milestones: 1 — Research constitution; 2 — Bounded discovery territory
-- Active milestone: 3 — Trustworthy evidence corpus
+- Completed milestones: 1–5
+- Next milestone: 6 — Adversarial novelty challenge (not started)
 - Scientific findings: none
 - Selected investigation: none
 
@@ -48,5 +48,16 @@ Create the isolated development environment once, then run the repository contra
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install "jsonschema>=4.20"
+.venv/bin/python scripts/pipeline.py validate
 .venv/bin/python -m unittest discover -s tests -v
 ```
+
+## Verified pilot outputs
+
+- 56 sources: 37 primary studies, 11 reviews, and 8 dataset-documentation records.
+- 65 provenance-linked claim records with bounded excerpts and source locations.
+- 18 deduplicated opportunities produced by all four discovery engines.
+- 18 schema-valid dossiers ranked under balanced, rigor-first, and impact-first profiles.
+- Three scientifically reviewed finalists for Milestone 6; none is claimed novel.
+
+See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, and `reports/milestone-5-ranking.md`.

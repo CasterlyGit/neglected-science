@@ -1,0 +1,328 @@
+{
+  "mechanical_finalist_suggestions": [
+    "datause-2b632b6af6",
+    "datause-ef6485ffad",
+    "translation-ea99f0e05c"
+  ],
+  "profiles": {
+    "balanced": [
+      {
+        "id": "datause-2b632b6af6",
+        "score": 27.0
+      },
+      {
+        "id": "datause-ef6485ffad",
+        "score": 26.0
+      },
+      {
+        "id": "translation-ea99f0e05c",
+        "score": 24.0
+      },
+      {
+        "id": "translation-270355081a",
+        "score": 23.0
+      },
+      {
+        "id": "translation-eef58d227a",
+        "score": 23.0
+      },
+      {
+        "id": "contradiction-123da41b9c",
+        "score": 22.0
+      },
+      {
+        "id": "contradiction-1369e38ede",
+        "score": 22.0
+      },
+      {
+        "id": "contradiction-318caad49c",
+        "score": 22.0
+      },
+      {
+        "id": "datause-338a5bb76c",
+        "score": 21.0
+      },
+      {
+        "id": "datause-5edc867d80",
+        "score": 21.0
+      },
+      {
+        "id": "datause-cf8a42f99a",
+        "score": 21.0
+      },
+      {
+        "id": "datause-93b8f561bb",
+        "score": 19.0
+      },
+      {
+        "id": "datause-ae66f1c59b",
+        "score": 19.0
+      },
+      {
+        "id": "datause-cc69dc2789",
+        "score": 19.0
+      },
+      {
+        "id": "explicit-4cc55ecab8",
+        "score": 19.0
+      },
+      {
+        "id": "explicit-78b9170079",
+        "score": 19.0
+      },
+      {
+        "id": "explicit-d37cf95b10",
+        "score": 19.0
+      },
+      {
+        "id": "explicit-2ee3d08b6b",
+        "score": 17.0
+      }
+    ],
+    "impact_first": [
+      {
+        "id": "datause-2b632b6af6",
+        "score": 29.2
+      },
+      {
+        "id": "datause-ef6485ffad",
+        "score": 26.8
+      },
+      {
+        "id": "translation-ea99f0e05c",
+        "score": 25.6
+      },
+      {
+        "id": "translation-270355081a",
+        "score": 24.4
+      },
+      {
+        "id": "translation-eef58d227a",
+        "score": 24.4
+      },
+      {
+        "id": "contradiction-123da41b9c",
+        "score": 23.2
+      },
+      {
+        "id": "contradiction-1369e38ede",
+        "score": 23.2
+      },
+      {
+        "id": "contradiction-318caad49c",
+        "score": 23.2
+      },
+      {
+        "id": "datause-338a5bb76c",
+        "score": 22.4
+      },
+      {
+        "id": "datause-5edc867d80",
+        "score": 22.4
+      },
+      {
+        "id": "datause-cf8a42f99a",
+        "score": 22.4
+      },
+      {
+        "id": "explicit-4cc55ecab8",
+        "score": 20.8
+      },
+      {
+        "id": "explicit-78b9170079",
+        "score": 20.8
+      },
+      {
+        "id": "explicit-d37cf95b10",
+        "score": 20.8
+      },
+      {
+        "id": "datause-93b8f561bb",
+        "score": 19.2
+      },
+      {
+        "id": "datause-ae66f1c59b",
+        "score": 19.2
+      },
+      {
+        "id": "datause-cc69dc2789",
+        "score": 19.2
+      },
+      {
+        "id": "explicit-2ee3d08b6b",
+        "score": 17.6
+      }
+    ],
+    "rigor_first": [
+      {
+        "id": "datause-ef6485ffad",
+        "score": 28.4
+      },
+      {
+        "id": "datause-2b632b6af6",
+        "score": 28.3
+      },
+      {
+        "id": "translation-ea99f0e05c",
+        "score": 24.8
+      },
+      {
+        "id": "contradiction-123da41b9c",
+        "score": 24.0
+      },
+      {
+        "id": "contradiction-1369e38ede",
+        "score": 24.0
+      },
+      {
+        "id": "contradiction-318caad49c",
+        "score": 24.0
+      },
+      {
+        "id": "translation-270355081a",
+        "score": 23.1
+      },
+      {
+        "id": "translation-eef58d227a",
+        "score": 23.1
+      },
+      {
+        "id": "datause-338a5bb76c",
+        "score": 22.3
+      },
+      {
+        "id": "datause-5edc867d80",
+        "score": 22.3
+      },
+      {
+        "id": "datause-cf8a42f99a",
+        "score": 22.3
+      },
+      {
+        "id": "datause-93b8f561bb",
+        "score": 20.9
+      },
+      {
+        "id": "datause-ae66f1c59b",
+        "score": 20.9
+      },
+      {
+        "id": "datause-cc69dc2789",
+        "score": 20.9
+      },
+      {
+        "id": "explicit-4cc55ecab8",
+        "score": 19.3
+      },
+      {
+        "id": "explicit-78b9170079",
+        "score": 19.3
+      },
+      {
+        "id": "explicit-d37cf95b10",
+        "score": 19.3
+      },
+      {
+        "id": "explicit-2ee3d08b6b",
+        "score": 17.9
+      }
+    ]
+  },
+  "rank_stability": {
+    "contradiction-123da41b9c": {
+      "best": 4,
+      "spread": 2,
+      "worst": 6
+    },
+    "contradiction-1369e38ede": {
+      "best": 5,
+      "spread": 2,
+      "worst": 7
+    },
+    "contradiction-318caad49c": {
+      "best": 6,
+      "spread": 2,
+      "worst": 8
+    },
+    "datause-2b632b6af6": {
+      "best": 1,
+      "spread": 1,
+      "worst": 2
+    },
+    "datause-338a5bb76c": {
+      "best": 9,
+      "spread": 0,
+      "worst": 9
+    },
+    "datause-5edc867d80": {
+      "best": 10,
+      "spread": 0,
+      "worst": 10
+    },
+    "datause-93b8f561bb": {
+      "best": 12,
+      "spread": 3,
+      "worst": 15
+    },
+    "datause-ae66f1c59b": {
+      "best": 13,
+      "spread": 3,
+      "worst": 16
+    },
+    "datause-cc69dc2789": {
+      "best": 14,
+      "spread": 3,
+      "worst": 17
+    },
+    "datause-cf8a42f99a": {
+      "best": 11,
+      "spread": 0,
+      "worst": 11
+    },
+    "datause-ef6485ffad": {
+      "best": 1,
+      "spread": 1,
+      "worst": 2
+    },
+    "explicit-2ee3d08b6b": {
+      "best": 18,
+      "spread": 0,
+      "worst": 18
+    },
+    "explicit-4cc55ecab8": {
+      "best": 12,
+      "spread": 3,
+      "worst": 15
+    },
+    "explicit-78b9170079": {
+      "best": 13,
+      "spread": 3,
+      "worst": 16
+    },
+    "explicit-d37cf95b10": {
+      "best": 14,
+      "spread": 3,
+      "worst": 17
+    },
+    "translation-270355081a": {
+      "best": 4,
+      "spread": 3,
+      "worst": 7
+    },
+    "translation-ea99f0e05c": {
+      "best": 3,
+      "spread": 0,
+      "worst": 3
+    },
+    "translation-eef58d227a": {
+      "best": 5,
+      "spread": 3,
+      "worst": 8
+    }
+  },
+  "scientific_review_finalists": [
+    "datause-2b632b6af6",
+    "datause-ef6485ffad",
+    "translation-ea99f0e05c"
+  ]
+}

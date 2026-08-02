@@ -1,0 +1,53 @@
+{
+  "datause-2b632b6af6": {
+    "question": "Can irregular-time ECOSTRESS observations, anchored by Landsat baselines, estimate neighborhood thermal recovery curves after heat events, and do canopy and impervious form explain between-neighborhood differences?",
+    "importance": "A validated recovery measure could distinguish persistent heat burden from one-time daytime hot spots while remaining relevant to local intervention planning.",
+    "known": "The pilot corpus supports land-surface-temperature measurement, varying-time thermal observation, and context-dependent vegetation cooling; it does not establish neighborhood recovery curves.",
+    "unresolved": "Variable availability, overpass timing, cloud filtering, event definition, and the novelty of a recovery-time analysis require adversarial review.",
+    "competing_hypotheses": [
+      "Neighborhood surface state and form produce reproducible differences in post-event thermal recovery.",
+      "Irregular satellite sampling, weather variation, and surface-air measurement differences create apparent recovery differences."
+    ],
+    "experiment": "Define heat events independently, estimate uncertainty-aware recovery curves from ECOSTRESS with Landsat context, and test held-out neighborhoods, years, and a second desert city.",
+    "falsification": [
+      "Recovery estimates are not stable across sampling and event definitions.",
+      "Neighborhood differences disappear after meteorology, observation timing, and surface composition are controlled."
+    ],
+    "scores": {"importance":4,"unresolved_evidence":2,"data_adequacy":3,"testability":3,"falsification":3,"feasibility":3,"negative_result_value":3,"cross_domain_leverage":2,"impact":4},
+    "status": "finalist"
+  },
+  "datause-ef6485ffad": {
+    "question": "Do rest-period relaxation signatures in NASA battery cycling data improve prediction of path-dependent degradation beyond models based only on cumulative exposure summaries?",
+    "importance": "A positive or negative result would clarify when battery history order matters for state-of-health estimation using public aging data.",
+    "known": "The corpus contains experimental evidence of path-dependent degradation and separate use of relaxation effects in capacity or remaining-life estimation.",
+    "unresolved": "The NASA experiments may not contain comparable load-order interventions or sufficiently standardized rest periods; this must be audited before selection.",
+    "competing_hypotheses": [
+      "Relaxation-curve features retain information about degradation pathways beyond cumulative cycle, temperature, and rate exposure.",
+      "Any apparent path signal is explained by cumulative exposure, cell differences, protocol changes, or measurement drift."
+    ],
+    "experiment": "Audit protocols, construct cumulative-exposure baselines, add preregistered relaxation features, and evaluate held-out cells and load sequences.",
+    "falsification": [
+      "Relaxation features do not improve held-out prediction over cumulative-exposure baselines.",
+      "The apparent effect fails across cells or is inseparable from protocol confounding."
+    ],
+    "scores": {"importance":3,"unresolved_evidence":3,"data_adequacy":3,"testability":3,"falsification":3,"feasibility":3,"negative_result_value":3,"cross_domain_leverage":2,"impact":3},
+    "status": "finalist"
+  },
+  "translation-ea99f0e05c": {
+    "question": "After aligning perturbation and state definitions, are recovery-curve features—rate, hysteresis, and incomplete return—mathematically transferable across urban heat, ecosystems, batteries, and cyclic materials, or do domain-specific mechanisms dominate?",
+    "importance": "The candidate directly tests whether cross-disciplinary language reveals a reusable research structure or only superficial analogy.",
+    "known": "All four bounded domains use recovery, relaxation, resilience, or hysteresis language, but the pilot corpus does not establish comparable variables or mechanisms.",
+    "unresolved": "Comparable normalization, sampling, and falsification may be impossible across all four domains; a narrower pairwise study may be required.",
+    "competing_hypotheses": [
+      "A small set of normalized recovery-curve features transfers across domains without implying shared mechanisms.",
+      "Differences in state definition, forcing, scale, and measurement make the apparent common structure scientifically uninformative."
+    ],
+    "experiment": "Define a domain-neutral perturbation-response contract, reproduce one curve per domain, and test whether the same feature definitions and failure criteria survive pairwise comparison.",
+    "falsification": [
+      "At least two domains cannot satisfy the same preregistered state and baseline definitions.",
+      "Feature similarity vanishes after uncertainty and sampling differences are represented."
+    ],
+    "scores": {"importance":3,"unresolved_evidence":1,"data_adequacy":2,"testability":2,"falsification":4,"feasibility":1,"negative_result_value":4,"cross_domain_leverage":4,"impact":3},
+    "status": "finalist"
+  }
+}

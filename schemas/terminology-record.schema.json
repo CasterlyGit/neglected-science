@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["concept", "terms", "domains", "structural_test", "caution"],
+  "properties": {
+    "concept": {"type": "string"},
+    "terms": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+    "domains": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+    "structural_test": {"type": "string", "minLength": 10},
+    "caution": {"type": "string", "minLength": 10}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "method": "Stratified relevance and provenance review: one dataset, one synthesis/review, and one focused study per domain where available.",
+  "sample_size": 12,
+  "accepted": 12,
+  "metadata_integrity": {
+    "crossref_checked_papers": 48,
+    "crossref_title_matches": 48,
+    "dataset_landing_pages_checked": 8,
+    "dataset_pages_reachable_directly": 6,
+    "dataset_pages_blocking_automated_access": 2
+  },
+  "records": [
+    {"source_id":"doi-10.1002-batt.202000160","verdict":"accept","reason":"Focused experimental study of path-dependent degradation."},
+    {"source_id":"doi-10.1039-d1cp00359c","verdict":"accept","reason":"Broad degradation synthesis for baseline terminology and mechanisms."},
+    {"source_id":"dataset-nasa-battery-prognostics","verdict":"accept-with-variable-audit","reason":"Official aging dataset; individual experiment compatibility remains to be checked."},
+    {"source_id":"doi-10.1038-s41467-021-26768-w","verdict":"accept","reason":"Focused multi-city evidence on tree-related surface-temperature differences."},
+    {"source_id":"doi-10.3390-rs11010048","verdict":"accept","reason":"Remote-sensing synthesis covering measurement choices and limitations."},
+    {"source_id":"dataset-nasa-ecostress-lst","verdict":"accept-with-variable-audit","reason":"Official varying-time thermal observations relevant to recovery-curve feasibility."},
+    {"source_id":"doi-10.1002-fee.1311","verdict":"accept","reason":"Direct treatment of disturbance history, ecological memory, and resilience."},
+    {"source_id":"doi-10.1111-ele.13457","verdict":"accept","reason":"Cross-ecosystem meta-analysis distinguishing recovery dimensions."},
+    {"source_id":"dataset-neon-data-portal","verdict":"accept-with-variable-audit","reason":"Official longitudinal ecological data portal; products must be selected later."},
+    {"source_id":"doi-10.1103-revmodphys.91.035002","verdict":"accept","reason":"Cross-material synthesis of physical memory phenomena."},
+    {"source_id":"doi-10.1016-j.ijfatigue.2021.106556","verdict":"accept","reason":"Review directly addressing fatigue-damage measurement limitations."},
+    {"source_id":"dataset-nist-materials-data","verdict":"accept-with-variable-audit","reason":"Official repository, but no specific fatigue dataset is assumed available."}
+  ],
+  "limitations": [
+    "The corpus is abstract- and metadata-level; full-text claims are not asserted.",
+    "Two official dataset sites returned automated-access 403 responses; their URLs remain recorded but suitability is not inferred.",
+    "Source selection favors English-language indexed works and may miss terminology outside OpenAlex coverage."
+  ]
+}

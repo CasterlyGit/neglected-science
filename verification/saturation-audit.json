@@ -1,0 +1,768 @@
+{
+  "domains": {
+    "battery_memory": [
+      {
+        "mapped_concepts": [
+          "degradation-state",
+          "hysteresis",
+          "memory-path-dependence",
+          "recovery-time",
+          "resilience-stability",
+          "temperature-state"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "battery relaxation path dependent aging history",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1007/s41918-019-00060-4",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Building Safe Lithium-Ion Batteries for Electric Vehicles: A Review",
+            "year": 2019
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.mser.2018.09.001",
+            "mapped_concepts": [],
+            "title": "Thermoelectrics: From history, a window to the future",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.1109/access.2021.3089032",
+            "mapped_concepts": [],
+            "title": "A Comprehensive Review of Available Battery Datasets, RUL Prediction Approaches, and Advanced Battery Management",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.joule.2024.05.008",
+            "mapped_concepts": [
+              "recovery-time"
+            ],
+            "title": "Advancing electrochemical impedance analysis through innovations in the distribution of relaxation times method",
+            "year": 2024
+          },
+          {
+            "doi": "https://doi.org/10.1038/s41427-018-0056-z",
+            "mapped_concepts": [],
+            "title": "In situ/operando synchrotron-based X-ray techniques for lithium-ion battery research",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.1021/acs.chemrev.1c00838",
+            "mapped_concepts": [
+              "resilience-stability"
+            ],
+            "title": "Review of Multifunctional Separators: Stabilizing the Cathode and the Anode for Alkali (Li, Na, and K) Metal\u2013Sulfur and Selenium Batteries",
+            "year": 2022
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.xinn.2023.100465",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "All-temperature area battery application mechanism, performance, and strategies",
+            "year": 2023
+          },
+          {
+            "doi": "https://doi.org/10.3390/batteries5010012",
+            "mapped_concepts": [],
+            "title": "Critical Review of the Use of Reference Electrodes in Li-Ion Batteries: A Diagnostic Perspective",
+            "year": 2019
+          },
+          {
+            "doi": "https://doi.org/10.1039/d0se00175a",
+            "mapped_concepts": [],
+            "title": "The success story of graphite as a lithium-ion anode material \u2013 fundamentals, remaining challenges, and recent developments including silicon (oxide) composites",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1002/ente.202200627",
+            "mapped_concepts": [
+              "degradation-state",
+              "hysteresis",
+              "memory-path-dependence"
+            ],
+            "title": "A Review and Perspective on Path Dependency in Batteries",
+            "year": 2022
+          }
+        ]
+      },
+      {
+        "mapped_concepts": [
+          "degradation-state",
+          "memory-path-dependence",
+          "temperature-state"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "battery degradation recovery memory hysteresis",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1016/j.egyr.2022.03.016",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Overview of batteries and battery management for electric vehicles",
+            "year": 2022
+          },
+          {
+            "doi": "https://doi.org/10.1109/access.2019.2942213",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "State of Charge Estimation for Lithium-Ion Batteries Using Model-Based and Data-Driven Methods: A Review",
+            "year": 2019
+          },
+          {
+            "doi": "https://doi.org/10.1038/s41560-018-0243-8",
+            "mapped_concepts": [
+              "memory-path-dependence",
+              "temperature-state"
+            ],
+            "title": "Efficient thermal management of Li-ion batteries with a passive interfacial thermal regulator based on a shape memory alloy",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.3390/pr9091685",
+            "mapped_concepts": [],
+            "title": "Review on the Battery Model and SOC Estimation Method",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.3390/su131810042",
+            "mapped_concepts": [],
+            "title": "A Review on Battery Modelling Techniques",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.1109/access.2016.2545338",
+            "mapped_concepts": [
+              "degradation-state"
+            ],
+            "title": "Reconfigurable Battery Techniques and Systems: A Survey",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.est.2021.103273",
+            "mapped_concepts": [],
+            "title": "Key challenges for a large-scale development of battery electric vehicles: A comprehensive review",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.3390/batteries2010003",
+            "mapped_concepts": [
+              "degradation-state"
+            ],
+            "title": "Capacity Degradation Mechanisms in Nickel/Metal Hydride Batteries",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.jpowsour.2020.228753",
+            "mapped_concepts": [],
+            "title": "Sustainable value chain of retired lithium-ion batteries for electric vehicles",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.est.2024.111435",
+            "mapped_concepts": [],
+            "title": "Review of battery state estimation methods for electric vehicles - Part I: SOC estimation",
+            "year": 2024
+          }
+        ]
+      }
+    ],
+    "earth_heat": [
+      {
+        "mapped_concepts": [
+          "degradation-state",
+          "resilience-stability",
+          "temperature-state"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "urban thermal lag nighttime heat persistence",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1029/2022rg000780",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Heat Waves: Physical Understanding and Scientific Challenges",
+            "year": 2023
+          },
+          {
+            "doi": "https://doi.org/10.1126/sciadv.adj7398",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Persistent urban heat",
+            "year": 2024
+          },
+          {
+            "doi": "https://doi.org/10.1088/1748-9326/aca3ba",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Observational evidence of intensified nocturnal urban heat island during heatwaves in European cities",
+            "year": 2022
+          },
+          {
+            "doi": "https://doi.org/10.1057/s41599-024-03586-1",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Duration of exposure to compound daytime-nighttime high temperatures and changes in population exposure in China under global warming",
+            "year": 2024
+          },
+          {
+            "doi": "https://doi.org/10.3390/atmos9030102",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Exchange Processes in the Atmospheric Boundary Layer Over Mountainous Terrain",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.1111/ecog.02788",
+            "mapped_concepts": [
+              "resilience-stability",
+              "temperature-state"
+            ],
+            "title": "Climatic microrefugia under anthropogenic climate change: implications for species redistribution",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.3390/rs13081426",
+            "mapped_concepts": [
+              "degradation-state",
+              "temperature-state"
+            ],
+            "title": "The Urban Observatory: A Multi-Modal Imaging Platform for the Study of Dynamics in Complex Urban Systems",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.1111/ele.13969",
+            "mapped_concepts": [],
+            "title": "Detecting patterns of vertebrate biodiversity across the multidimensional urban landscape",
+            "year": 2022
+          },
+          {
+            "doi": "https://doi.org/10.1038/s43247-023-01096-7",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Circulation dampened heat extremes intensification over the Midwest USA and amplified over Western Europe",
+            "year": 2023
+          },
+          {
+            "doi": "https://doi.org/10.1186/s12889-025-23763-4",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Impact of urban heat island effect on dengue incidence: a remote sensing approach using thermal and high-resolution optical imagery",
+            "year": 2025
+          }
+        ]
+      },
+      {
+        "mapped_concepts": [
+          "accumulated-stress",
+          "degradation-state",
+          "hysteresis",
+          "recovery-time",
+          "resilience-stability",
+          "temperature-state"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "surface urban heat island diurnal hysteresis recovery",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1111/gcb.15661",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Identifying dominant environmental predictors of freshwater wetland methane fluxes across diurnal to seasonal time scales",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.1038/s41467-025-59912-x",
+            "mapped_concepts": [
+              "hysteresis",
+              "temperature-state"
+            ],
+            "title": "Contemporary income inequality outweighs historic redlining in shaping intra-urban heat disparities in Los Angeles",
+            "year": 2025
+          },
+          {
+            "doi": "https://doi.org/10.1029/2022wr032227",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Resolve the Clear\u2010Sky Continuous Diurnal Cycle of High\u2010Resolution ECOSTRESS Evapotranspiration and Land Surface Temperature",
+            "year": 2022
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.ijthermalsci.2023.108181",
+            "mapped_concepts": [
+              "recovery-time",
+              "temperature-state"
+            ],
+            "title": "Numerical simulation of heat recovery from asphalt pavement in Finnish climate conditions",
+            "year": 2023
+          },
+          {
+            "doi": "https://doi.org/10.1111/gcb.14037",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Trees tolerate an extreme heatwave via sustained transpirational cooling and increased leaf thermal tolerance",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.cacint.2026.100351",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Urban Heat Island mitigation strategies: a comprehensive review of recent advances",
+            "year": 2026
+          },
+          {
+            "doi": "https://doi.org/10.5194/gmd-16-4551-2023",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "temperature-state"
+            ],
+            "title": "Simulating heat and CO <sub>2</sub> fluxes in Beijing using SUEWS V2020b: sensitivity to vegetation phenology and maximum conductance",
+            "year": 2023
+          },
+          {
+            "doi": "https://doi.org/10.1146/annurev-marine-042023-093037",
+            "mapped_concepts": [
+              "resilience-stability",
+              "temperature-state"
+            ],
+            "title": "Impacts of Climate Change on Marine Foundation Species",
+            "year": 2023
+          },
+          {
+            "doi": "https://doi.org/10.30574/ijsra.2024.13.1.2050",
+            "mapped_concepts": [
+              "degradation-state",
+              "temperature-state"
+            ],
+            "title": "Phase Change Materials (PCMs) for passive Cooling: Performance in urban buildings",
+            "year": 2024
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.buildenv.2023.110152",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Impact of heatwaves and system shocks on a nearly zero energy educational building: Is it resilient to overheating?",
+            "year": 2023
+          }
+        ]
+      }
+    ],
+    "ecological_recovery": [
+      {
+        "mapped_concepts": [
+          "accumulated-stress",
+          "degradation-state",
+          "memory-path-dependence",
+          "recovery-time",
+          "resilience-stability"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "ecosystem recovery debt disturbance legacy",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1002/fee.1311",
+            "mapped_concepts": [
+              "memory-path-dependence",
+              "recovery-time",
+              "resilience-stability"
+            ],
+            "title": "Changing disturbance regimes, ecological memory, and forest resilience",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1038/ncomms14163",
+            "mapped_concepts": [
+              "recovery-time"
+            ],
+            "title": "Anthropogenic ecosystem disturbance and the recovery debt",
+            "year": 2017
+          },
+          {
+            "doi": "https://doi.org/10.1098/rspb.2017.2577",
+            "mapped_concepts": [
+              "recovery-time"
+            ],
+            "title": "Restoration and repair of Earth's damaged ecosystems",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.1007/s10021-016-0051-6",
+            "mapped_concepts": [],
+            "title": "Legacy Effects of Human Land Use: Ecosystems as Time-Lagged Systems",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1126/science.abl4649",
+            "mapped_concepts": [],
+            "title": "The biodiversity and ecosystem service contributions and trade-offs of forest restoration approaches",
+            "year": 2022
+          },
+          {
+            "doi": "https://doi.org/10.3389/fsufs.2020.534187",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "degradation-state",
+              "recovery-time",
+              "resilience-stability"
+            ],
+            "title": "Managing Grazing to Restore Soil Health, Ecosystem Function, and Ecosystem Services",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.ecolind.2019.106020",
+            "mapped_concepts": [],
+            "title": "Invasive alien plant species: Their impact on environment, ecosystem services and human health",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1038/s41586-019-1712-3",
+            "mapped_concepts": [
+              "resilience-stability"
+            ],
+            "title": "Anatomy and resilience of the global production ecosystem",
+            "year": 2019
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.ecoser.2016.07.014",
+            "mapped_concepts": [],
+            "title": "Aesthetic and spiritual values of ecosystems: Recognising the ontological and axiological plurality of cultural ecosystem \u2018services\u2019",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1038/s41586-020-2146-7",
+            "mapped_concepts": [
+              "recovery-time"
+            ],
+            "title": "Rebuilding marine life",
+            "year": 2020
+          }
+        ]
+      },
+      {
+        "mapped_concepts": [
+          "degradation-state",
+          "recovery-time",
+          "resilience-stability",
+          "temperature-state"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "ecological hysteresis resilience recovery time",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1111/1365-2664.12649",
+            "mapped_concepts": [
+              "degradation-state",
+              "recovery-time",
+              "resilience-stability",
+              "temperature-state"
+            ],
+            "title": "Quantifying resilience",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.5751/es-09427-220317",
+            "mapped_concepts": [
+              "resilience-stability"
+            ],
+            "title": "A quantitative framework for assessing ecological resilience",
+            "year": 2017
+          },
+          {
+            "doi": "https://doi.org/10.1007/s00168-017-0841-6",
+            "mapped_concepts": [
+              "recovery-time",
+              "resilience-stability"
+            ],
+            "title": "Innovation and regional economic resilience: an exploratory analysis",
+            "year": 2017
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.foreco.2022.120129",
+            "mapped_concepts": [
+              "resilience-stability"
+            ],
+            "title": "Mechanisms of forest resilience",
+            "year": 2022
+          },
+          {
+            "doi": "https://doi.org/10.1111/1365-2745.13651",
+            "mapped_concepts": [
+              "resilience-stability"
+            ],
+            "title": "Unifying the concepts of stability and resilience in ecology",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.1093/oxrep/graa015",
+            "mapped_concepts": [
+              "recovery-time"
+            ],
+            "title": "Will COVID-19 fiscal recovery packages accelerate or retard progress on climate change?",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.jenvman.2016.07.065",
+            "mapped_concepts": [
+              "degradation-state",
+              "resilience-stability"
+            ],
+            "title": "Economics, socio-ecological resilience and ecosystem services",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.jenvman.2016.04.040",
+            "mapped_concepts": [
+              "resilience-stability"
+            ],
+            "title": "Biological invasions, ecological resilience and adaptive governance",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.hydroa.2018.100009",
+            "mapped_concepts": [
+              "degradation-state",
+              "resilience-stability"
+            ],
+            "title": "Understanding of water resilience in the Anthropocene",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.1071/an15297",
+            "mapped_concepts": [
+              "recovery-time",
+              "resilience-stability"
+            ],
+            "title": "Resilience in farm animals: biology, management, breeding and implications for animal welfare",
+            "year": 2016
+          }
+        ]
+      }
+    ],
+    "materials_fatigue": [
+      {
+        "mapped_concepts": [
+          "accumulated-stress",
+          "degradation-state",
+          "memory-path-dependence",
+          "recovery-time",
+          "resilience-stability",
+          "temperature-state"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "cyclic material memory relaxation fatigue damage",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1038/ncomms12920",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "recovery-time",
+              "resilience-stability"
+            ],
+            "title": "Super-elastic and fatigue resistant carbon material with lamellar multi-arch microstructure",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.pmatsci.2017.04.008",
+            "mapped_concepts": [
+              "memory-path-dependence"
+            ],
+            "title": "Welding and Joining of NiTi Shape Memory Alloys: A Review",
+            "year": 2017
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.matdes.2020.109030",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "memory-path-dependence",
+              "resilience-stability",
+              "temperature-state"
+            ],
+            "title": "Recent developments on the cyclic stability in elastocaloric materials",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1007/s11837-020-04013-x",
+            "mapped_concepts": [
+              "memory-path-dependence"
+            ],
+            "title": "A Review on Additive Manufacturing of Shape-Memory Materials for Biomedical Applications",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1021/acs.chemrev.7b00291",
+            "mapped_concepts": [],
+            "title": "Nature-Inspired Structural Materials for Flexible Electronic Devices",
+            "year": 2017
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.conbuildmat.2019.116800",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "memory-path-dependence"
+            ],
+            "title": "Iron-based shape memory alloy (Fe-SMA) for fatigue strengthening of cracked steel bridge connections",
+            "year": 2019
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.ijfatigue.2018.03.016",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "memory-path-dependence"
+            ],
+            "title": "Three-dimensional constitutive model for structural and functional fatigue of shape memory alloy actuators",
+            "year": 2018
+          },
+          {
+            "doi": "https://doi.org/10.1021/acs.chemrev.6b00172",
+            "mapped_concepts": [],
+            "title": "Organic Lasers: Recent Developments on Materials, Device Geometries, and Fabrication Techniques",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.pmatsci.2019.02.001",
+            "mapped_concepts": [],
+            "title": "Trap-controlled mechanoluminescent materials",
+            "year": 2019
+          },
+          {
+            "doi": "https://doi.org/10.3390/met11040609",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "degradation-state"
+            ],
+            "title": "A Review of Damage, Void Evolution, and Fatigue Life Prediction Models",
+            "year": 2021
+          }
+        ]
+      },
+      {
+        "mapped_concepts": [
+          "accumulated-stress",
+          "hysteresis",
+          "recovery-time",
+          "resilience-stability",
+          "temperature-state"
+        ],
+        "new_taxonomy_concepts": [],
+        "query": "material hysteresis recovery accumulated loading",
+        "result_count": 10,
+        "works": [
+          {
+            "doi": "https://doi.org/10.1002/aisy.202000039",
+            "mapped_concepts": [
+              "hysteresis",
+              "resilience-stability"
+            ],
+            "title": "Wearable and Stretchable Strain Sensors: Materials, Sensing Mechanisms, and Applications",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1007/s40831-016-0090-4",
+            "mapped_concepts": [
+              "recovery-time"
+            ],
+            "title": "REE Recovery from End-of-Life NdFeB Permanent Magnet Scrap: A Critical Review",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1002/aenm.201903741",
+            "mapped_concepts": [
+              "temperature-state"
+            ],
+            "title": "Energy Applications of Magnetocaloric Materials",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1038/ncomms12920",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "recovery-time",
+              "resilience-stability"
+            ],
+            "title": "Super-elastic and fatigue resistant carbon material with lamellar multi-arch microstructure",
+            "year": 2016
+          },
+          {
+            "doi": "https://doi.org/10.1002/adfm.202214935",
+            "mapped_concepts": [
+              "accumulated-stress",
+              "hysteresis",
+              "resilience-stability"
+            ],
+            "title": "Low Hysteresis Hydrogel Induced by Spatial Confinement",
+            "year": 2023
+          },
+          {
+            "doi": "https://doi.org/10.1039/d0se00175a",
+            "mapped_concepts": [],
+            "title": "The success story of graphite as a lithium-ion anode material \u2013 fundamentals, remaining challenges, and recent developments including silicon (oxide) composites",
+            "year": 2020
+          },
+          {
+            "doi": "https://doi.org/10.1126/sciadv.aao6804",
+            "mapped_concepts": [],
+            "title": "3D printing of bacteria into functional complex materials",
+            "year": 2017
+          },
+          {
+            "doi": "https://doi.org/10.1038/s41467-021-24382-4",
+            "mapped_concepts": [
+              "hysteresis",
+              "recovery-time"
+            ],
+            "title": "Skin-like mechanoresponsive self-healing ionic elastomer from supramolecular zwitterionic network",
+            "year": 2021
+          },
+          {
+            "doi": "https://doi.org/10.1021/acs.chemmater.9b00772",
+            "mapped_concepts": [
+              "hysteresis"
+            ],
+            "title": "Understanding the Low-Voltage Hysteresis of Anionic Redox in Na<sub>2</sub>Mn<sub>3</sub>O<sub>7</sub>",
+            "year": 2019
+          },
+          {
+            "doi": "https://doi.org/10.1016/j.mattod.2020.04.005",
+            "mapped_concepts": [],
+            "title": "Nanostructural metallic materials: Structures and mechanical properties",
+            "year": 2020
+          }
+        ]
+      }
+    ]
+  },
+  "existing_concepts": [
+    "accumulated-stress",
+    "dataset-conventional-use",
+    "degradation-state",
+    "early-warning-slowing",
+    "hysteresis",
+    "memory-path-dependence",
+    "recovery-time",
+    "resilience-stability",
+    "temperature-state"
+  ],
+  "retrieved_at": "2026-08-02T11:39:27Z"
+}

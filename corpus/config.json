@@ -1,0 +1,117 @@
+{
+  "from_year": 2016,
+  "sources_per_domain": 12,
+  "max_results_per_query": 20,
+  "domains": {
+    "earth_heat": {
+      "label": "Urban and land-surface heat recovery",
+      "queries": [
+        "urban heat island nighttime cooling recovery",
+        "urban thermal inertia heatwave recovery",
+        "land surface temperature nighttime urban vegetation"
+      ],
+      "keywords": ["urban", "heat", "thermal", "nighttime", "cooling", "surface temperature", "recovery", "inertia", "vegetation"]
+    },
+    "ecological_recovery": {
+      "label": "Ecological disturbance and recovery",
+      "queries": [
+        "ecological memory disturbance recovery resilience",
+        "ecosystem recovery time disturbance",
+        "critical slowing recovery ecosystem resilience"
+      ],
+      "keywords": ["ecological", "ecosystem", "disturbance", "recovery", "resilience", "memory", "critical slowing", "forest", "stability"]
+    },
+    "battery_memory": {
+      "label": "Battery degradation, relaxation, and path dependence",
+      "queries": [
+        "lithium ion battery degradation hysteresis memory effect",
+        "battery relaxation recovery degradation",
+        "battery state of health path dependence"
+      ],
+      "keywords": ["battery", "lithium", "degradation", "hysteresis", "memory", "relaxation", "recovery", "state of health", "path dependence"]
+    },
+    "materials_fatigue": {
+      "label": "Material fatigue, hysteresis, and relaxation",
+      "queries": [
+        "material fatigue hysteresis relaxation memory",
+        "thermal hysteresis phase change material fatigue",
+        "viscoelastic recovery fatigue hysteresis"
+      ],
+      "keywords": ["material", "fatigue", "hysteresis", "relaxation", "memory", "phase change", "viscoelastic", "recovery", "cyclic"]
+    }
+  },
+  "datasets": [
+    {
+      "source_id": "dataset-usgs-landsat-c2-st",
+      "domain": "earth_heat",
+      "title": "Landsat Collection 2 Surface Temperature",
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-surface-temperature",
+      "publisher": "U.S. Geological Survey",
+      "conventional_use": "Surface-temperature retrieval and mapping from Landsat observations",
+      "measures": ["land surface temperature", "emissivity", "atmospheric inputs"]
+    },
+    {
+      "source_id": "dataset-nasa-ecostress-lst",
+      "domain": "earth_heat",
+      "title": "ECOSTRESS Land Surface Temperature and Emissivity",
+      "url": "https://www.earthdata.nasa.gov/data/instruments/ecostress",
+      "publisher": "NASA Earthdata",
+      "conventional_use": "Thermal stress and surface-temperature observations at varying times of day",
+      "measures": ["land surface temperature", "emissivity", "evapotranspiration-related products"]
+    },
+    {
+      "source_id": "dataset-neon-data-portal",
+      "domain": "ecological_recovery",
+      "title": "NEON Data Portal",
+      "url": "https://data.neonscience.org/",
+      "publisher": "National Ecological Observatory Network",
+      "conventional_use": "Long-term standardized ecological observations across United States sites",
+      "measures": ["organisms", "biogeochemistry", "land cover", "meteorology"]
+    },
+    {
+      "source_id": "dataset-gedi-l4a-biomass",
+      "domain": "ecological_recovery",
+      "title": "GEDI Level 4A Footprint Aboveground Biomass Density",
+      "url": "https://lpdaac.usgs.gov/products/gedi04_av002/",
+      "publisher": "NASA LP DAAC",
+      "conventional_use": "Footprint-level estimates of aboveground biomass density",
+      "measures": ["aboveground biomass density", "quality flags", "geolocation"]
+    },
+    {
+      "source_id": "dataset-nasa-battery-prognostics",
+      "domain": "battery_memory",
+      "title": "NASA Prognostics Center of Excellence Battery Data Set",
+      "url": "https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository",
+      "publisher": "NASA Ames Research Center",
+      "conventional_use": "Battery aging, state-of-health estimation, and remaining-useful-life studies",
+      "measures": ["charge", "discharge", "impedance", "temperature", "capacity"]
+    },
+    {
+      "source_id": "dataset-battery-archive",
+      "domain": "battery_memory",
+      "title": "Battery Archive",
+      "url": "https://www.batteryarchive.org/",
+      "publisher": "Battery research community data service",
+      "conventional_use": "Comparison and visualization of battery cycling experiments",
+      "measures": ["cycling", "capacity", "voltage", "current", "temperature"]
+    },
+    {
+      "source_id": "dataset-nist-materials-data",
+      "domain": "materials_fatigue",
+      "title": "NIST Materials Data Repository",
+      "url": "https://materialsdata.nist.gov/",
+      "publisher": "National Institute of Standards and Technology",
+      "conventional_use": "Preservation and dissemination of materials research data",
+      "measures": ["dataset-dependent material structure and property measurements"]
+    },
+    {
+      "source_id": "dataset-materials-project",
+      "domain": "materials_fatigue",
+      "title": "Materials Project",
+      "url": "https://materialsproject.org/",
+      "publisher": "Materials Project",
+      "conventional_use": "Computed materials properties and materials screening",
+      "measures": ["computed structures", "thermodynamic properties", "electronic properties"]
+    }
+  ]
+}

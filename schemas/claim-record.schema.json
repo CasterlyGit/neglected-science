@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "source_id", "domain", "location", "claim_kind", "concepts", "evidence_excerpt", "evidence_sha256", "polarity", "extraction_method", "review_status", "uncertainty"],
+  "properties": {
+    "claim_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "source_id": {"type": "string"},
+    "domain": {"type": "string"},
+    "location": {"type": "string", "minLength": 1},
+    "claim_kind": {"enum": ["explicit-gap", "limitation", "reported-association", "reported-mechanism", "recovery-observation", "dataset-use"]},
+    "concepts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "evidence_excerpt": {"type": "string", "minLength": 1, "maxLength": 240},
+    "evidence_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "polarity": {"enum": ["positive", "negative", "mixed", "uncertain", "not-applicable"]},
+    "extraction_method": {"enum": ["deterministic-abstract-v1", "curated-dataset-record-v1"]},
+    "review_status": {"enum": ["pending", "sample-reviewed", "human-reviewed", "rejected"]},
+    "uncertainty": {"enum": ["low", "medium", "high"]}
+  }
+}

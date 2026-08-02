@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "domain", "title", "year", "source_type", "url", "retrieved_at", "provenance", "review_status", "uncertainties"],
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "domain": {"enum": ["earth_heat", "ecological_recovery", "battery_memory", "materials_fatigue"]},
+    "title": {"type": "string", "minLength": 8},
+    "year": {"type": ["integer", "null"], "minimum": 1900, "maximum": 2100},
+    "source_type": {"enum": ["review", "primary-study", "dataset-documentation", "corrective-evidence"]},
+    "doi": {"type": ["string", "null"]},
+    "openalex_id": {"type": ["string", "null"]},
+    "url": {"type": "string", "format": "uri"},
+    "publisher": {"type": ["string", "null"]},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "cited_by_count": {"type": "integer", "minimum": 0},
+    "abstract_available": {"type": "boolean"},
+    "abstract_sha256": {"type": ["string", "null"]},
+    "crossref_verified": {"type": "boolean"},
+    "title_match": {"type": ["boolean", "null"]},
+    "retrieved_at": {"type": "string", "format": "date-time"},
+    "provenance": {"type": "string", "minLength": 1},
+    "review_status": {"enum": ["mechanically-screened", "human-reviewed", "needs-review"]},
+    "uncertainties": {"type": "array", "items": {"type": "string"}},
+    "conventional_use": {"type": ["string", "null"]},
+    "measures": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "evaluation_set": "All 18 deduplicated pilot candidates after classifier corrections and contradiction-engine narrowing.",
+  "counts": {
+    "supported_lead": 11,
+    "gated_variable_or_definition_audit": 4,
+    "rejected": 2,
+    "duplicate": 1
+  },
+  "useful_auditable_lead_rate": 0.8333,
+  "duplicate_rate": 0.0556,
+  "thresholds": {
+    "minimum_useful_auditable_lead_rate": 0.8,
+    "maximum_duplicate_rate": 0.1,
+    "provenance_required": 1.0
+  },
+  "engine_results": {
+    "explicit": {"generated":4,"supported_or_gated":4,"notes":"All remain prior-art leads, not proof of open questions."},
+    "contradiction": {"generated":3,"supported_or_gated":2,"notes":"One ecological output overlaps another and is treated as a duplicate; all are apparent tensions only."},
+    "translation": {"generated":3,"supported_or_gated":3,"notes":"Structural equivalence remains unproven and is the object of the proposed tests."},
+    "data-use": {"generated":8,"supported_or_gated":6,"notes":"Materials Project is rejected for cyclic-fatigue adequacy; GEDI early-warning use is rejected without time-series linkage."}
+  },
+  "rejections": [
+    {"candidate_id":"datause-cc69dc2789","reason":"Computed static materials properties do not by themselves measure accumulated cyclic fatigue."},
+    {"candidate_id":"datause-5edc867d80","reason":"Footprint biomass estimates alone do not establish repeated temporal recovery needed for early-warning analysis."}
+  ],
+  "duplicates": [
+    {"candidate_id":"contradiction-318caad49c","of":"contradiction-123da41b9c","reason":"Both are generated from the same ecological recovery/resilience evidence pair and measurement-boundary issue."}
+  ]
+}

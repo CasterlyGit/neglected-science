@@ -14,19 +14,19 @@ Evaluate and document a coherent first territory narrow enough for rigorous retr
 
 Completion gate: the scope has explicit inclusion, exclusion, time, evidence, cost, and stop criteria; at least one plausible alternative scope is compared; no investigation is preselected.
 
-## 3. Build a trustworthy evidence corpus — active
+## 3. Build a trustworthy evidence corpus — complete
 
 Create a deliberately bounded catalog of reviews, seminal work, datasets, contradictions, corrections, limitations, and negative evidence. Extract provenance-backed claims rather than storing an undifferentiated document pile.
 
 Completion gate: corpus coverage rules and stopping rule are met; every claim resolves to a source location; retrieval and extraction uncertainty are recorded; spot checks pass.
 
-## 4. Implement four discovery engines — not-started
+## 4. Implement four discovery engines — complete
 
 Generate candidates through explicit-gap, contradiction, translation-gap, and data-use-gap analyses.
 
 Completion gate: each engine produces auditable candidates from the corpus, shows its evidence path, and passes false-positive and duplication checks on a bounded evaluation set.
 
-## 5. Build opportunity dossiers and ranking — not-started
+## 5. Build opportunity dossiers and ranking — complete
 
 Represent each candidate with importance, existing knowledge, unresolved elements, data, hypotheses, experiment, falsification, confounders, contrary novelty evidence, cost, and impact.
 

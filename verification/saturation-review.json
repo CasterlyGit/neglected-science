@@ -1,0 +1,18 @@
+{
+  "method": "Two additional bounded OpenAlex searches per domain after the 56-source corpus was frozen; top results were reviewed for new mechanism, contradiction, and dataset families.",
+  "passes_per_domain": 2,
+  "new_high_level_mechanism_classes": 0,
+  "new_dataset_families": 0,
+  "decision": "Stop expanding the Milestone 3 corpus and retain refinements for Milestone 6 searches.",
+  "domain_notes": {
+    "earth_heat": "Persistent/nocturnal heat and diurnal-cycle results refine the recovery-time candidate but remain within thermal persistence, sampling, and hysteresis concepts already represented.",
+    "ecological_recovery": "Recovery debt, time-lagged systems, resilience quantification, and definition alignment are already represented by memory, recovery, and resilience concepts.",
+    "battery_memory": "Relaxation-time analysis and battery-dataset reviews refine protocol auditing but add no new high-level path-dependence or recovery class.",
+    "materials_fatigue": "Cyclic stability, fatigue strengthening, low hysteresis, and shape-memory results remain within accumulated stress, recovery, and hysteresis classes."
+  },
+  "limitations": [
+    "Search relevance was imperfect and included off-domain results.",
+    "No claim is made that the literature is globally saturated.",
+    "The stop decision applies only to the bounded pilot corpus; Milestone 6 must search specifically around each finalist."
+  ]
+}
