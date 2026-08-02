@@ -106,8 +106,12 @@ Completion gate: at least one target survives with an evidence-backed novelty bo
 
 Cycle result: E. coli and bighorn survived cautiously; MESI was reframed. All unresolved specialist gaps remain explicit in `reports/manual-cycle-milestone-6.md`.
 
+### E.5 Certify execution readiness — required before future Milestone 7 selection
+
+For both primary and reserve, independently prove fresh official acquisition, integrity/version, rights, structural variable fit, safe holdout partitioning, baseline viability, and a clean operational rehearsal. A previous inspection, a score, or a cached file cannot compensate for a failed certificate. See `docs/EXECUTION_READINESS.md`.
+
 ### F. Select, preregister, execute, and evaluate — active with an access gate
 
 Only a confirmation survivor may enter historical Milestones 7–9. The reserve remains available until final selection.
 
-Cycle result: the owner authorized first-test selection and `target-ecoli-regression` was selected and preregistered in local commit `7b1232a`. Execution is gated because the two required public Dryad input files could not be retrieved through documented public download routes; no baseline or holdout result has been accessed. Historical Milestone 8 remains incomplete and Milestone 9 cannot begin before a real investigation.
+Cycle result: the owner authorized first-test selection and `target-ecoli-regression` was selected and preregistered in local commit `7b1232a`. It does not retrospectively pass the new E.5 certificate: official unattended retrieval currently yields an anti-automation page rather than checksum-valid data. A visible official-interface workaround is permitted, but execution remains gated until integrity is verified. No baseline or holdout result has been accepted. Historical Milestone 8 remains incomplete and Milestone 9 cannot begin before a real investigation.

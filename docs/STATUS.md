@@ -18,6 +18,7 @@
 - `target-ecoli-regression` is selected for the first investigation and preregistered in `experiments/ecoli-regression/` before source-file download or final-holdout access.
 - `target-bighorn-within-between` remains the reserve; `target-mesi-reconciliation` remains the gated alternate.
 - Milestone 8 is blocked on access to the two checksum-verifiable public Dryad source files. The public metadata and original analysis script were retrieved, but both official API download routes returned HTTP 401 and the legacy file stream returned HTTP 403.
+- Milestone 6.5 is now a hard execution-readiness certification for future selections; the current E. coli target does not pass it retrospectively until its official files are manually acquired and checksum verified.
 - No baseline, preregistered analysis, validation result, final-holdout result, experiment conclusion, or Milestone 9 method evaluation exists.
 - `target-mesi-reconciliation` remains a reframed alternate with an author-overlap and specialist-review gate.
 - No experiment, preregistration, final holdout access, or Milestone 7 analysis has begun.
@@ -55,3 +56,4 @@
 - `reports/manual-cycle-milestone-6.md`: complete replacement-cycle report.
 - `reports/milestone-7-selection.md`: selection rationale and frozen preregistration.
 - `reports/milestone-8-access-gate.md`: raw-data access evidence and reopen condition.
+- `docs/EXECUTION_READINESS.md`: Milestone 6.5 gate and the full Milestones 6.5–9 failure catalogue.

@@ -20,6 +20,7 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 - Redesign state: manual priority queue exercised through first interview and confirmation-grade novelty challenge
 - Milestone 7: selected and preregistered locally (`target-ecoli-regression`)
 - Milestone 8: not executed; the required public Dryad input files are currently inaccessible through documented download routes
+- Milestone 6.5: execution readiness is a required noncompensatory gate for every future primary and reserve
 - Scientific findings: none
 - Selected investigation: none
 
@@ -70,3 +71,5 @@ python3 -m venv .venv
 - Replacement cycle: seven manually prioritized leads, three interview-ready targets, two confirmation survivors, and one reframed alternate. No scientific result or novelty claim is asserted.
 
 See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, `reports/milestone-5-ranking.md`, `reports/milestone-6-novelty.md`, `reports/three-target-replay.md`, `reports/manual-cycle-milestone-6.md`, `reports/milestone-7-selection.md`, and `reports/milestone-8-access-gate.md`.
+
+`docs/EXECUTION_READINESS.md` records the mandatory preselection certificate and the program-wide controls for failures that could otherwise recur during selection, preregistration, execution, or method evaluation.
