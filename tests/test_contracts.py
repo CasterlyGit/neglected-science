@@ -232,6 +232,10 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
         self.assertTrue(all(row["status"] == "not-certified" for row in record["records"]))
 
+    def test_runtime_preflight_learning_keeps_operational_gate_separate(self):
+        record = json.loads((ROOT / "verification" / "system-one-runtime-preflight-learning-1.json").read_text())
+        self.assertIn("operational reproducibility only", record["scope"])
+
 
 if __name__ == "__main__":
     unittest.main()

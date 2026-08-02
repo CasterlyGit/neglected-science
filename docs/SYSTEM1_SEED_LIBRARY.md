@@ -20,6 +20,10 @@ Failure of any condition is a pre-admission rejection, not a full-audit candidat
 
 The seven conditions measure whether a design is investigation-ready; they do not prove that a proposed investigation is distinct from the paper's own answer. Before spending a full audit, System 1 therefore records a separate **nontriviality preview**: the proposed consequence must not merely reproduce the source's stated solution or its already-run robustness check. This is a selector safeguard, not an eighth quality-credit condition and not a reward for candidate survival.
 
+## Runtime preflight
+
+Before a pre-admitted seed receives full audit, System 1 must also record a lightweight runtime preflight: either the published baseline's declared dependencies are locally executable in a clean, versioned environment, or an independently specified reconstruction has a committed dependency lock and structural no-outcome rehearsal. This is an operational admission guard, not a scientific-quality score. A missing or unpinned runtime is a rejection or reconstruction task before audit, not a reason to weaken execution readiness later.
+
 ## Initial design library
 
 The library has five seed patterns: replicated baseline/change measurement; repeated-unit within-versus-between decomposition; independently assembled evidence-table reconciliation; cluster-randomized intervention with repeated outcomes; and specimen-level calibration or condition shift with a held-unit check. E. coli is a positive design reference only. Previous source failures are selector negative controls only.
