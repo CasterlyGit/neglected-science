@@ -5,6 +5,7 @@ from pathlib import Path
 from scripts import pipeline
 from scripts import ecoli_analysis
 from scripts import system_guards
+from scripts import closed_evidence_factory
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +16,10 @@ def jsonl(path):
 
 
 class DeterministicPipelineTests(unittest.TestCase):
+    def test_closed_evidence_factory_refuses_abstract_only_leads(self):
+        rows = closed_evidence_factory.run()
+        self.assertGreater(len(rows), 0)
+        self.assertTrue(all(row["verdict"] == "rejected-before-interview" for row in rows))
     def test_closed_evidence_benchmark_rejects_any_failed_gate(self):
         result = system_guards.check_benchmark()
         self.assertEqual("pass", result["benchmark"])
