@@ -122,7 +122,8 @@ class OpportunityDossierContractTests(unittest.TestCase):
         errors = list(Draft202012Validator(schema).iter_errors(record))
         self.assertEqual([], errors)
         self.assertEqual("no-justified-trio", record["verdict"])
-        self.assertEqual(2, sum(item["disposition"] == "eligible-for-full-audit" for item in record["records"]))
+        self.assertEqual(0, sum(item["disposition"] == "eligible-for-full-audit" for item in record["records"]))
+        self.assertTrue(all(item["failed_gate"] == "actual-data-fit" for item in record["records"]))
 
 
 if __name__ == "__main__":
