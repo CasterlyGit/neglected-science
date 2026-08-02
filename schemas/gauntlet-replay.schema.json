@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["replay_id", "source_cycle", "admission_ids", "interview_ready_ids", "trio_created", "broad_pipeline_authorized", "would_reach_confirmation_milestone_6", "next_action", "conclusion"],
+  "properties": {
+    "replay_id": {"type": "string", "pattern": "^gr-[a-z0-9-]+$"},
+    "source_cycle": {"type": "string"},
+    "admission_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+    "interview_ready_ids": {"type": "array", "maxItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+    "trio_created": {"type": "boolean"},
+    "broad_pipeline_authorized": {"type": "boolean"},
+    "would_reach_confirmation_milestone_6": {"type": "boolean"},
+    "next_action": {"enum": ["forge-replacement-leads", "conduct-first-interviews", "build-bounded-evidence"]},
+    "conclusion": {"type": "string", "minLength": 30}
+  }
+}

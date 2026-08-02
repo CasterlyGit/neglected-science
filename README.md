@@ -17,7 +17,7 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 - Remote: https://github.com/CasterlyGit/neglected-science
 - Program state: paused after Milestone 6
 - Completed milestones: 1–6
-- Redesign decision: adopt a three-target first-interview gauntlet before any new corpus or ranking cycle
+- Redesign state: three-target candidate factory and first-interview gauntlet implemented; no new cycle authorized
 - Milestone 7: gated; no eligible finalist
 - Scientific findings: none
 - Selected investigation: none
@@ -43,7 +43,7 @@ docs/            durable project status and decisions
 
 No broad corpus ingestion or final scientific selection begins until Milestones 1 and 2 pass their completion gates. No result is called novel without an adversarial prior-art search and appropriate expert scrutiny.
 
-The pilot is paused after Milestone 6. The three-target gauntlet in `docs/DOMAIN_SELECTION_SIDE_TRACK.md` is adopted as the redesign direction, but the roadmap has not yet been amended and no new target cycle is authorized.
+The pilot is paused after Milestone 6. The revised flow first upgrades raw leads into exactly three interview-ready targets using five uncompensated construction checks, then requires a primary and reserve survivor from an immediate adversarial interview. The roadmap and governed replay contracts implement this design, but no new target cycle is authorized.
 
 The public repository documents the program and its evidence; it does not constitute a scientific publication or a claim that any result is novel.
 
@@ -65,5 +65,6 @@ python3 -m venv .venv
 - 18 deduplicated opportunities produced by all four discovery engines.
 - 18 schema-valid dossiers ranked under balanced, rigor-first, and impact-first profiles.
 - Three finalists adversarially challenged: all rejected; none is eligible for experiment selection.
+- Retrospective replay: none of those finalists would qualify as a target under the revised candidate factory, so the new flow stops before broad corpus, ranking, or confirmation-grade novelty work.
 
-See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, `reports/milestone-5-ranking.md`, and `reports/milestone-6-novelty.md`.
+See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, `reports/milestone-5-ranking.md`, `reports/milestone-6-novelty.md`, and `reports/three-target-replay.md`.

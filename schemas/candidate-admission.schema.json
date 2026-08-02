@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["admission_id", "source_candidate_id", "slot_type", "target_question", "experiment_spec", "construction_checks", "emission_verdict", "failure_stage", "evidence_basis", "retrospective"],
+  "properties": {
+    "admission_id": {"type": "string", "pattern": "^ca-[a-z0-9-]+$"},
+    "source_candidate_id": {"type": "string"},
+    "slot_type": {"enum": ["data-first", "contradiction-first", "boundary-replication-first", "cross-domain"]},
+    "target_question": {"type": "string", "minLength": 20},
+    "experiment_spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "unit", "contrast", "outcome", "dataset", "closest_prior", "falsifier", "three_outcome_value", "independent_check"],
+      "properties": {
+        "system": {"type": "string"},
+        "unit": {"type": "string"},
+        "contrast": {"type": "string"},
+        "outcome": {"type": "string"},
+        "dataset": {"type": "string"},
+        "closest_prior": {"type": "string"},
+        "falsifier": {"type": "string"},
+        "three_outcome_value": {"type": "string"},
+        "independent_check": {"type": "string"}
+      }
+    },
+    "construction_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prior_art_distance", "actual_data_fit", "nontrivial_consequence", "decisive_test", "bounded_expertise"],
+      "properties": {
+        "prior_art_distance": {"$ref": "#/$defs/check"},
+        "actual_data_fit": {"$ref": "#/$defs/check"},
+        "nontrivial_consequence": {"$ref": "#/$defs/check"},
+        "decisive_test": {"$ref": "#/$defs/check"},
+        "bounded_expertise": {"$ref": "#/$defs/check"}
+      }
+    },
+    "emission_verdict": {"enum": ["excluded-raw-lead", "interview-ready"]},
+    "failure_stage": {"enum": ["prior-art", "data-protocol", "consequence", "decisive-test", "expertise", "none"]},
+    "evidence_basis": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "retrospective": {"type": "boolean"}
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "rationale", "evidence_refs"],
+      "properties": {
+        "status": {"enum": ["pass", "fail"]},
+        "rationale": {"type": "string", "minLength": 15},
+        "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    }
+  }
+}

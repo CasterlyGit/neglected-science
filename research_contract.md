@@ -17,6 +17,9 @@ This contract applies to every candidate, experiment, report, and automated comp
 8. Terminology similarity is a lead, not proof that phenomena or mechanisms are equivalent.
 9. Importance, novelty, tractability, and available-data quality are separate judgments.
 10. Uncertainty and reviewer disagreement must not be collapsed into a single confidence score.
+10a. A raw lead becomes a target only after it passes prior-art-distance, actual-data-fit, nontrivial-consequence, decisive-test, and bounded-expertise checks.
+10b. Candidate generation must replace failed raw leads before forming a trio; ranking cannot compensate for a failed construction check.
+10c. Broad evidence work requires exactly three interview-ready targets, followed by at least two first-interview survivors: one primary and one reserve.
 
 ## Experiments
 
@@ -41,3 +44,4 @@ This contract applies to every candidate, experiment, report, and automated comp
 23. Automation may retrieve, structure, compare, generate candidates, and run declared computations.
 24. Automation may not silently expand scope, suppress contrary evidence, select a final question, or promote a scientific claim.
 25. The system must preserve an auditable path from source to claim to candidate to experiment to conclusion.
+26. Automation must not emit a target from landing-page metadata, terminology similarity, absence of an exact match, or a total score alone.

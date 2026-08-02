@@ -33,6 +33,8 @@ SATURATION = ROOT / "verification" / "saturation-audit.json"
 NOVELTY_SEARCHES = ROOT / "verification" / "novelty-searches.jsonl"
 DATASET_AUDITS = ROOT / "verification" / "dataset-audits.jsonl"
 NOVELTY_CHALLENGES = ROOT / "verification" / "novelty-challenges.jsonl"
+CANDIDATE_ADMISSIONS = ROOT / "verification" / "candidate-admissions.jsonl"
+GAUNTLET_REPLAYS = ROOT / "verification" / "gauntlet-replays.jsonl"
 
 GAP_PATTERNS = re.compile(r"\b(remain(?:s|ed)? unknown|not (?:well )?understood|future (?:work|research)|knowledge gap|lack(?:s|ing)?|challenge|uncertain|unresolved|poorly understood)\b", re.I)
 LIMIT_PATTERNS = re.compile(r"\b(limitation|however|despite|uncertaint|bias|confound|caveat|difficult|inconsistent)\b", re.I)
@@ -54,6 +56,8 @@ CORE_DISCOVERY_CONCEPTS = {
     "recovery-time", "memory-path-dependence", "hysteresis",
     "resilience-stability", "accumulated-stress", "early-warning-slowing",
 }
+TRIO_SIZE = 3
+MINIMUM_INTERVIEW_SURVIVORS = 2
 
 
 def utc_now() -> str:
@@ -488,6 +492,8 @@ def validate_all():
         (NOVELTY_SEARCHES, ROOT / "schemas" / "novelty-search-record.schema.json"),
         (DATASET_AUDITS, ROOT / "schemas" / "dataset-audit.schema.json"),
         (NOVELTY_CHALLENGES, ROOT / "schemas" / "novelty-challenge.schema.json"),
+        (CANDIDATE_ADMISSIONS, ROOT / "schemas" / "candidate-admission.schema.json"),
+        (GAUNTLET_REPLAYS, ROOT / "schemas" / "gauntlet-replay.schema.json"),
     ]
     failures = []
     for data_path, schema_path in targets:
@@ -508,12 +514,20 @@ def validate_all():
     audit_rows = read_jsonl(DATASET_AUDITS)
     audit_by_id = {row["audit_id"]: row for row in audit_rows}
     challenge_rows = read_jsonl(NOVELTY_CHALLENGES)
+    evidence_record_ids = set(search_by_id) | set(audit_by_id) | {row["challenge_id"] for row in challenge_rows}
+    admission_rows = read_jsonl(CANDIDATE_ADMISSIONS)
+    admission_by_id = {row["admission_id"]: row for row in admission_rows}
+    replay_rows = read_jsonl(GAUNTLET_REPLAYS)
     if len(search_by_id) != len(search_rows):
         failures.append("verification/novelty-searches.jsonl: duplicate search_id")
     if len(audit_by_id) != len(audit_rows):
         failures.append("verification/dataset-audits.jsonl: duplicate audit_id")
     if len({row["challenge_id"] for row in challenge_rows}) != len(challenge_rows):
         failures.append("verification/novelty-challenges.jsonl: duplicate challenge_id")
+    if len(admission_by_id) != len(admission_rows):
+        failures.append("verification/candidate-admissions.jsonl: duplicate admission_id")
+    if len({row["replay_id"] for row in replay_rows}) != len(replay_rows):
+        failures.append("verification/gauntlet-replays.jsonl: duplicate replay_id")
     if {row["finalist_id"] for row in challenge_rows} != finalist_ids:
         failures.append("verification/novelty-challenges.jsonl: challenge coverage must equal finalist set")
     for finalist_id in finalist_ids:
@@ -541,6 +555,29 @@ def validate_all():
                 failures.append(f"verification/novelty-challenges.jsonl:{number}: missing audit {audit_id}")
             elif finalist_id not in audit_by_id[audit_id]["finalist_ids"]:
                 failures.append(f"verification/novelty-challenges.jsonl:{number}: audit {audit_id} does not cover finalist")
+    for number, admission in enumerate(admission_rows, 1):
+        if admission["source_candidate_id"] not in dossier_ids:
+            failures.append(f"verification/candidate-admissions.jsonl:{number}: missing source candidate {admission['source_candidate_id']}")
+        checks_pass = all(check["status"] == "pass" for check in admission["construction_checks"].values())
+        if (admission["emission_verdict"] == "interview-ready") != checks_pass:
+            failures.append(f"verification/candidate-admissions.jsonl:{number}: interview-ready requires every construction check to pass")
+        for check in admission["construction_checks"].values():
+            missing_refs = set(check["evidence_refs"]) - evidence_record_ids
+            if missing_refs:
+                failures.append(f"verification/candidate-admissions.jsonl:{number}: missing evidence records {sorted(missing_refs)}")
+    for number, replay in enumerate(replay_rows, 1):
+        missing = set(replay["admission_ids"]) - set(admission_by_id)
+        if missing:
+            failures.append(f"verification/gauntlet-replays.jsonl:{number}: missing admissions {sorted(missing)}")
+            continue
+        ready = [identifier for identifier in replay["admission_ids"] if admission_by_id[identifier]["emission_verdict"] == "interview-ready"]
+        if replay["interview_ready_ids"] != ready:
+            failures.append(f"verification/gauntlet-replays.jsonl:{number}: interview_ready_ids do not match admission verdicts")
+        trio_created = len(ready) == 3
+        if replay["trio_created"] != trio_created:
+            failures.append(f"verification/gauntlet-replays.jsonl:{number}: trio_created requires exactly three interview-ready targets")
+        if not trio_created and (replay["broad_pipeline_authorized"] or replay["would_reach_confirmation_milestone_6"]):
+            failures.append(f"verification/gauntlet-replays.jsonl:{number}: failed construction batch cannot advance")
     if failures:
         print("\n".join(failures), file=sys.stderr)
         raise SystemExit(1)

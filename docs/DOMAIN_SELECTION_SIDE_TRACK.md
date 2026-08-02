@@ -1,12 +1,12 @@
 # Three-target gauntlet
 
-Status: adopted redesign direction. The scientific program remains paused after Milestone 6 until this decision is translated into the roadmap and governed record contracts.
+Status: implemented as the operating design for the next cycle. The scientific program remains paused before new target generation.
 
 ## Decision
 
 Neglected Science will not begin by selecting a broad domain, building a corpus, generating many candidates, and discovering fatal defects near the end.
 
-Every search cycle will begin with exactly three concrete target experiments. All three will face an immediate adversarial first interview. No broad corpus, discovery engine, ranking exercise, or preregistration may begin unless the trio produces both:
+Every search cycle will begin with exactly three interview-ready target experiments. Raw ideas do not count toward three. All three will face an immediate adversarial first interview. No broad corpus, discovery engine, ranking exercise, or preregistration may begin unless the trio produces both:
 
 1. one primary survivor; and
 2. one reserve survivor.
@@ -38,6 +38,20 @@ A target is not a field, theme, dataset, or vague question. It is a compact prop
 - a reason either a positive or negative result matters.
 
 If these cannot be stated before searching, the idea is not ready to occupy one of the three slots.
+
+## Candidate factory: improve before interviewing
+
+The generator may inspect many cheap raw leads, but it emits exactly three targets only after each lead passes five construction checks:
+
+1. **Prior-art distance:** name the closest primary experiment and state a consequential residual difference. “Not done on this dataset/location/model” does not pass.
+2. **Actual data fit:** inspect official variable/protocol documentation and a real sample; verify the unit, contrast, outcome, controls, identifiers, and independent check.
+3. **Nontrivial consequence:** state what changes under positive, null, and contrary outcomes. A new plot, benchmark increment, or untested pairing does not pass.
+4. **Decisive test:** show that the proposed data can distinguish the target claim from the strongest simple explanation.
+5. **Bounded expertise:** identify the domain judgments and show that they are narrow enough to audit without an unbounded multi-specialty dependency.
+
+A single failed check excludes the lead before it occupies a trio slot. The factory keeps forging replacements until exactly three pass or the cycle budget expires. This is not a promise that admitted targets will survive: it prevents known, cheap-to-detect defects from masquerading as candidates.
+
+The three emitted targets must also satisfy the diversity rule below. Candidate quality is therefore a hard contract, not another score that a high total can compensate for.
 
 ## The trio must be intentionally diverse
 
@@ -195,16 +209,8 @@ The roadmap is still paused and has not yet been rewritten. When it is amended, 
 
 The old Milestones 2–6 should not simply receive another preliminary checklist. Their order and gates must be changed so that target generation and adversarial admission precede territory-scale corpus work.
 
-## Next action, still paused
+## Implemented controls and next action
 
-The next task is not to generate the first trio.
+The roadmap now places candidate construction and the first interview before broad evidence work. `schemas/candidate-admission.schema.json` and `schemas/gauntlet-replay.schema.json` govern the construction gate and replay decision. Repository tests enforce that all five construction checks must pass, exactly three ready targets are required to form a trio, and a failed batch cannot authorize later work.
 
-First, translate this decision into:
-
-- revised roadmap milestones and completion gates;
-- a machine-checkable target-interview record;
-- a trio-level pass/fail contract;
-- a strict retrieval and token budget; and
-- tests proving that one survivor cannot advance without a reserve.
-
-Only after those controls are verified should the owner authorize the first three-target cycle.
+The next action is to forge three new interview-ready targets under a separately authorized, bounded cycle. The historical finalist set cannot be reused.

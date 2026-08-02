@@ -61,3 +61,41 @@ Completion gate: a method-evaluation report documents misses, false leads, exper
 ## Program rule
 
 Milestones 1–2 can be accelerated through careful specification. Milestones 3–6 are evidence-intensive and may overlap operationally, but cannot be compressed by weakening coverage, provenance, or adversarial review. Milestones 7–9 are sequential because preregistration must precede final testing and method evaluation must follow a real investigation.
+
+## Revised operating sequence for the next cycle
+
+The numbered milestones above remain the truthful history of the completed pilot. They are not the order for a replacement cycle.
+
+### A. Forge exactly three interview-ready targets — implemented, awaiting execution
+
+Inspect raw leads cheaply and require every emitted target to pass prior-art distance, actual variable/protocol fit, nontrivial three-outcome value, a decisive test, and bounded expertise. The three targets must satisfy the diversity rule.
+
+Completion gate: exactly three schema-valid targets pass every construction check. A failed lead is replaced before the trio exists; a score cannot rescue it.
+
+### B. Conduct the adversarial first interview — not-started
+
+Attack exact and renamed prior art, data fit, trivial explanations, specialist objections, and scientific consequence. Allow at most one substantive rewrite per slot.
+
+Completion gate: at least two targets are admitted, yielding a primary and reserve. Fewer than two closes the trio without broad ingestion.
+
+### C. Build survivor-bounded evidence — not-started
+
+Retrieve evidence around the survivors, their closest killers, and the variables needed for their decisive tests. Do not rebuild a territory-wide corpus.
+
+Completion gate: source and claim provenance, contrary evidence, coverage, and stopping rules pass for both primary and reserve.
+
+### D. Deepen and compare the surviving targets — not-started
+
+Develop competing hypotheses, baselines, confounders, feasibility, negative-result value, and specialist dependencies without dropping the reserve.
+
+Completion gate: both dossiers remain testable; comparative review identifies a provisional primary without selecting an experiment.
+
+### E. Run confirmation-grade novelty challenge — not-started
+
+Repeat and deepen the adversarial search using citation tracing, adjacent disciplines, protocol audits, and specialist scrutiny. This is the successor to Milestone 6, not the first kill test.
+
+Completion gate: at least one target survives with an evidence-backed novelty boundary and no unresolved fatal data defect. Otherwise start a new three-target cycle.
+
+### F. Select, preregister, execute, and evaluate — gated
+
+Only a confirmation survivor may enter historical Milestones 7–9. The reserve remains available until final selection.

@@ -59,6 +59,23 @@ class DeterministicPipelineTests(unittest.TestCase):
             self.assertTrue(set(challenge["search_ids"]) <= search_ids)
             self.assertTrue(set(challenge["dataset_audit_ids"]) <= audit_ids)
 
+    def test_revised_candidate_factory_rejects_known_pilot_failures(self):
+        admissions = jsonl("verification/candidate-admissions.jsonl")
+        replay = jsonl("verification/gauntlet-replays.jsonl")[0]
+        self.assertEqual(3, len(admissions))
+        self.assertTrue(all(row["retrospective"] for row in admissions))
+        self.assertTrue(all(row["emission_verdict"] == "excluded-raw-lead" for row in admissions))
+        for row in admissions:
+            self.assertTrue(any(check["status"] == "fail" for check in row["construction_checks"].values()))
+        self.assertEqual([], replay["interview_ready_ids"])
+        self.assertFalse(replay["trio_created"])
+        self.assertFalse(replay["broad_pipeline_authorized"])
+        self.assertFalse(replay["would_reach_confirmation_milestone_6"])
+
+    def test_trio_contract_requires_three_ready_targets_and_two_survivors(self):
+        self.assertEqual(3, pipeline.TRIO_SIZE)
+        self.assertEqual(2, pipeline.MINIMUM_INTERVIEW_SURVIVORS)
+
 
 if __name__ == "__main__":
     unittest.main()

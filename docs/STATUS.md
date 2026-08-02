@@ -16,15 +16,16 @@
 
 - The program is paused after Milestone 6.
 - No current finalist is eligible for Milestone 7.
-- No reranking, replacement-candidate generation, roadmap amendment, or new corpus cycle is authorized while paused.
-- The redesign direction is decided: every future search cycle starts with exactly three concrete targets and an immediate adversarial first interview.
+- No reranking, replacement-candidate generation, or new corpus cycle is authorized while paused.
+- The redesign is implemented: every future cycle forges exactly three interview-ready targets and immediately subjects them to an adversarial first interview.
 
 ## Redesign decision
 
-- Adopted direction: `docs/DOMAIN_SELECTION_SIDE_TRACK.md`.
+- Implemented direction: `docs/DOMAIN_SELECTION_SIDE_TRACK.md` and the revised next-cycle sequence in `ROADMAP.md`.
 - Expensive discovery work requires two survivors from one trio: a primary and a reserve.
-- The roadmap remains unchanged and the program remains paused until the gauntlet is translated into milestone gates and governed records.
-- No target generation or interview cycle is authorized by this design decision alone.
+- A raw lead must pass five uncompensated construction checks before it can occupy one of the three slots.
+- The historical finalists were replayed through this gate: zero qualified, no trio would have formed, and the old flow would not have reached confirmation-grade Milestone 6.
+- No new target-generation or interview cycle is authorized by this implementation alone.
 
 ## Gated
 
@@ -38,3 +39,9 @@
 - `verification/novelty-searches.jsonl`
 - `verification/dataset-audits.jsonl`
 - `verification/novelty-challenges.jsonl`
+
+## Redesign verification
+
+- `verification/candidate-admissions.jsonl`: retrospective construction-gate records for the three pilot finalists.
+- `verification/gauntlet-replays.jsonl`: deterministic decision showing the failed historical batch cannot advance.
+- `reports/three-target-replay.md`: comparative replay and interpretation.
