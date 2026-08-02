@@ -145,7 +145,15 @@ class OpportunityDossierContractTests(unittest.TestCase):
         record = json.loads((ROOT / "verification" / "system-one-v3-v2-audit-1.json").read_text())
         self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
         self.assertEqual("no-justified-trio", record["verdict"])
-        self.assertEqual(2, sum(item["disposition"] == "eligible-for-full-audit" for item in record["records"]))
+        self.assertEqual(0, sum(item["disposition"] == "eligible-for-full-audit" for item in record["records"]))
+        self.assertTrue(all(item["failed_gate"] == "actual-data-fit" or item["failed_gate"] == "nontrivial-consequence" for item in record["records"]))
+
+    def test_system_one_seed_library_is_contract_first(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-seed-library-phase.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-seed-library-phase.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertEqual(7, len(record["pre_admission_conditions"]))
+        self.assertEqual(5, len(record["seed_patterns"]))
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@
     "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
     "Retain rejected, blocked, null, and uncertain results as evidence."
   ],
-  "evaluated_at": "2026-08-02T16:46:33Z",
+  "evaluated_at": "2026-08-02T16:51:13Z",
   "evidence": {
     "construction_gate_enforced": true,
     "current_ready_targets": 0,
@@ -16,7 +16,7 @@
     "primary_and_reserve_required": true,
     "real_investigation_retained": true
   },
-  "next_permitted_action": "Run the predeclared blinded System-1 corpus-quality benchmark after one versioned selector improvement; retain all rejections and defer System-2 work beyond shadow handoff checks.",
+  "next_permitted_action": "Build the contract-first System-1 seed library: require all seven preliminary conditions before a source enters full audit; retain prior rejections as negative controls and defer System-2 work beyond shadow handoff checks.",
   "reward_target": "verified-final-method-verdict",
   "systems": {
     "system_one": {

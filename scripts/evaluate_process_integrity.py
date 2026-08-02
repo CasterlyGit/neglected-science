@@ -70,7 +70,7 @@ def evaluate(now=None):
             "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
             "Retain rejected, blocked, null, and uncertain results as evidence.",
         ],
-        "next_permitted_action": "Run the predeclared blinded System-1 corpus-quality benchmark after one versioned selector improvement; retain all rejections and defer System-2 work beyond shadow handoff checks.",
+        "next_permitted_action": "Build the contract-first System-1 seed library: require all seven preliminary conditions before a source enters full audit; retain prior rejections as negative controls and defer System-2 work beyond shadow handoff checks.",
     }
 
 
