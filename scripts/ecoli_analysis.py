@@ -67,11 +67,11 @@ def published_style(rows, blocks):
     return {f"{strain}:{env}": pearson(pairs) for (strain, env), pairs in sorted(comparisons.items())}
 
 
-def cross_fitted(ancestor_rows, evolved_rows, x_block, y_block):
+def cross_fitted(ancestor_rows, evolved_rows, x_block, y_block, exclude_rep=None):
     ancestor = anc_initial_by_block(ancestor_rows, {x_block, y_block})
     comparisons = defaultdict(list)
     for row in evolved_rows:
-        if row["block"] != y_block:
+        if row["block"] != y_block or row["rep"] == exclude_rep:
             continue
         base = (row["strain"], row["env"], row["mut"])
         x = ancestor.get(base + (x_block,))
@@ -83,13 +83,20 @@ def cross_fitted(ancestor_rows, evolved_rows, x_block, y_block):
     return {f"{strain}:{env}": pearson(pairs) for (strain, env), pairs in sorted(comparisons.items())}
 
 
-def summarise_cross_fit(ancestor_rows, evolved_rows, pairs):
-    estimates = {f"{x}_to_{y}": cross_fitted(ancestor_rows, evolved_rows, x, y) for x, y in pairs}
+def summarise_cross_fit(ancestor_rows, evolved_rows, pairs, exclude_rep=None):
+    estimates = {f"{x}_to_{y}": cross_fitted(ancestor_rows, evolved_rows, x, y, exclude_rep) for x, y in pairs}
     combined = {
         key: fisher_mean([estimate.get(key) for estimate in estimates.values()])
         for key in sorted(set().union(*(set(estimate) for estimate in estimates.values())))
     }
     return estimates, combined
+
+
+def bootstrap_interval(correlations, iterations=10000, seed=20260802):
+    usable = [value for value in correlations if value is not None and abs(value) < 1]
+    generator = random.Random(seed)
+    draws = sorted(fisher_mean([generator.choice(usable) for _ in usable]) for _ in range(iterations))
+    return [draws[int(iterations * 0.025)], draws[int(iterations * 0.975) - 1]]
 
 
 def analysis(partition):
@@ -98,13 +105,25 @@ def analysis(partition):
     blocks, pairs = PARTITIONS[partition]
     baseline = published_style(evolved_rows, blocks)
     estimates, combined = summarise_cross_fit(ancestor_rows, evolved_rows, pairs)
+    combined_values = list(combined.values())
+    leave_comparison = {
+        key: fisher_mean([value for other, value in combined.items() if other != key])
+        for key in combined
+    }
+    leave_replicate = {
+        rep: fisher_mean(list(summarise_cross_fit(ancestor_rows, evolved_rows, pairs, exclude_rep=rep)[1].values()))
+        for rep in ("1", "2", "3")
+    }
     return {
         "partition": partition,
         "blocks": sorted(blocks),
         "published_style_correlations": baseline,
         "published_style_mean": fisher_mean(list(baseline.values())),
         "cross_fit_estimates": estimates,
-        "cross_fit_mean": fisher_mean(list(combined.values())),
+        "cross_fit_mean": fisher_mean(combined_values),
+        "cross_fit_bootstrap_95_interval": bootstrap_interval(combined_values),
+        "leave_one_comparison_out_range": [min(leave_comparison.values()), max(leave_comparison.values())],
+        "leave_one_replicate_out": leave_replicate,
         "eligible_comparisons": sum(value is not None for value in combined.values()),
         "excluded_comparisons": sorted(key for key, value in combined.items() if value is None),
     }

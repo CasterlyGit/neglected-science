@@ -23,6 +23,12 @@ class DeterministicPipelineTests(unittest.TestCase):
         self.assertNotIn("4", ecoli_analysis.PARTITIONS["exploration"][0])
         self.assertNotIn("4", ecoli_analysis.PARTITIONS["validation"][0])
         self.assertIn("4", ecoli_analysis.PARTITIONS["final"][0])
+
+    def test_ecoli_bootstrap_interval_is_deterministic(self):
+        self.assertEqual(
+            ecoli_analysis.bootstrap_interval([-0.8, -0.2, 0.1], iterations=100, seed=5),
+            ecoli_analysis.bootstrap_interval([-0.8, -0.2, 0.1], iterations=100, seed=5),
+        )
     def test_normalization_and_concept_detection(self):
         self.assertEqual("tree cooling", pipeline.normalize_title("Tree—Cooling!"))
         self.assertIn("memory-path-dependence", pipeline.concepts_for("history-dependent battery response"))
