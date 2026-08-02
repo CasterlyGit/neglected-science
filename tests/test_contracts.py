@@ -69,8 +69,8 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual("continue-bounded-cycle", record["verdict"])
         self.assertTrue(record["evidence"]["investigation_transaction_valid"])
         self.assertEqual(0, record["evidence"]["current_ready_targets"])
-        self.assertEqual(6, record["systems"]["system_one"]["source_feasible_records"])
-        self.assertEqual("no-justified-trio", record["systems"]["system_one"]["verdict"])
+        self.assertEqual(1, record["systems"]["system_one"]["source_feasible_records"])
+        self.assertEqual("seed-full-audit", record["systems"]["system_one"]["verdict"])
         self.assertFalse(record["systems"]["system_two"]["investigation_verdict_ready"])
 
     def test_system_one_batch_retains_a_three_record_defeat(self):
@@ -172,6 +172,13 @@ class OpportunityDossierContractTests(unittest.TestCase):
         admitted = [row for row in receipt["records"] if row["disposition"] == "pre-admitted-seed"]
         self.assertEqual(["seed-home-range-calibration"], [row["seed_id"] for row in admitted])
         self.assertTrue(all(all(condition["status"] == "pass" for condition in row["conditions"]) for row in admitted))
+
+    def test_seed_full_audit_is_a_non_promoting_prior_art_receipt(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-seed-full-audit.schema.json").read_text())
+        receipt = json.loads((ROOT / "verification" / "system-one-seed-full-audit-1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(receipt)))
+        self.assertEqual("failed-gate-rejection-receipt", receipt["disposition"])
+        self.assertEqual("prior-art-nontriviality", receipt["failed_gate"])
 
 
 if __name__ == "__main__":

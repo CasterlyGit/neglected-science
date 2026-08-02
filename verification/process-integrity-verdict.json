@@ -6,7 +6,7 @@
     "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
     "Retain rejected, blocked, null, and uncertain results as evidence."
   ],
-  "evaluated_at": "2026-08-02T16:55:59Z",
+  "evaluated_at": "2026-08-02T16:58:19Z",
   "evidence": {
     "construction_gate_enforced": true,
     "current_ready_targets": 0,
@@ -16,13 +16,13 @@
     "primary_and_reserve_required": true,
     "real_investigation_retained": true
   },
-  "next_permitted_action": "Build the contract-first System-1 seed library: require all seven preliminary conditions before a source enters full audit; retain prior rejections as negative controls and defer System-2 work beyond shadow handoff checks.",
+  "next_permitted_action": "Retain the pre-admission and full-audit rejection receipts; search only a contrasting design pattern for complete seven-condition seeds, and defer System-2 work beyond handoff checks.",
   "reward_target": "verified-final-method-verdict",
   "systems": {
     "system_one": {
       "candidate_generation_permitted": false,
-      "source_feasible_records": 6,
-      "verdict": "no-justified-trio"
+      "source_feasible_records": 1,
+      "verdict": "seed-full-audit"
     },
     "system_two": {
       "investigation_verdict_ready": false,

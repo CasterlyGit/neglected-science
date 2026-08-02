@@ -32,6 +32,8 @@ def evaluate(now=None):
     atlas = read("verification/structural-atlas-verdict.json")
     batch = latest_batch()
     active_cycle = read("verification/system-one-cycle.json")
+    seed_screen = read("verification/system-one-seed-pre-admission-1.json")
+    seed_audit = read("verification/system-one-seed-full-audit-1.json")
     current_ready = sum(row["eligible_for_candidate_generation"] for row in screen)
     execution = improvement["integrity_gates"]["execution_integrity"]
     transaction_valid = check_transaction()["transaction"] == "pass"
@@ -54,9 +56,9 @@ def evaluate(now=None):
         "evidence": evidence,
         "systems": {
             "system_one": {
-                "source_feasible_records": sum(row["eligible_for_cell_construction"] for row in intake),
+                "source_feasible_records": seed_screen["summary"]["pre_admitted_count"],
                 "candidate_generation_permitted": False,
-                "verdict": "no-justified-trio" if batch["verdict"] == "no-justified-trio" else "audit-source-fragility",
+                "verdict": "seed-full-audit" if seed_audit["disposition"] == "failed-gate-rejection-receipt" else "seed-pre-admission",
             },
             "system_two": {
                 "structural_verdict": atlas["verdict"],
@@ -70,7 +72,7 @@ def evaluate(now=None):
             "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
             "Retain rejected, blocked, null, and uncertain results as evidence.",
         ],
-        "next_permitted_action": "Build the contract-first System-1 seed library: require all seven preliminary conditions before a source enters full audit; retain prior rejections as negative controls and defer System-2 work beyond shadow handoff checks.",
+        "next_permitted_action": "Retain the pre-admission and full-audit rejection receipts; search only a contrasting design pattern for complete seven-condition seeds, and defer System-2 work beyond handoff checks.",
     }
 
 
