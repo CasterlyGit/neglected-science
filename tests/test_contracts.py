@@ -131,6 +131,15 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual(["system-one-v2-preaudit-1"], record["based_on_batches"])
         self.assertIn("real official-file retrieval", record["change"])
 
+    def test_system_one_v3_source_batch_preserves_checksum_failures(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-v3-source-batch.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-v3-source-batch-1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertEqual("source-verified-await-v2", record["verdict"])
+        self.assertEqual(2, sum(item["disposition"] == "content-verified-eligible-for-v2" for item in record["records"]))
+        rejected = next(item for item in record["records"] if item["disposition"] == "rejected-before-v2")
+        self.assertFalse(rejected["retrieval"]["checksum_match"])
+
 
 if __name__ == "__main__":
     unittest.main()
