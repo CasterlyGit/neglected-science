@@ -162,6 +162,17 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual(5, len(record["records"]))
         self.assertTrue(all(item["pre_admission_status"] == "evidence-pending-not-full-audit" for item in record["records"]))
 
+    def test_seed_pre_admission_preserves_rejections_and_blocks_promotion(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-seed-pre-admission.schema.json").read_text())
+        receipt = json.loads((ROOT / "verification" / "system-one-seed-pre-admission-1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(receipt)))
+        self.assertEqual(5, receipt["summary"]["records_screened"])
+        self.assertEqual(1, receipt["summary"]["pre_admitted_count"])
+        self.assertEqual(4, receipt["summary"]["rejected_count"])
+        admitted = [row for row in receipt["records"] if row["disposition"] == "pre-admitted-seed"]
+        self.assertEqual(["seed-home-range-calibration"], [row["seed_id"] for row in admitted])
+        self.assertTrue(all(all(condition["status"] == "pass" for condition in row["conditions"]) for row in admitted))
+
 
 if __name__ == "__main__":
     unittest.main()
