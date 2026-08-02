@@ -14,10 +14,11 @@
     "future System-2 verdict is discriminating, claim-bounded, and action-specific"
   ],
   "frozen_corpus_revision": "dfa5657277c9188bced5601fa646846e803913ca",
+  "leniency_audit_complete": true,
   "limitation": "This is a blinded mechanical contract audit, not an independent scientific-source audit; it establishes record completeness and disposition traceability only.",
-  "next_permitted_action": "Run a source-level leniency audit on a predeclared subset; do not promote the two provisional records or start System-2 selection.",
+  "next_permitted_action": "Generate one contrasting three-record V2 batch from source-specific unresolved gaps; do not promote the two provisional records or start System-2 selection.",
   "pass_rate": 1.0,
-  "quality_verdict": "leniency-audit-required",
+  "quality_verdict": "leniency-audit-complete-no-reliability-claim",
   "record_count": 10,
   "records": [
     {

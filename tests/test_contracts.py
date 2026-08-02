@@ -107,7 +107,8 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual("evaluated", record["status"])
         self.assertTrue(record["blinded"])
         self.assertEqual(10, record["record_count"])
-        self.assertEqual("leniency-audit-required", record["quality_verdict"])
+        self.assertEqual("leniency-audit-complete-no-reliability-claim", record["quality_verdict"])
+        self.assertTrue(record["leniency_audit_complete"])
         self.assertEqual("no-justified-trio", record["selection_verdict"])
 
     def test_system_one_selector_v2_is_versioned_against_the_repeated_bottleneck(self):

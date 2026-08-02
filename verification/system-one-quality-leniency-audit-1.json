@@ -1,0 +1,29 @@
+{
+  "audit_id": "system-one-quality-leniency-audit-1",
+  "benchmark_id": "system-one-quality-heldout-1",
+  "selection_rule": "Audit both provisional full-audit records and the first rejected record in frozen corpus order (cell-vineyard-aggregation).",
+  "audit_scope": "Direct retrace of the primary-claim and official-acquisition assertions only. This is not a novelty, causal, or specialist review.",
+  "records": [
+    {
+      "cell_id": "cell-bighorn-within-between",
+      "primary_receipt": {"url": "https://pubs.usgs.gov/publication/70257594", "location": "USGS publication abstract", "finding": "The official record describes repeated fat-reserve and infection-status measures in individual bighorn sheep and reports pathogen-associated fat costs."},
+      "acquisition_receipt": {"url": "https://datadryad.org/dataset/doi:10.5061/dryad.6wwpzgn44", "location": "HTTP HEAD response on 2026-08-02", "finding": "The official Dryad landing page returned HTTP 200; this confirms current landing-page access but does not re-validate every CSV variable."},
+      "result": "pass-with-scope-limit"
+    },
+    {
+      "cell_id": "cell-mesi-reconciliation",
+      "primary_receipt": {"url": "https://doi.org/10.1111/gcb.16585", "location": "Introduction and data-availability statement", "finding": "The primary report states that constituent databases can yield contrasting conclusions and identifies data-extractor bias as quantifiable when analyses account for constituent databases."},
+      "acquisition_receipt": {"url": "https://zenodo.org/api/records/10423853", "location": "Official record API, retrieved 2026-08-02", "finding": "The API returned HTTP 200 and listed MESI-organization/mesi-db-v1.0.3.zip with MD5 9a2fbb66fcda40da04384e4b7773644c."},
+      "result": "pass-with-scope-limit"
+    },
+    {
+      "cell_id": "cell-vineyard-aggregation",
+      "primary_receipt": {"url": "https://doi.org/10.1002/ps.8140", "location": "Abstract and Methods summary", "finding": "The paper reports calendar and model-based strategies across four epidemics, disease-severity assessment at harvest, and a model-based application claim."},
+      "acquisition_receipt": {"url": "https://zenodo.org/api/records/15101430", "location": "Official record API, retrieved 2026-08-02", "finding": "The API returned HTTP 200 and listed disease-severity and weather CSV files plus a README, with no plot-level outcome or application-event file in the inventory."},
+      "result": "pass-with-scope-limit"
+    }
+  ],
+  "verdict": "source-assertions-retained-no-promotion",
+  "finding": "The direct retrace found no contradiction in the three audited source/acquisition assertions. It confirms the rejected vineyard disposition as well as the two provisional records' provenance, but does not establish their novelty, feasibility, or candidate admission.",
+  "next_permitted_action": "Generate one new, contrasting three-record V2 batch from source-specific unresolved gaps; retain the two provisional records as unpromoted comparison cases."
+}
