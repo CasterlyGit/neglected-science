@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "project": "neglected-science",
+  "owner": "casterly",
+  "maturity": "experimental",
+  "visibility": "local-only",
+  "product_type": "research-tool",
+  "workflow": {
+    "mode": "local-direct",
+    "remote": "none",
+    "evidence": "paver-receipts"
+  },
+  "release": {
+    "versioning": "none",
+    "current_version": null,
+    "target_version": null,
+    "verified_commit": null
+  },
+  "readiness": {
+    "preview": "not-applicable",
+    "operations": "local"
+  }
+}

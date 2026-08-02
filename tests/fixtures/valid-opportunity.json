@@ -1,0 +1,22 @@
+{
+  "id": "example-recovery-question",
+  "question": "Do two measurable recovery processes share a testable mechanism rather than only similar terminology?",
+  "gap_types": ["translation", "contradiction"],
+  "importance": "A shared mechanism could support transferable experiments.",
+  "known": "Both fields report time-dependent recovery.",
+  "unresolved": "The evidence for a shared mechanism has not been established.",
+  "public_evidence": ["public dataset A", "public dataset B"],
+  "competing_hypotheses": [
+    "The systems share a measurable dynamical structure.",
+    "The similarity is vocabulary-level and disappears under aligned definitions."
+  ],
+  "experiment": "Align definitions and compare preregistered dynamical signatures.",
+  "falsification": ["The signatures fail to reproduce within either source domain."],
+  "confounders": ["Different sampling intervals"],
+  "evidence_against_novelty": ["An adjacent field may already use the proposed mapping."],
+  "neglect_explanation": "The fields use different terminology and publication venues.",
+  "scores": {"importance": 2, "testability": 3, "data_adequacy": 2},
+  "uncertainties": ["No specialist review has occurred."],
+  "sources": [{"source_id": "example-a", "location": "section 2"}],
+  "status": "candidate"
+}

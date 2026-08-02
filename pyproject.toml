@@ -1,0 +1,9 @@
+[project]
+name = "neglected-science"
+version = "0.0.0"
+description = "Contracts and tooling for an AI-assisted neglected-science research program"
+requires-python = ">=3.9"
+dependencies = ["jsonschema>=4.20"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
