@@ -136,9 +136,9 @@ class OpportunityDossierContractTests(unittest.TestCase):
         record = json.loads((ROOT / "verification" / "system-one-v3-source-batch-1.json").read_text())
         self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
         self.assertEqual("source-verified-await-v2", record["verdict"])
-        self.assertEqual(2, sum(item["disposition"] == "content-verified-eligible-for-v2" for item in record["records"]))
-        rejected = next(item for item in record["records"] if item["disposition"] == "rejected-before-v2")
-        self.assertFalse(rejected["retrieval"]["checksum_match"])
+        self.assertEqual(3, sum(item["disposition"] == "content-verified-eligible-for-v2" for item in record["records"]))
+        rejected = json.loads((ROOT / "verification" / "system-one-v3-source-rejections-1.jsonl").read_text())
+        self.assertFalse(rejected["retrieved_checksum"] == rejected["provider_checksum"])
 
 
 if __name__ == "__main__":
