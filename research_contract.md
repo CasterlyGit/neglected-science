@@ -24,12 +24,15 @@ This contract applies to every candidate, experiment, report, and automated comp
 ## Experiments
 
 11. The question, hypotheses, data rules, primary outcomes, holdouts, tests, and falsification criteria must be preregistered before final evaluation.
+11a. Before validation freeze, every computational preregistration must also name the executable algorithm revision, deterministic uncertainty calculation (including seed where relevant), robustness procedures, exact final invocation, and governed result-receipt path.
 12. Training, exploration, validation, and final holdout data must be separated where the design permits.
 13. Baseline reproduction precedes novel analysis.
 14. Leakage, confounding, robustness, measurement error, and alternative explanations must be tested.
 15. Deviations from preregistration must be timestamped and labeled exploratory.
+15a. A post-final deviation may not revise the final primary disposition; it is exploratory and must remain separately identified.
 16. Negative results and failed experiments remain in the record.
 17. Reproducibility includes code, configuration, environment, data provenance, and permitted acquisition steps.
+17a. Final evaluation must immediately create a governed, checksum-linked result receipt; ignored artifacts alone are not evidence.
 
 ## Claims and review
 

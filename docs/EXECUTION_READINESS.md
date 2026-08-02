@@ -19,12 +19,13 @@ Milestone 6.5 sits after confirmation-grade novelty review and before Milestone 
 | Partition safety | A deterministic reader can expose only schema and declared non-final partitions; final outcomes are inaccessible to exploration code | Target is not selectable. |
 | Baseline viability | The original code, or an independently specified reconstruction, identifies the exact inputs, grouping, transformation, and expected diagnostic | Target is not selectable. |
 | Operational rehearsal | A clean environment creates a provenance receipt and runs a no-outcome structural check with pinned dependencies | Target is not selectable. |
+| Executable preregistration | Before validation freeze, the code revision, interval calculation, robustness procedures, final invocation, and durable-result receipt location are machine-declared | Final evaluation is prohibited. |
 
 The certification record must name the source URL, retrieval time, version, digest, license, file list, exact structural checks, environment lock, partition design, failure logs, and reviewer. It is a feasibility certificate, not a scientific result and not permission to inspect final-holdout outcomes.
 
 ## Current E. coli status
 
-The E. coli target was selected and preregistered before this new gate existed. Its historic selection remains an auditable record, but it has **not passed Milestone 6.5 retrospectively**: Dryad's live page exposes the files, while unattended retrieval encounters an anti-automation validation page. The downloaded responses had HTML content and did not match the published SHA-256 values; they were discarded. No scientific data were accepted. Milestone 8 remains blocked until the official files are acquired and verified.
+The E. coli target was selected and preregistered before this new gate existed. Its historic selection remains auditable. It subsequently passed official archive acquisition and checksum verification through an owner-mediated Dryad download, but exposed two process gaps: unattended retrieval was blocked by anti-automation controls, and v1 lacked exact uncertainty/robustness computation details. Both are now explicit future-gate requirements. The executed result remains open to specialist and exploratory-sensitivity verification; see `verification/ecoli-final-result.json`.
 
 ## Failure catalogue through Milestone 9
 
@@ -36,6 +37,7 @@ The E. coli target was selected and preregistered before this new gate existed. 
 | 8: provenance drift or parser silently maps the wrong units | Immutable raw receipt, explicit input schema, row/unit reconciliation, and synthetic parser tests | Checksums, data dictionary mapping, count reconciliation, and passing tests. |
 | 8: published baseline cannot be reproduced | Reconstruct the original analysis from source code/methods on non-final partitions first; never tune novel analysis to force agreement | Baseline report stating match, partial match, or failure with exact source-location evidence. |
 | 8: exploratory choices leak into final evaluation | Separate exploration, validation, and final code paths; commit the validation-frozen implementation before final evaluation | Commit hash, partition access log, and one final-evaluation receipt. |
+| 8: final result is left only in an ignored or ephemeral output | Predeclare a governed receipt path and create it immediately after the final invocation | Schema-valid result receipt linking data digests, code commit, artifact digest, disposition, deviations, and gaps. |
 | 8: result is driven by one block, unit, model, or undocumented dependency | Predeclare robustness checks, use leave-unit/block checks, pin environment, and retain null/contrary outcomes | Reproducible report, environment lock, robustness table, deviations, and negative results. |
 | 8: computational association is inflated into mechanism or causation | Claim linting against the preregistered claim boundary; record specialist gaps | Claim-to-evidence table and explicit prohibited inferences. |
 | 8: a robustness test is described as a new biological law | State whether the result is persistence, attenuation/null, or reversal of a published pattern; prohibit mechanism and universality claims | Plain-language claim boundary plus source-to-result evidence table. |

@@ -40,23 +40,29 @@ Completion gate: each finalist has an evidence-backed disposition; surviving nov
 
 Outcome: all three finalists were rejected. Direct prior art invalidated the urban and battery questions; established generic theory plus incompatible protocols invalidated the four-domain transfer question. No candidate advances automatically to Milestone 7.
 
-## 7. Select and preregister one experiment — not-started
+## 7. Select and preregister one experiment — complete
 
 Choose the strongest surviving candidate and freeze its question, definitions, hypotheses, data rules, confounders, baselines, holdouts, tests, falsification criteria, and novelty boundary before final evaluation.
 
 Completion gate: a versioned preregistration exists before access to final holdout results and contains no outcome-dependent ambiguity that would materially change interpretation.
 
-## 8. Execute the scientific investigation — not-started
+Outcome: `target-ecoli-regression` was selected and preregistered in versions 1 and 2. V2 is a preserved pre-final amendment that made the confidence-interval and leave-out computations explicit; it did not change the question, data, partitions, hypotheses, estimand, or claim boundary.
+
+## 8. Execute the scientific investigation — active with open verification gaps
 
 Reproduce an established baseline, verify the pipeline, run the preregistered analysis, test alternatives, evaluate holdouts, search for artifacts, and produce a reproducible report including negative results.
 
 Completion gate: declared checks run; deviations are documented; results are reproducible from permitted inputs; claims match evidence; external scrutiny gaps are explicit.
 
-## 9. Evaluate and generalize the method — not-started
+Outcome so far: the official data files were checksum-verified, the published-style baseline and non-final validation were run, and final block 4 was evaluated once. The final cross-fit estimate is attenuated and uncertain under the preregistered rule. The predeclared weighted errors-in-variables sensitivity and independent specialist review remain open; see `reports/milestone-8-ecoli-investigation.md`.
+
+## 9. Evaluate and generalize the method — complete for the narrow first-run evaluation
 
 Determine whether the selected question was unresolved, important, tractable, and better surfaced by this method than by ordinary review. Generalize only verified components.
 
 Completion gate: a method-evaluation report documents misses, false leads, expert dependencies, useful automation, unsafe automation, and the justified next architecture.
+
+Outcome: the first-run method evaluation is complete in `reports/milestone-9-method-evaluation.md`. It partially supports the narrow thesis that the process can surface an informative public-data robustness question. It does not establish reliability, superiority to ordinary review, autonomous discovery, cross-domain discovery, or broad generalization.
 
 ## Program rule
 
@@ -110,8 +116,8 @@ Cycle result: E. coli and bighorn survived cautiously; MESI was reframed. All un
 
 For both primary and reserve, independently prove fresh official acquisition, integrity/version, rights, structural variable fit, safe holdout partitioning, baseline viability, and a clean operational rehearsal. A previous inspection, a score, or a cached file cannot compensate for a failed certificate. See `docs/EXECUTION_READINESS.md`.
 
-### F. Select, preregister, execute, and evaluate — active with an access gate
+### F. Select, preregister, execute, and evaluate — active with open verification gaps
 
 Only a confirmation survivor may enter historical Milestones 7–9. The reserve remains available until final selection.
 
-Cycle result: the owner authorized first-test selection and `target-ecoli-regression` was selected and preregistered in local commit `7b1232a`. It does not retrospectively pass the new E.5 certificate: official unattended retrieval currently yields an anti-automation page rather than checksum-valid data. A visible official-interface workaround is permitted, but execution remains gated until integrity is verified. No baseline or holdout result has been accepted. Historical Milestone 8 remains incomplete and Milestone 9 cannot begin before a real investigation.
+Cycle result: the owner authorized first-test selection and `target-ecoli-regression` was selected and preregistered in local commit `7b1232a`. An owner-mediated official Dryad download subsequently passed checksum verification; the published-style baseline, validation, and one final-holdout evaluation ran. The final cross-fit disposition is attenuated or uncertain. Milestone 8 remains active because its weighted errors-in-variables sensitivity and independent specialist review are open. The first-run Milestone 9 evaluation is complete but does not authorize broader generalization.

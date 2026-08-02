@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Future executable preregistration supplement",
+  "type": "object",
+  "required": ["base_preregistration", "algorithm_revision", "uncertainty_procedure", "robustness_procedures", "final_invocation", "durable_result_receipt"],
+  "properties": {
+    "base_preregistration": {"type": "string", "minLength": 1},
+    "algorithm_revision": {"type": "string", "minLength": 7},
+    "uncertainty_procedure": {"type": "string", "minLength": 20},
+    "robustness_procedures": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 10}},
+    "final_invocation": {"type": "string", "minLength": 10},
+    "durable_result_receipt": {"type": "string", "pattern": "^verification/"}
+  },
+  "additionalProperties": false
+}

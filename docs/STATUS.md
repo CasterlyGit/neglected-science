@@ -18,15 +18,15 @@
 - The current proof target is narrow: can provenance-first, adversarial selection identify overlooked, publicly testable robustness or reconciliation questions?
 - Milestones 1–9 are evidence for that narrow target only. They do not yet establish an autonomous cross-domain discovery system or validate broader generalization.
 
-## Active with evidence-access gate
+## Active investigation with preserved result
 
 - `target-ecoli-regression` is selected for the first investigation and preregistered in `experiments/ecoli-regression/` before source-file download or final-holdout access.
 - `target-bighorn-within-between` remains the reserve; `target-mesi-reconciliation` remains the gated alternate.
-- Milestone 8 is blocked on access to the two checksum-verifiable public Dryad source files. The public metadata and original analysis script were retrieved, but both official API download routes returned HTTP 401 and the legacy file stream returned HTTP 403.
-- Milestone 6.5 is now a hard execution-readiness certification for future selections; the current E. coli target does not pass it retrospectively until its official files are manually acquired and checksum verified.
-- No baseline, preregistered analysis, validation result, final-holdout result, experiment conclusion, or Milestone 9 method evaluation exists.
+- The owner-downloaded official Dryad archive passed both published SHA-256 checks. The published-style baseline, non-final validation, and one final-holdout evaluation have run.
+- The final result is attenuated and uncertain: published-style mean Fisher correlation −0.644; independent-block cross-fit −0.171 (bootstrap 95% interval −0.356 to 0.013). It is preserved in `verification/ecoli-final-result.json` and does not support calling the original direction robust to this stress test.
+- Milestone 8 remains active because the predeclared weighted errors-in-variables sensitivity and independent specialist review did not occur before final evaluation. Any later analysis is exploratory.
+- Milestone 9's narrow first-run evaluation is complete: the selection process is partially supported as a way to surface an informative public robustness question, but reliability, superiority to ordinary review, autonomous discovery, and cross-domain generalization remain unproven.
 - `target-mesi-reconciliation` remains a reframed alternate with an author-overlap and specialist-review gate.
-- No experiment, preregistration, final holdout access, or Milestone 7 analysis has begun.
 
 ## Redesign decision
 
@@ -38,7 +38,7 @@
 
 ## Gated
 
-- No final-holdout result may be accessed before a validation-frozen implementation exists.
+- No future final-holdout result may be accessed before a validation-frozen implementation exists.
 - The source repository is public. No scientific publication, release, or scientific public claim is authorized.
 - No experiment may be selected or preregistered from the rejected finalist set.
 - Specialist review remains unresolved for assay-block exchangeability, longitudinal wildlife inference, and MESI estimand equivalence/overlap.
@@ -62,3 +62,5 @@
 - `reports/milestone-7-selection.md`: selection rationale and frozen preregistration.
 - `reports/milestone-8-access-gate.md`: raw-data access evidence and reopen condition.
 - `docs/EXECUTION_READINESS.md`: Milestone 6.5 gate and the full Milestones 6.5–9 failure catalogue.
+- `reports/milestone-8-ecoli-investigation.md`: preserved final result and open verification gaps.
+- `reports/milestone-9-method-evaluation.md`: bounded method evaluation and justified next architecture.

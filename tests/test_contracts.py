@@ -46,6 +46,12 @@ class OpportunityDossierContractTests(unittest.TestCase):
         Draft202012Validator.check_schema(schema)
         self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
 
+    def test_future_executable_preregistration_contract_is_valid(self):
+        schema = json.loads((ROOT / "schemas" / "executable-preregistration.schema.json").read_text())
+        Draft202012Validator.check_schema(schema)
+        example = {"base_preregistration": "experiments/example/preregistration-v1.json", "algorithm_revision": "abcdef1", "uncertainty_procedure": "Fixed bootstrap calculation with a declared seed.", "robustness_procedures": ["Leave one comparison out."], "final_invocation": "python analysis.py --partition final", "durable_result_receipt": "verification/example-final-result.json"}
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(example)))
+
 
 if __name__ == "__main__":
     unittest.main()

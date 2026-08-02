@@ -19,7 +19,8 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 - Completed milestones: 1–6
 - Redesign state: manual priority queue exercised through first interview and confirmation-grade novelty challenge
 - Milestone 7: selected and preregistered locally (`target-ecoli-regression`)
-- Milestone 8: not executed; the required public Dryad input files are currently inaccessible through documented download routes
+- Milestone 8: final result executed and preserved; independent specialist review and one predeclared exploratory-only sensitivity remain open
+- Milestone 9: narrow first-run method evaluation complete; broader generalization remains gated
 - Milestone 6.5: execution readiness is a required noncompensatory gate for every future primary and reserve
 - Scientific findings: none
 - Selected investigation: none
@@ -51,9 +52,9 @@ The public repository documents the program and its evidence; it does not consti
 
 ## Current investigation, in plain language
 
-We are revisiting a published evolution experiment in which E. coli populations that began fitter appeared to gain less fitness—“diminishing returns.” That pattern may be real, or partly a measurement artifact because the same noisy baseline measurement is mathematically embedded in the fitness-change score. The public experiment has separate assay blocks. We preregistered a test that estimates baseline fitness and later fitness change from different blocks, then asks whether the negative relationship still holds.
+We revisited a published evolution experiment in which E. coli populations that began fitter appeared to gain less fitness—“diminishing returns.” That pattern may be real, or partly a measurement artifact because the same noisy baseline measurement is mathematically embedded in the fitness-change score. The public experiment has separate assay blocks. We preregistered a test that estimates baseline fitness and later fitness change from different blocks, then asks whether the negative relationship still holds.
 
-We do not know the final answer. Persistence would strengthen the reported pattern; attenuation or a null result would show artifact sensitivity; reversal would challenge it. This is a computational robustness test of a published dataset—not proof of a biological mechanism or universal evolutionary law.
+The final independent-block estimate was attenuated and its preregistered interval included zero. This does not support calling the published directional pattern robust to this stress test. It is a computational robustness result—not proof of a biological mechanism, a universal evolutionary law, or falsity of the original study.
 
 ## Verification
 
