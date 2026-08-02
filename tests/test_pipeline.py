@@ -56,6 +56,13 @@ class DeterministicPipelineTests(unittest.TestCase):
         self.assertFalse(screened["eligible_for_candidate_generation"])
         self.assertIn("fresh official-file retrieval is access-blocked", screened["reasons"])
 
+    def test_checksum_upgrade_clears_only_the_provenance_reason(self):
+        upgrades = {row["cell_id"]: row for row in jsonl("verification/atlas-provenance-upgrades.jsonl")}
+        cell = next(row for row in jsonl("corpus/research-cells.jsonl") if row["cell_id"] == "cell-mesi-reconciliation")
+        screened = screen_strategic_leads.screen(cell, upgrades_by_cell=upgrades)
+        self.assertNotIn("official source files are not checksum-verified", screened["reasons"])
+        self.assertFalse(screened["eligible_for_candidate_generation"])
+
     def test_ecoli_transaction_verifies_durable_inputs_and_result(self):
         self.assertEqual("pass", system_guards.check_transaction()["transaction"])
 
