@@ -35,6 +35,7 @@ def evaluate(now=None):
     seed_screen = read("verification/system-one-seed-pre-admission-2.json")
     seed_audit = read("verification/system-one-seed-full-audit-1.json")
     seed_packet = read("verification/system-one-seed-candidate-packet-1.json")
+    seed_packet_two = read("verification/system-one-seed-candidate-packet-2.json")
     current_ready = sum(row["eligible_for_candidate_generation"] for row in screen)
     execution = improvement["integrity_gates"]["execution_integrity"]
     transaction_valid = check_transaction()["transaction"] == "pass"
@@ -57,7 +58,7 @@ def evaluate(now=None):
         "evidence": evidence,
         "systems": {
             "system_one": {
-                "source_feasible_records": seed_screen["summary"]["pre_admitted_count"],
+                "source_feasible_records": sum(packet["disposition"] == "interview-ready-domain-specific-candidate-packet" for packet in [seed_packet, seed_packet_two]),
                 "candidate_generation_permitted": False,
                 "verdict": "form-target-trio" if seed_packet["disposition"] == "interview-ready-domain-specific-candidate-packet" else "seed-pre-admission",
             },
