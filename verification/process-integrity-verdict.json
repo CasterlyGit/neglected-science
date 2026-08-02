@@ -6,7 +6,7 @@
     "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
     "Retain rejected, blocked, null, and uncertain results as evidence."
   ],
-  "evaluated_at": "2026-08-02T16:33:48Z",
+  "evaluated_at": "2026-08-02T16:38:44Z",
   "evidence": {
     "construction_gate_enforced": true,
     "current_ready_targets": 0,

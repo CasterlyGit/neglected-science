@@ -116,6 +116,14 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual("system-one-selector-v2", record["improvement_id"])
         self.assertEqual(["system-one-batch-1", "system-one-batch-2"], record["based_on_batches"])
 
+    def test_system_one_v2_preaudit_retains_a_fresh_nonpromoting_trio(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-v2-preaudit.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-v2-preaudit-1.json").read_text())
+        errors = list(Draft202012Validator(schema).iter_errors(record))
+        self.assertEqual([], errors)
+        self.assertEqual("no-justified-trio", record["verdict"])
+        self.assertEqual(2, sum(item["disposition"] == "eligible-for-full-audit" for item in record["records"]))
+
 
 if __name__ == "__main__":
     unittest.main()
