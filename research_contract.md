@@ -20,6 +20,7 @@ This contract applies to every candidate, experiment, report, and automated comp
 10a. A raw lead becomes a target only after it passes prior-art-distance, actual-data-fit, nontrivial-consequence, decisive-test, and bounded-expertise checks.
 10b. Candidate generation must replace failed raw leads before forming a trio; ranking cannot compensate for a failed construction check.
 10c. Broad evidence work requires exactly three interview-ready targets, followed by at least two first-interview survivors: one primary and one reserve.
+10d. A cross-domain structural comparison must map the system, unit, measurement, published inference, validation gap, and source/data provenance for every case. Shared terminology, curve shape, or topic is not structural evidence; the comparison may not assert a shared scientific mechanism.
 
 ## Experiments
 

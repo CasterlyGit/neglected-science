@@ -76,6 +76,14 @@ Milestones 1–2 can be accelerated through careful specification. Milestones 3�
 
 The numbered milestones above remain the truthful history of the completed pilot. They are not the order for a replacement cycle.
 
+### S. Build a bounded structural atlas — active
+
+Compare a deliberately small, diverse set of primary-paper and public-data cases through a common structural record: system, unit, measurement, published inference, validation gap, and provenance. Produce one plain-language verdict stating the supported pattern, prohibited larger claim, number of new interview-ready targets, and one next permitted action.
+
+Completion gate: exactly nine or fewer bounded cases meet the source-and-data-first protocol; every structural comparison has a documented mismatch/limitation test; the final verdict does not claim a shared mechanism or a target trio unless the existing closed-evidence factory emits one.
+
+Current result: six verified anchor cases across evolutionary biology, wildlife disease ecology, global-change evidence synthesis, battery diagnostics, plant disease management, and materials fatigue. They support a limited observation that research-design fragilities recur across fields; they do not establish a common mechanism and emit no new interview-ready trio. See `docs/INITIAL_STRUCTURAL_CORPUS_PROTOCOL.md` and `reports/structural-atlas.md`.
+
 ### A. Form exactly three interview-ready targets — complete for manual cycle
 
 Inspect raw leads cheaply and require every emitted target to pass prior-art distance, actual variable/protocol fit, nontrivial three-outcome value, a decisive test, and bounded expertise. The three targets must satisfy the diversity rule.

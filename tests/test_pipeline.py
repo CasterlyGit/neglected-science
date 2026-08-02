@@ -6,6 +6,7 @@ from scripts import pipeline
 from scripts import ecoli_analysis
 from scripts import system_guards
 from scripts import closed_evidence_factory
+from scripts import build_structural_atlas
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +25,15 @@ class DeterministicPipelineTests(unittest.TestCase):
         result = system_guards.check_benchmark()
         self.assertEqual("pass", result["benchmark"])
         self.assertEqual(5, result["cases"])
+
+    def test_structural_atlas_has_a_plain_language_nonpromotion_verdict(self):
+        cases = jsonl("corpus/structural-cases.jsonl")
+        result = build_structural_atlas.build(cases)
+        self.assertEqual(6, result["case_count"])
+        self.assertEqual(6, result["domain_count"])
+        self.assertEqual("LIMITED SUPPORT — NO NEW TARGET TRIO", result["verdict"])
+        self.assertIn("does not", result["plain_language"])
+        self.assertGreaterEqual(len(result["patterns"]), 4)
 
     def test_ecoli_transaction_verifies_durable_inputs_and_result(self):
         self.assertEqual("pass", system_guards.check_transaction()["transaction"])

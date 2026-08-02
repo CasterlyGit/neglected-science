@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cross-domain structural case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "domain", "title", "source_evidence", "data_evidence", "layers", "structural_patterns", "plain_language_verdict", "candidate_status", "limitations"],
+  "properties": {
+    "case_id": {"type": "string", "pattern": "^struct-[a-z0-9-]+$"},
+    "domain": {"type": "string", "minLength": 3},
+    "title": {"type": "string", "minLength": 10},
+    "source_evidence": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "additionalProperties": false, "required": ["url", "location", "finding"], "properties": {"url": {"type": "string", "format": "uri"}, "location": {"type": "string", "minLength": 3}, "finding": {"type": "string", "minLength": 12}}}
+    },
+    "data_evidence": {"type": "object", "additionalProperties": false, "required": ["url", "location", "status"], "properties": {"url": {"type": "string", "format": "uri"}, "location": {"type": "string", "minLength": 3}, "status": {"enum": ["checksum-verified", "row-level-inspected", "aggregate-only", "access-blocked"]}}},
+    "layers": {"type": "object", "additionalProperties": false, "required": ["system", "unit", "measurement", "published_inference", "validation_gap"], "properties": {"system": {"type": "string", "minLength": 8}, "unit": {"type": "string", "minLength": 8}, "measurement": {"type": "string", "minLength": 8}, "published_inference": {"type": "string", "minLength": 12}, "validation_gap": {"type": "string", "minLength": 12}}},
+    "structural_patterns": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["measurement-reuse", "unit-mismatch", "calibration-shift", "provenance-reconciliation", "data-closure"]}},
+    "plain_language_verdict": {"type": "string", "minLength": 20},
+    "candidate_status": {"enum": ["historical-demonstration", "gated", "excluded", "deferred"]},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 10}}
+  }
+}

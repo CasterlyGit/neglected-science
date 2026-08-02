@@ -8,6 +8,10 @@ Build a disciplined computational instrument that identifies neglected, importan
 
 The initial, testable thesis is narrower: **can a provenance-first, adversarial selection process reliably identify overlooked, publicly testable robustness or reconciliation questions?** Neglected Science is not yet an autonomous cross-domain discovery system. The nine milestones are the proof path for this thesis: Milestones 1–6 establish and adversarially test candidate selection, 6.5 verifies execution readiness, 7 freezes one question, 8 executes it reproducibly, and 9 evaluates whether the method surfaced a question better than ordinary review. Broader claims about cross-domain unknowns, autonomous discovery, or generalization remain gated on one or more completed investigations.
 
+## Structural-atlas extension
+
+The next local method layer is a bounded cross-domain **structural atlas**. It compares how studies move from observed data to a claim: their unit, measurement, baseline, inference, validation gap, and provenance. Its purpose is to distinguish evidence-backed similarity in research design from superficial similarity in subject matter. It may generate a domain-specific robustness or reconciliation lead only after the existing source, data, novelty, self-contained-interpretation, and three-target gates pass. The atlas cannot establish a shared physical, biological, or social mechanism across domains.
+
 ## Long-term outcome
 
 Neglected Science should make it possible for a technically capable outsider, assisted by AI, to:

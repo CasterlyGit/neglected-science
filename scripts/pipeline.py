@@ -499,6 +499,7 @@ def validate_all():
         (GAUNTLET_REPLAYS, ROOT / "schemas" / "gauntlet-replay.schema.json"),
         (CANDIDATE_PRIORITY, ROOT / "schemas" / "candidate-priority.schema.json"),
         (TARGET_REVIEWS, ROOT / "schemas" / "target-review.schema.json"),
+        (ROOT / "corpus" / "structural-cases.jsonl", ROOT / "schemas" / "structural-case.schema.json"),
     ]
     failures = []
     for data_path, schema_path in targets:

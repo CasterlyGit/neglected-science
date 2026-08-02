@@ -37,6 +37,12 @@
 - The historical finalists were replayed through this gate: zero qualified, no trio would have formed, and the old flow would not have reached confirmation-grade Milestone 6.
 - For this cycle, the owner authorized manual candidate prioritization instead of an automatic generator. The seven-lead queue preserves excluded and deferred alternatives.
 
+## Structural-atlas direction — active
+
+- The owner authorized a Level-2 reframing: compare evidence-backed research-design structures across domains, then generate questions from those comparisons.
+- `docs/STRUCTURAL_ATLAS_PROGRAM.md` defines a final plain-language verdict, the exact case-admission list, and the downstream candidate gates.
+- The bounded six-case seed atlas records one historical demonstration, two gated cases, two exclusions, and one access-blocked deferral. Its current verdict is limited support for recurring research-design failures, no shared scientific mechanism, and no new interview-ready trio.
+
 ## Gated
 
 - No future final-holdout result may be accessed before a validation-frozen implementation exists.
