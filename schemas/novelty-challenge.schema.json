@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["challenge_id", "finalist_id", "question", "terminology", "search_ids", "dataset_audit_ids", "evidence_for_novelty", "evidence_against_novelty", "evidence_for_importance", "evidence_against_importance", "simpler_explanations", "decisive_tests", "confounders", "measurement_incompatibilities", "missing_expertise", "failed_searches", "disposition", "disposition_rationale", "surviving_question", "confidence", "reviewed_at"],
+  "properties": {
+    "challenge_id": {"type": "string", "pattern": "^nc-[a-z0-9-]+$"},
+    "finalist_id": {"type": "string"},
+    "question": {"type": "string", "minLength": 20},
+    "terminology": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "search_ids": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+    "dataset_audit_ids": {"type": "array", "items": {"type": "string"}},
+    "evidence_for_novelty": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "evidence_against_novelty": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "evidence_for_importance": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "evidence_against_importance": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "simpler_explanations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "decisive_tests": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "confounders": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "measurement_incompatibilities": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "missing_expertise": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "failed_searches": {"type": "array", "items": {"type": "string"}},
+    "disposition": {"enum": ["rejected", "reframed", "gated", "surviving"]},
+    "disposition_rationale": {"type": "string", "minLength": 30},
+    "surviving_question": {"type": ["string", "null"]},
+    "confidence": {"enum": ["low", "moderate", "high"]},
+    "reviewed_at": {"type": "string", "format": "date-time"}
+  }
+}

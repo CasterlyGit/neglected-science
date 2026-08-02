@@ -43,6 +43,22 @@ class DeterministicPipelineTests(unittest.TestCase):
         self.assertEqual({"balanced", "rigor_first", "impact_first"}, set(rankings["profiles"]))
         self.assertEqual(3, len(rankings["scientific_review_finalists"]))
 
+    def test_milestone_6_challenges_cover_finalists(self):
+        dossiers = jsonl("opportunities/dossiers.jsonl")
+        finalists = {row["id"] for row in dossiers if row["status"] == "finalist"}
+        challenges = jsonl("verification/novelty-challenges.jsonl")
+        searches = jsonl("verification/novelty-searches.jsonl")
+        audits = jsonl("verification/dataset-audits.jsonl")
+        self.assertEqual(finalists, {row["finalist_id"] for row in challenges})
+        self.assertEqual(3, len(challenges))
+        self.assertTrue(all(row["disposition"] in {"rejected", "reframed", "gated", "surviving"} for row in challenges))
+        self.assertTrue(all(row["missing_expertise"] for row in challenges))
+        search_ids = {row["search_id"] for row in searches}
+        audit_ids = {row["audit_id"] for row in audits}
+        for challenge in challenges:
+            self.assertTrue(set(challenge["search_ids"]) <= search_ids)
+            self.assertTrue(set(challenge["dataset_audit_ids"]) <= audit_ids)
+
 
 if __name__ == "__main__":
     unittest.main()

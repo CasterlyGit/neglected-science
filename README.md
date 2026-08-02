@@ -15,8 +15,8 @@ The current candidate territory is stress, memory, recovery, and phase transitio
 - Maturity: experimental
 - Visibility: local-only
 - Remote: none
-- Completed milestones: 1–5
-- Next milestone: 6 — Adversarial novelty challenge (not started)
+- Completed milestones: 1–6
+- Next decision: rerank or generate replacement candidates, or pause; Milestone 7 has no eligible finalist
 - Scientific findings: none
 - Selected investigation: none
 
@@ -58,6 +58,6 @@ python3 -m venv .venv
 - 65 provenance-linked claim records with bounded excerpts and source locations.
 - 18 deduplicated opportunities produced by all four discovery engines.
 - 18 schema-valid dossiers ranked under balanced, rigor-first, and impact-first profiles.
-- Three scientifically reviewed finalists for Milestone 6; none is claimed novel.
+- Three finalists adversarially challenged: all rejected; none is eligible for experiment selection.
 
-See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, and `reports/milestone-5-ranking.md`.
+See `reports/milestone-3-corpus.md`, `reports/milestone-4-discovery.md`, `reports/milestone-5-ranking.md`, and `reports/milestone-6-novelty.md`.

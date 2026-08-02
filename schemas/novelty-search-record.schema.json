@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["search_id", "finalist_id", "attack_type", "terms", "scope", "searched_at", "result", "evidence", "uncertainties"],
+  "properties": {
+    "search_id": {"type": "string", "pattern": "^ns-[a-z0-9-]+$"},
+    "finalist_id": {"type": "string"},
+    "attack_type": {"enum": ["exact-terminology", "alternative-terminology", "adjacent-discipline", "citation-backward", "citation-forward", "negative-importance"]},
+    "terms": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "scope": {"type": "string", "minLength": 10},
+    "searched_at": {"type": "string", "format": "date-time"},
+    "result": {"enum": ["prior-art-found", "no-decisive-match", "partial", "metadata-blocked"]},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "url", "source_type", "location", "finding"],
+        "properties": {
+          "title": {"type": "string", "minLength": 5},
+          "url": {"type": "string", "format": "uri"},
+          "source_type": {"enum": ["primary-study", "official-dataset-documentation", "bibliographic-metadata", "review-or-theory"]},
+          "location": {"type": "string", "minLength": 3},
+          "finding": {"type": "string", "minLength": 10}
+        }
+      }
+    },
+    "uncertainties": {"type": "array", "items": {"type": "string"}}
+  }
+}

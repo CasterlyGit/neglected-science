@@ -32,11 +32,13 @@ Represent each candidate with importance, existing knowledge, unresolved element
 
 Completion gate: roughly 10–20 candidates are scored reproducibly; sensitivity analysis shows how rankings change; three finalists have complete dossiers.
 
-## 6. Conduct an adversarial novelty challenge — not-started
+## 6. Conduct an adversarial novelty challenge — complete
 
 Attempt to invalidate every finalist using alternative terminology, citation tracing, adjacent disciplines, simpler explanations, data adequacy checks, and specialist scrutiny where available.
 
 Completion gate: each finalist has an evidence-backed disposition; surviving novelty is described cautiously; unresolved expert-review gaps remain explicit.
+
+Outcome: all three finalists were rejected. Direct prior art invalidated the urban and battery questions; established generic theory plus incompatible protocols invalidated the four-domain transfer question. No candidate advances automatically to Milestone 7.
 
 ## 7. Select and preregister one experiment — not-started
 

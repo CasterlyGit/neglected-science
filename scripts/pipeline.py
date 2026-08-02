@@ -30,6 +30,9 @@ CANDIDATES = ROOT / "opportunities" / "candidates.jsonl"
 DOSSIERS = ROOT / "opportunities" / "dossiers.jsonl"
 RANKINGS = ROOT / "opportunities" / "rankings.json"
 SATURATION = ROOT / "verification" / "saturation-audit.json"
+NOVELTY_SEARCHES = ROOT / "verification" / "novelty-searches.jsonl"
+DATASET_AUDITS = ROOT / "verification" / "dataset-audits.jsonl"
+NOVELTY_CHALLENGES = ROOT / "verification" / "novelty-challenges.jsonl"
 
 GAP_PATTERNS = re.compile(r"\b(remain(?:s|ed)? unknown|not (?:well )?understood|future (?:work|research)|knowledge gap|lack(?:s|ing)?|challenge|uncertain|unresolved|poorly understood)\b", re.I)
 LIMIT_PATTERNS = re.compile(r"\b(limitation|however|despite|uncertaint|bias|confound|caveat|difficult|inconsistent)\b", re.I)
@@ -482,6 +485,9 @@ def validate_all():
         (LEDGER, ROOT / "schemas" / "retrieval-ledger.schema.json"),
         (ROOT / "terminology" / "concepts.jsonl", ROOT / "schemas" / "terminology-record.schema.json"),
         (DOSSIERS, ROOT / "schemas" / "opportunity-dossier.schema.json"),
+        (NOVELTY_SEARCHES, ROOT / "schemas" / "novelty-search-record.schema.json"),
+        (DATASET_AUDITS, ROOT / "schemas" / "dataset-audit.schema.json"),
+        (NOVELTY_CHALLENGES, ROOT / "schemas" / "novelty-challenge.schema.json"),
     ]
     failures = []
     for data_path, schema_path in targets:
@@ -494,6 +500,47 @@ def validate_all():
     for number, claim in enumerate(read_jsonl(CLAIMS), 1):
         if claim["source_id"] not in source_ids:
             failures.append(f"claims/claims.jsonl:{number}: missing source {claim['source_id']}")
+    dossier_rows = read_jsonl(DOSSIERS)
+    dossier_ids = {row["id"] for row in dossier_rows}
+    finalist_ids = {row["id"] for row in dossier_rows if row["status"] == "finalist"}
+    search_rows = read_jsonl(NOVELTY_SEARCHES)
+    search_by_id = {row["search_id"]: row for row in search_rows}
+    audit_rows = read_jsonl(DATASET_AUDITS)
+    audit_by_id = {row["audit_id"]: row for row in audit_rows}
+    challenge_rows = read_jsonl(NOVELTY_CHALLENGES)
+    if len(search_by_id) != len(search_rows):
+        failures.append("verification/novelty-searches.jsonl: duplicate search_id")
+    if len(audit_by_id) != len(audit_rows):
+        failures.append("verification/dataset-audits.jsonl: duplicate audit_id")
+    if len({row["challenge_id"] for row in challenge_rows}) != len(challenge_rows):
+        failures.append("verification/novelty-challenges.jsonl: duplicate challenge_id")
+    if {row["finalist_id"] for row in challenge_rows} != finalist_ids:
+        failures.append("verification/novelty-challenges.jsonl: challenge coverage must equal finalist set")
+    for finalist_id in finalist_ids:
+        attacks = {row["attack_type"] for row in search_rows if row["finalist_id"] == finalist_id}
+        if not {"citation-backward", "citation-forward"} <= attacks:
+            failures.append(f"verification/novelty-searches.jsonl: incomplete citation trace for {finalist_id}")
+        if not attacks & {"alternative-terminology", "adjacent-discipline"}:
+            failures.append(f"verification/novelty-searches.jsonl: missing terminology expansion for {finalist_id}")
+    for number, search in enumerate(search_rows, 1):
+        if search["finalist_id"] not in dossier_ids:
+            failures.append(f"verification/novelty-searches.jsonl:{number}: missing finalist {search['finalist_id']}")
+    for number, audit in enumerate(audit_rows, 1):
+        for finalist_id in audit["finalist_ids"]:
+            if finalist_id not in dossier_ids:
+                failures.append(f"verification/dataset-audits.jsonl:{number}: missing finalist {finalist_id}")
+    for number, challenge in enumerate(challenge_rows, 1):
+        finalist_id = challenge["finalist_id"]
+        for search_id in challenge["search_ids"]:
+            if search_id not in search_by_id:
+                failures.append(f"verification/novelty-challenges.jsonl:{number}: missing search {search_id}")
+            elif search_by_id[search_id]["finalist_id"] != finalist_id:
+                failures.append(f"verification/novelty-challenges.jsonl:{number}: search {search_id} belongs to another finalist")
+        for audit_id in challenge["dataset_audit_ids"]:
+            if audit_id not in audit_by_id:
+                failures.append(f"verification/novelty-challenges.jsonl:{number}: missing audit {audit_id}")
+            elif finalist_id not in audit_by_id[audit_id]["finalist_ids"]:
+                failures.append(f"verification/novelty-challenges.jsonl:{number}: audit {audit_id} does not cover finalist")
     if failures:
         print("\n".join(failures), file=sys.stderr)
         raise SystemExit(1)
