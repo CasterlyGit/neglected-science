@@ -69,8 +69,8 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual("continue-bounded-cycle", record["verdict"])
         self.assertTrue(record["evidence"]["investigation_transaction_valid"])
         self.assertEqual(0, record["evidence"]["current_ready_targets"])
-        self.assertEqual(2, record["systems"]["system_one"]["source_feasible_records"])
-        self.assertEqual("form-target-trio", record["systems"]["system_one"]["verdict"])
+        self.assertEqual(0, record["systems"]["system_one"]["source_feasible_records"])
+        self.assertEqual("no-justified-trio", record["systems"]["system_one"]["verdict"])
         self.assertFalse(record["systems"]["system_two"]["investigation_verdict_ready"])
 
     def test_system_one_batch_retains_a_three_record_defeat(self):
@@ -225,6 +225,12 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
         self.assertEqual(2, sum(row["verdict"] == "admitted" for row in record["records"]))
         self.assertEqual("two-survivors-ready-for-execution-readiness", record["verdict"])
+
+    def test_execution_readiness_does_not_select_unrunnable_pair(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-execution-readiness.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-execution-readiness-1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertTrue(all(row["status"] == "not-certified" for row in record["records"]))
 
 
 if __name__ == "__main__":

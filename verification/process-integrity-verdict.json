@@ -6,7 +6,7 @@
     "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
     "Retain rejected, blocked, null, and uncertain results as evidence."
   ],
-  "evaluated_at": "2026-08-02T17:11:00Z",
+  "evaluated_at": "2026-08-02T17:13:44Z",
   "evidence": {
     "construction_gate_enforced": true,
     "current_ready_targets": 0,
@@ -16,13 +16,13 @@
     "primary_and_reserve_required": true,
     "real_investigation_retained": true
   },
-  "next_permitted_action": "Run execution-readiness certification independently for the sensor primary and virus reserve; retain the killed stream packet and do not promote any record to System 2.",
+  "next_permitted_action": "Retain the execution-readiness failures; construct an explicitly versioned reconstruction and a separately certified reserve before reopening selection, with no final-outcome execution or System-2 promotion.",
   "reward_target": "verified-final-method-verdict",
   "systems": {
     "system_one": {
       "candidate_generation_permitted": false,
-      "source_feasible_records": 2,
-      "verdict": "form-target-trio"
+      "source_feasible_records": 0,
+      "verdict": "no-justified-trio"
     },
     "system_two": {
       "investigation_verdict_ready": false,

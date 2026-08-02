@@ -59,9 +59,9 @@ def evaluate(now=None):
         "evidence": evidence,
         "systems": {
             "system_one": {
-                "source_feasible_records": 2,
+                "source_feasible_records": 0,
                 "candidate_generation_permitted": False,
-                "verdict": "form-target-trio" if seed_packet["disposition"] == "interview-ready-domain-specific-candidate-packet" else "seed-pre-admission",
+                "verdict": "no-justified-trio",
             },
             "system_two": {
                 "structural_verdict": atlas["verdict"],
@@ -75,7 +75,7 @@ def evaluate(now=None):
             "Do not treat a missing acquisition, checksum, or specialist gap as a pass.",
             "Retain rejected, blocked, null, and uncertain results as evidence.",
         ],
-        "next_permitted_action": "Run execution-readiness certification independently for the sensor primary and virus reserve; retain the killed stream packet and do not promote any record to System 2.",
+        "next_permitted_action": "Retain the execution-readiness failures; construct an explicitly versioned reconstruction and a separately certified reserve before reopening selection, with no final-outcome execution or System-2 promotion.",
     }
 
 
