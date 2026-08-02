@@ -27,6 +27,8 @@ def screen(cell, attempts_by_cell=None, upgrades_by_cell=None):
         reasons.append("cell is not an unresolved gated lead")
     if "specialist" in " ".join(cell["decision"]["limitations"]).lower():
         reasons.append("self-contained interpretation is not established")
+    if not cell.get("candidate_clearance"):
+        reasons.append("adversarial novelty and consequence clearance is absent")
     return {"cell_id": cell["cell_id"], "eligible_for_candidate_generation": not reasons, "reasons": reasons or ["eligible only for adversarial source and novelty review"]}
 
 

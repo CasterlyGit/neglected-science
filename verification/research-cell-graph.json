@@ -23,6 +23,18 @@
         "fragility"
       ],
       "to": "cell-magdrift-access"
+    },
+    {
+      "from": "cell-tundra-warming-plots",
+      "material_mismatch": [
+        "unit",
+        "claim"
+      ],
+      "shared_roles": [
+        "validation",
+        "fragility"
+      ],
+      "to": "cell-celegans-outcrossing-fitness"
     }
   ],
   "nodes": [
@@ -123,6 +135,17 @@
         "fragility": "scale-translation",
         "unit": "physical-specimen",
         "validation": "independent-measurement"
+      }
+    },
+    {
+      "decision": "gated",
+      "domain": "experimental evolution",
+      "id": "cell-celegans-outcrossing-fitness",
+      "roles": {
+        "claim": "association",
+        "fragility": "unit-mismatch",
+        "unit": "repeated-unit",
+        "validation": "held-unit-evaluation"
       }
     }
   ],

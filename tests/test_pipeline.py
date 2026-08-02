@@ -41,13 +41,13 @@ class DeterministicPipelineTests(unittest.TestCase):
     def test_research_cells_have_only_conservative_structural_edges(self):
         cells = jsonl("corpus/research-cells.jsonl")
         graph = build_research_graph.build(cells)
-        self.assertEqual(9, len(graph["nodes"]))
+        self.assertEqual(10, len(graph["nodes"]))
         self.assertTrue(all("fragility" in edge["shared_roles"] or "validation" in edge["shared_roles"] for edge in graph["edges"]))
         self.assertTrue(all(edge["material_mismatch"] for edge in graph["edges"]))
 
     def test_seed_strategic_screen_does_not_promote_inventory_only_cells(self):
         rows = [screen_strategic_leads.screen(cell) for cell in jsonl("corpus/research-cells.jsonl")]
-        self.assertEqual(9, len(rows))
+        self.assertEqual(10, len(rows))
         self.assertEqual(0, sum(row["eligible_for_candidate_generation"] for row in rows))
 
     def test_access_blocked_acquisition_receipt_is_a_noncompensatory_failure(self):

@@ -22,6 +22,13 @@ The seed contains a small number of evidence-backed structural connections. Each
 - Plain meaning: both studies expose a named way evidence can become unavailable or non-independent, but they make different kinds of claims about different units.
 - Not established: a common scientific mechanism or a transferable scientific conclusion.
 
+### Icing and summer warming effects measured repeatedly at tundra plots ↔ Outcrossing rates and population fitness in evolving C. elegans
+
+- Shared structural roles: validation, fragility.
+- Material mismatch retained: unit, claim.
+- Plain meaning: both studies expose a named way evidence can become unavailable or non-independent, but they make different kinds of claims about different units.
+- Not established: a common scientific mechanism or a transferable scientific conclusion.
+
 ## Cells that do not connect yet
 
 - **Shallow-history fitness gain under independent assay blocks**: retained as `historical-demonstration`; it needs a more specific compatible comparison before it can support an atlas conclusion.
