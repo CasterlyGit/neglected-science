@@ -155,6 +155,13 @@ class OpportunityDossierContractTests(unittest.TestCase):
         self.assertEqual(7, len(record["pre_admission_conditions"]))
         self.assertEqual(5, len(record["seed_patterns"]))
 
+    def test_system_one_seed_queue_cannot_skip_pre_admission(self):
+        schema = json.loads((ROOT / "schemas" / "system-one-seed-queue.schema.json").read_text())
+        record = json.loads((ROOT / "verification" / "system-one-seed-queue-1.json").read_text())
+        self.assertEqual([], list(Draft202012Validator(schema).iter_errors(record)))
+        self.assertEqual(5, len(record["records"]))
+        self.assertTrue(all(item["pre_admission_status"] == "evidence-pending-not-full-audit" for item in record["records"]))
+
 
 if __name__ == "__main__":
     unittest.main()
