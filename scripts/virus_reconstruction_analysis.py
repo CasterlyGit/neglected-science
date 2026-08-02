@@ -29,11 +29,16 @@ def fit(rows):
     return solve([[sum(r[i] * r[j] for r in x) for j in range(5)] for i in range(5)], [sum(r[i] * v for r, v in zip(x, y)) for i in range(5)])
 
 
+def complete(rows):
+    return [r for r in rows if all(r[f] not in ("", "NA") for f in FEATURES) and r["trans.ability"] not in ("", "NA")]
+
+
 def main():
     p = argparse.ArgumentParser(); p.add_argument("--input", required=True); p.add_argument("--holdout-block", required=True); p.add_argument("--allow-evaluation", action="store_true"); a = p.parse_args()
     data = load(a.input); blocks = sorted({r["block"] for r in data})
     if a.holdout_block not in blocks: raise ValueError("unknown block")
     train, test = [r for r in data if r["block"] != a.holdout_block], [r for r in data if r["block"] == a.holdout_block]
+    train, test = complete(train), complete(test)
     if not a.allow_evaluation:
         print({"blocks": blocks, "holdout": a.holdout_block, "train_rows": len(train), "test_rows": len(test), "outcomes_evaluated": False}); return
     c = fit(train); mae = sum(abs(float(r["trans.ability"]) - sum(v*w for v,w in zip([1.0]+[float(r[f]) for f in FEATURES], c))) for r in test)/len(test)
