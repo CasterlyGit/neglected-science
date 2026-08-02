@@ -41,3 +41,5 @@ Neglected Science should make it possible for a technically capable outsider, as
 ## Guiding program
 
 The nine milestones in `ROADMAP.md` are the durable program. Their order may be refined when evidence requires it, but none may be silently removed, collapsed into an app-building exercise, or claimed complete without its stated gate.
+
+After each real investigation, the program enters a local feedback cycle: preserve the result, evaluate the narrow thesis and process integrity, propose one bounded improvement, obtain owner approval for its direction and level, and test it on another real investigation. This loop is the path to robust value; it is not a license for autonomous scope expansion.

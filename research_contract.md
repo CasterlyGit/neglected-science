@@ -39,7 +39,7 @@ This contract applies to every candidate, experiment, report, and automated comp
 18. Correlation cannot be described as causation.
 19. “Novel” means no prior work was found after a documented adversarial search; it is never an absolute guarantee.
 20. Computational evidence cannot be presented as physical or clinical validation.
-21. Expert scrutiny is required when interpretation depends materially on domain knowledge unavailable within the evidence record.
+21. Expert scrutiny is required when interpretation depends materially on domain knowledge unavailable within the evidence record. If the owner does not authorize such scrutiny, the system must narrow the claim to self-contained evidence or reject the target; it must not simulate expert review.
 22. Publication, public claims, human-subject work, restricted data, laboratory work, or consequential external action requires a separate explicit decision.
 
 ## Automation boundary

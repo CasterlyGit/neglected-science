@@ -64,6 +64,10 @@ Completion gate: a method-evaluation report documents misses, false leads, exper
 
 Outcome: the first-run method evaluation is complete in `reports/milestone-9-method-evaluation.md`. It partially supports the narrow thesis that the process can surface an informative public-data robustness question. It does not establish reliability, superiority to ordinary review, autonomous discovery, cross-domain discovery, or broad generalization.
 
+## Post-investigation feedback cycle — active
+
+Every completed investigation feeds `docs/FEEDBACK_LOOP.md`: a governed evaluation proposes one bounded improvement, and the owner approves its direction and change level before behavior changes. Cycle 1 is recorded in `verification/improvement-cycle-1.json`; it authorizes only Level-1 local safeguards.
+
 ## Program rule
 
 Milestones 1–2 can be accelerated through careful specification. Milestones 3–6 are evidence-intensive and may overlap operationally, but cannot be compressed by weakening coverage, provenance, or adversarial review. Milestones 7–9 are sequential because preregistration must precede final testing and method evaluation must follow a real investigation.

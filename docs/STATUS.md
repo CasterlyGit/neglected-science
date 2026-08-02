@@ -17,6 +17,7 @@
 
 - The current proof target is narrow: can provenance-first, adversarial selection identify overlooked, publicly testable robustness or reconciliation questions?
 - Milestones 1–9 are evidence for that narrow target only. They do not yet establish an autonomous cross-domain discovery system or validate broader generalization.
+- The active post-investigation loop is local-only: each real investigation produces one governed improvement proposal, and the owner approves its direction and change level before any method change.
 
 ## Active investigation with preserved result
 
