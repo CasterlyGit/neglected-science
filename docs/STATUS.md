@@ -13,10 +13,12 @@
 - Milestone 6 completed with 13 alternative-terminology/citation-search records, 7 variable-level dataset audits, and 3 schema-valid adversarial dossiers. All three finalists were rejected.
 - A replacement manual-priority cycle completed the redesigned sequence through confirmation-grade Milestone 6: seven ranked leads, three governed target reviews, two cautious survivors, and one reframed alternate.
 
-## Paused
+## Active with evidence-access gate
 
-- The program is paused for the owner's decision after confirmation-grade Milestone 6.
-- `target-ecoli-regression` is the provisional primary and `target-bighorn-within-between` is the reserve; both are eligible for consideration, not selected.
+- `target-ecoli-regression` is selected for the first investigation and preregistered in `experiments/ecoli-regression/` before source-file download or final-holdout access.
+- `target-bighorn-within-between` remains the reserve; `target-mesi-reconciliation` remains the gated alternate.
+- Milestone 8 is blocked on access to the two checksum-verifiable public Dryad source files. The public metadata and original analysis script were retrieved, but both official API download routes returned HTTP 401 and the legacy file stream returned HTTP 403.
+- No baseline, preregistered analysis, validation result, final-holdout result, experiment conclusion, or Milestone 9 method evaluation exists.
 - `target-mesi-reconciliation` remains a reframed alternate with an author-overlap and specialist-review gate.
 - No experiment, preregistration, final holdout access, or Milestone 7 analysis has begun.
 
@@ -30,7 +32,7 @@
 
 ## Gated
 
-- No final experiment is selected.
+- No final-holdout result may be accessed before a validation-frozen implementation exists.
 - The source repository is public. No scientific publication, release, or scientific public claim is authorized.
 - No experiment may be selected or preregistered from the rejected finalist set.
 - Specialist review remains unresolved for assay-block exchangeability, longitudinal wildlife inference, and MESI estimand equivalence/overlap.
@@ -51,3 +53,5 @@
 - `verification/target-reviews.jsonl`: construction, first-interview, dataset, citation, and confirmation records for the new trio.
 - `verification/cycle-result.json`: comparative dispositions and deferred selection decision.
 - `reports/manual-cycle-milestone-6.md`: complete replacement-cycle report.
+- `reports/milestone-7-selection.md`: selection rationale and frozen preregistration.
+- `reports/milestone-8-access-gate.md`: raw-data access evidence and reopen condition.
