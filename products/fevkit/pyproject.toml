@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fevkit"
+version = "0.1.0"
+description = "Local-first trajectory assurance for biomedical and scientific agent runs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "CasterlyGit"}]
+keywords = ["biomedical", "scientific-agents", "provenance", "reproducibility", "ro-crate"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.scripts]
+fevkit = "fevkit.cli:main"
+
+[project.urls]
+Homepage = "https://fevkit.vercel.app"
+Source = "https://github.com/CasterlyGit/neglected-science/tree/main/products/fevkit"
+Issues = "https://github.com/CasterlyGit/neglected-science/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fevkit = ["schema.json", "profiles.json"]
