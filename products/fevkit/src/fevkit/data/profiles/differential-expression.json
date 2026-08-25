@@ -1,0 +1,13 @@
+{
+  "id": "differential-expression",
+  "title": "Differential-expression analysis",
+  "description": "Requires biological data, software outputs, statistical uncertainty, multiple-testing declaration, robustness, and human review.",
+  "minimum_stage": "V3",
+  "required_functions": ["F1", "F3", "F4", "F5", "F6"],
+  "required_evidence": ["E3", "E4"],
+  "requires_human_review": true,
+  "requires_statistics": true,
+  "requires_uncertainty": true,
+  "requires_robustness": true,
+  "requires_multiple_testing": true
+}
