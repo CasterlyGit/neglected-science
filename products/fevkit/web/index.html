@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FEVKit · Trust the trajectory</title>
+<meta name="description" content="Local-first trajectory assurance for scientific and biomedical agent runs.">
+<meta name="theme-color" content="#090c10">
+<style>
+:root{color-scheme:dark;--bg:#090c10;--panel:#111720;--line:#293443;--text:#edf4f7;--muted:#91a1af;--mint:#83f0c4;--red:#ff8d98;--amber:#efc36d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main,header,footer{width:min(1120px,calc(100% - 32px));margin:auto}header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}a{color:inherit}.hero{padding:100px 0 70px}.eyebrow{color:var(--mint);font:700 12px monospace;text-transform:uppercase;letter-spacing:.12em}h1{font-size:clamp(54px,8vw,96px);line-height:.92;letter-spacing:-.06em;margin:24px 0}h1 em{color:var(--mint);font-family:Georgia,serif;font-weight:400}.lede{max-width:760px;color:#bdc7ce;font-size:20px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:50px 0}.card{padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.card b{color:var(--mint);font:800 13px monospace}.card p{color:var(--muted)}.inspector{border:1px solid var(--line);border-radius:18px;padding:26px;background:var(--panel);margin:80px 0}.controls{display:flex;flex-wrap:wrap;gap:8px}button,label{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#0c1118;color:var(--text);cursor:pointer}.primary{background:var(--mint);color:#07110e;font-weight:800}.status{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.metric{padding:15px;border:1px solid var(--line);border-radius:12px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font:800 26px monospace;margin-top:7px}pre{max-height:520px;overflow:auto;background:#07090c;padding:18px;border-radius:12px;color:#b9d7cf;white-space:pre-wrap}.boundary{border-left:3px solid var(--red);padding:18px 24px;background:#211319;margin:80px 0}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted)}@media(max-width:700px){.grid,.status{grid-template-columns:1fr}.hero{padding-top:70px}}
+</style>
+</head>
+<body>
+<header><strong>FEVKit</strong><a href="https://github.com/CasterlyGit/neglected-science/tree/main/products/fevkit" rel="noreferrer">Source ↗</a></header>
+<main>
+<section class="hero">
+<div class="eyebrow">Open-source · local-first · agent-neutral</div>
+<h1>Trust the <em>trajectory</em>,<br>not just the answer.</h1>
+<p class="lede">A biomedical agent can sound right and still run the wrong science. FEVKit separates what it did, what supports it, and what assurance the run actually earned.</p>
+</section>
+<section class="grid">
+<article class="card"><b>F1–F6</b><h2>Function</h2><p>Planning, coordination, tool execution, state capture, repair, and escalation.</p></article>
+<article class="card"><b>E1–E6</b><h2>Evidence</h2><p>Literature, knowledge bases, biological data, software, models, and observations.</p></article>
+<article class="card"><b>V0–V4</b><h2>Validation</h2><p>Illustrative output through prospective independent empirical evaluation.</p></article>
+</section>
+<section class="inspector">
+<h2>Browser manifest inspection</h2>
+<p>Open a local <code>run.json</code>. The file never leaves the browser. Browser mode checks structure and claim support but cannot verify adjacent files or replay code.</p>
+<div class="controls"><label class="primary">Open run.json<input id="file" type="file" accept=".json,application/json" hidden></label><button id="passing">Load passing shape</button><button id="broken">Load broken demo</button></div>
+<div class="status"><div class="metric"><span>Computed stage</span><strong id="stage">V—</strong></div><div class="metric"><span>Errors</span><strong id="errors">0</strong></div><div class="metric"><span>Warnings</span><strong id="warnings">0</strong></div></div>
+<pre id="output">Select a manifest to inspect it.</pre>
+</section>
+<section class="boundary"><h2>Auditable does not mean clinically valid.</h2><p>FEVKit cannot establish treatment safety, biological truth, regulatory compliance, or ethical authorization.</p></section>
+</main>
+<footer>FEVKit 0.1.0 · MIT licensed · Browser mode is capped at V1</footer>
+<script>
+const out=document.querySelector("#output"),stage=document.querySelector("#stage"),errors=document.querySelector("#errors"),warnings=document.querySelector("#warnings");
+function inspect(d){const r=d&&d.run||{},f=[];if(d.spec_version!=="0.1")f.push({severity:"error",code:"STRUCTURE.SPEC_VERSION",message:"spec_version must be 0.1"});["id","title","objective","domain"].forEach(k=>{if(!r[k])f.push({severity:"error",code:"STRUCTURE.MISSING",message:"missing run."+k})});if(!r.system||!r.system.name||!r.system.version)f.push({severity:"error",code:"STRUCTURE.SYSTEM",message:"system name and version are required"});const ev=new Set((r.evidence||[]).map(x=>x.id));(r.claims||[]).forEach((c,i)=>{if(!(c.support||[]).length)f.push({severity:"error",code:"CLAIM.UNSUPPORTED",message:"claim "+i+" has no support edges"});(c.support||[]).forEach(e=>{if(!ev.has(e.evidence_id))f.push({severity:"error",code:"REF.CLAIM_EVIDENCE",message:"unresolved evidence "+e.evidence_id})});if(!c.uncertainty)f.push({severity:"error",code:"CLAIM.UNCERTAINTY",message:"claim "+i+" lacks uncertainty"});if(!c.limitations)f.push({severity:"error",code:"CLAIM.LIMITATIONS",message:"claim "+i+" lacks limitations"});if(["high","clinical"].includes(c.risk))f.push({severity:"warning",code:"CLAIM.CLINICAL_BOUNDARY",message:"clinical-risk claim requires external governance"})});const computed=(r.steps||[]).length&&(r.artifacts||[]).length?"V1":"V0";stage.textContent=computed;errors.textContent=f.filter(x=>x.severity==="error").length;warnings.textContent=f.filter(x=>x.severity==="warning").length;out.textContent=JSON.stringify({mode:"browser-only",run:r.id||null,computed_stage:computed,canonical_cli_required_for:"V2+",findings:f},null,2)}
+document.querySelector("#file").addEventListener("change",e=>{const reader=new FileReader();reader.onload=()=>{try{inspect(JSON.parse(reader.result))}catch(x){out.textContent="Invalid JSON: "+x.message}};reader.readAsText(e.target.files[0])});
+document.querySelector("#passing").addEventListener("click",()=>inspect({spec_version:"0.1",run:{id:"shape-demo",title:"Passing shape",objective:"Demonstrate browser structure",domain:"synthetic",system:{name:"demo",version:"1.0"},steps:[{id:"s"}],artifacts:[{id:"a"}],evidence:[{id:"e"}],claims:[{text:"Synthetic only",risk:"research",support:[{evidence_id:"e"}],uncertainty:"fixture only",limitations:"not scientific evidence"}]}}));
+document.querySelector("#broken").addEventListener("click",()=>inspect({spec_version:"0.1",run:{id:"broken-demo",title:"Broken demo",objective:"Show failure",domain:"biomedical",system:{name:"unknown"},steps:[{}],artifacts:[{}],evidence:[],claims:[{text:"Use a treatment",risk:"clinical",support:[]}]}}));
+</script>
+</body>
+</html>
