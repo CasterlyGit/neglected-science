@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fevkit.dev/schema/run-0.1.json",
+  "title": "FEVKit run manifest",
+  "type": "object",
+  "required": ["spec_version", "run"],
+  "properties": {
+    "spec_version": {"const": "0.1"},
+    "run": {
+      "type": "object",
+      "required": ["id", "title", "objective", "domain", "system", "status", "steps", "evidence", "claims", "validation", "privacy"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "objective": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 1},
+        "system": {"type": "object"},
+        "inputs": {"type": "array"},
+        "artifacts": {"type": "array"},
+        "steps": {"type": "array"},
+        "evidence": {"type": "array"},
+        "claims": {"type": "array"},
+        "validation": {"type": "object"},
+        "privacy": {"type": "object"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
