@@ -1,0 +1,44 @@
+name: FEVKit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'products/fevkit/**'
+      - '.github/workflows/fevkit.yml'
+  pull_request:
+    paths:
+      - 'products/fevkit/**'
+      - '.github/workflows/fevkit.yml'
+permissions:
+  contents: read
+  security-events: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: products/fevkit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install package and build tooling
+        run: python -m pip install --upgrade pip build && python -m pip install -e .
+      - name: Release gate
+        run: python scripts/release_gate.py
+      - name: Build wheel and source distribution
+        run: python -m build
+      - name: Upload SARIF
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: products/fevkit/build/fevkit.sarif
+      - name: Upload release evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: fevkit-release-evidence
+          path: |
+            products/fevkit/VERIFICATION.json
+            products/fevkit/build/
+            products/fevkit/dist/
