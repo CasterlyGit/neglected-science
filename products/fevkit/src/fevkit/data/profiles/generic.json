@@ -1,0 +1,13 @@
+{
+  "id": "generic",
+  "title": "Generic scientific workflow",
+  "description": "A minimal inspectable trajectory with no domain-specific assurance claim.",
+  "minimum_stage": "V1",
+  "required_functions": [],
+  "required_evidence": [],
+  "requires_human_review": false,
+  "requires_statistics": false,
+  "requires_uncertainty": false,
+  "requires_robustness": false,
+  "requires_multiple_testing": false
+}
