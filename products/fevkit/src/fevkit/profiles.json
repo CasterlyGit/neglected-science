@@ -1,0 +1,32 @@
+{
+  "generic": {
+    "title": "Generic scientific computation",
+    "minimum_stage": "V1",
+    "required_functions": ["F1", "F3", "F4"],
+    "required_evidence": [],
+    "human_review": false,
+    "statistics": false,
+    "uncertainty": false,
+    "robustness": false
+  },
+  "differential-expression": {
+    "title": "Differential-expression analysis",
+    "minimum_stage": "V3",
+    "required_functions": ["F1", "F3", "F4", "F5", "F6"],
+    "required_evidence": ["E3", "E4"],
+    "human_review": true,
+    "statistics": true,
+    "uncertainty": true,
+    "robustness": true
+  },
+  "variant-prioritization": {
+    "title": "Variant prioritization",
+    "minimum_stage": "V3",
+    "required_functions": ["F1", "F2", "F3", "F4", "F5", "F6"],
+    "required_evidence": ["E1", "E2", "E3", "E4"],
+    "human_review": true,
+    "statistics": true,
+    "uncertainty": true,
+    "robustness": true
+  }
+}
