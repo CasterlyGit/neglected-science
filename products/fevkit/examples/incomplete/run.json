@@ -1,0 +1,77 @@
+{
+  "spec_version": "0.1",
+  "run": {
+    "id": "broken-clinical-agent-demo",
+    "title": "Intentionally incomplete workflow",
+    "objective": "Prove that FEVKit rejects an attractive answer with an indefensible trajectory.",
+    "domain": "biomedical-research/variant-prioritization",
+    "started_at": "2026-08-24T21:00:00Z",
+    "completed_at": "2026-08-24T20:59:00Z",
+    "status": "completed",
+    "system": {"name": "Unversioned clinical agent", "version": ""},
+    "privacy": {"contains_personal_data": false, "classification": "unknown"},
+    "environment": {"runtimes": {}},
+    "inputs": [
+      {
+        "id": "input-patient-like-data",
+        "path": "artifacts/unversioned.csv",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "media_type": "text/csv",
+        "sensitive": true,
+        "sensitivity_type": "phi"
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "artifact-answer",
+        "path": "artifacts/answer-that-does-not-exist.json",
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "generated_by": "step-answer"
+      }
+    ],
+    "steps": [
+      {
+        "id": "step-answer",
+        "sequence": 1,
+        "function": "F3",
+        "action": "Ask an unversioned model for a treatment recommendation.",
+        "status": "completed",
+        "inputs": ["input-patient-like-data"],
+        "outputs": ["artifact-not-declared"],
+        "tool": {"name": "unknown-model", "parameters": "temperature=1"}
+      }
+    ],
+    "evidence": [
+      {
+        "id": "evidence-vague-data",
+        "class": "E3",
+        "artifact_ids": ["artifact-not-declared"],
+        "retrieved_at": "yesterday",
+        "source": {"title": "Some uploaded rows"}
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-treatment",
+        "text": "This patient should receive a specific treatment.",
+        "kind": "inference",
+        "risk": "clinical",
+        "step_ids": ["step-answer"],
+        "support": []
+      }
+    ],
+    "human_checkpoints": [],
+    "validation": {
+      "profile": "variant-prioritization",
+      "claimed_stage": "V4",
+      "evaluations": [],
+      "prospective": false,
+      "closed_loop": false
+    },
+    "replay": {
+      "command": "python analysis.py",
+      "expected_artifacts": [],
+      "network": "unknown"
+    }
+  }
+}
