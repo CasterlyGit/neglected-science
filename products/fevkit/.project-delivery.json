@@ -1,0 +1,10 @@
+{
+  "project": "FEVKit",
+  "version": "0.1.0",
+  "release_date": "2026-08-24",
+  "deployment": "https://fevkit.vercel.app",
+  "source": "products/fevkit",
+  "release_gate": "scripts/release_gate.py",
+  "status": "review-ready alpha",
+  "email_state": "researched and drafted; not sent"
+}
