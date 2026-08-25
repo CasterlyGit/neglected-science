@@ -1,0 +1,17 @@
+{
+  "product": "FEVKit",
+  "version": "0.1.0",
+  "released_at": "2026-08-24T23:59:00Z",
+  "deployment": "https://fevkit.vercel.app",
+  "release_gate": [
+    "14 unit tests",
+    "passing V3 synthetic audit",
+    "deterministic replay with expected SHA-256",
+    "expected rejection of adversarial clinical-style run",
+    "SARIF emission",
+    "Process Run RO-Crate 0.5 export",
+    "Python 3.10, 3.11, and 3.12 CI matrix",
+    "browser inspector production smoke test"
+  ],
+  "scientific_boundary": "Auditable and replayable do not imply biologically true, clinically valid, safe, ethical, or regulatorily compliant."
+}
