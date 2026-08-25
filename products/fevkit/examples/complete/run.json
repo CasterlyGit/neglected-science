@@ -1,0 +1,235 @@
+{
+  "spec_version": "0.1",
+  "run": {
+    "id": "fevkit-synthetic-replay-v1",
+    "title": "Synthetic trajectory-assurance demonstration",
+    "objective": "Demonstrate an inspectable, replayable, scientifically evaluated trajectory without a biological or clinical claim.",
+    "domain": "biomedical-research/synthetic-smoke-test",
+    "started_at": "2026-08-24T20:00:00Z",
+    "completed_at": "2026-08-24T20:06:00Z",
+    "status": "completed",
+    "system": {
+      "name": "FEVKit synthetic demonstration",
+      "version": "1.0.0",
+      "agent_framework": "deterministic-scripted-workflow",
+      "models": []
+    },
+    "privacy": {
+      "contains_personal_data": false,
+      "classification": "synthetic-public",
+      "controls": "No real people, specimens, or clinical records are present."
+    },
+    "environment": {
+      "runtimes": {"python": "3.11.0"},
+      "platform": "portable-python",
+      "lockfiles": [
+        {
+          "path": "artifacts/environment.lock",
+          "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+        }
+      ]
+    },
+    "inputs": [
+      {
+        "id": "input-synthetic",
+        "path": "artifacts/input.txt",
+        "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        "media_type": "text/plain",
+        "type": "synthetic-dataset",
+        "version": "FEVKIT-SYNTH-001",
+        "sensitive": false
+      },
+      {
+        "id": "input-environment-lock",
+        "path": "artifacts/environment.lock",
+        "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        "media_type": "text/plain",
+        "type": "environment-lock",
+        "version": "1.0.0",
+        "sensitive": false
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "artifact-plan",
+        "path": "artifacts/plan.md",
+        "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        "media_type": "text/markdown",
+        "generated_by": "step-plan"
+      },
+      {
+        "id": "artifact-result",
+        "path": "artifacts/result.txt",
+        "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        "media_type": "text/plain",
+        "generated_by": "step-execute"
+      },
+      {
+        "id": "artifact-trace",
+        "path": "artifacts/trace.json",
+        "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        "media_type": "application/json",
+        "generated_by": "step-trace"
+      },
+      {
+        "id": "artifact-self-check",
+        "path": "artifacts/self_check.txt",
+        "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        "media_type": "text/plain",
+        "generated_by": "step-self-check"
+      },
+      {
+        "id": "artifact-review",
+        "path": "artifacts/review.md",
+        "sha256": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+        "media_type": "text/markdown",
+        "generated_by": "step-review"
+      }
+    ],
+    "steps": [
+      {
+        "id": "step-plan",
+        "sequence": 1,
+        "function": "F1",
+        "action": "Freeze the synthetic-only objective and replay acceptance condition.",
+        "status": "completed",
+        "started_at": "2026-08-24T20:00:00Z",
+        "completed_at": "2026-08-24T20:01:00Z",
+        "inputs": ["input-synthetic"],
+        "outputs": ["artifact-plan"]
+      },
+      {
+        "id": "step-execute",
+        "sequence": 2,
+        "function": "F3",
+        "action": "Copy the hashed synthetic input to the declared output using a fixed standard-library command.",
+        "status": "completed",
+        "started_at": "2026-08-24T20:01:00Z",
+        "completed_at": "2026-08-24T20:03:00Z",
+        "inputs": ["input-synthetic", "input-environment-lock", "artifact-plan"],
+        "outputs": ["artifact-result"],
+        "tool": {
+          "name": "python-copy-smoke-test",
+          "version": "1.0.0",
+          "parameters": {"operation": "byte-for-byte-copy"}
+        }
+      },
+      {
+        "id": "step-trace",
+        "sequence": 3,
+        "function": "F4",
+        "action": "Freeze ordered execution and lineage.",
+        "status": "completed",
+        "started_at": "2026-08-24T20:03:00Z",
+        "completed_at": "2026-08-24T20:04:00Z",
+        "inputs": ["artifact-plan", "artifact-result"],
+        "outputs": ["artifact-trace"]
+      },
+      {
+        "id": "step-self-check",
+        "sequence": 4,
+        "function": "F5",
+        "action": "Compare the regenerated output digest with the predeclared input digest.",
+        "status": "completed",
+        "started_at": "2026-08-24T20:04:00Z",
+        "completed_at": "2026-08-24T20:05:00Z",
+        "inputs": ["input-synthetic", "artifact-result"],
+        "outputs": ["artifact-self-check"]
+      },
+      {
+        "id": "step-review",
+        "sequence": 5,
+        "function": "F6",
+        "action": "Escalate the bounded result to an assurance reviewer.",
+        "status": "completed",
+        "started_at": "2026-08-24T20:05:00Z",
+        "completed_at": "2026-08-24T20:06:00Z",
+        "inputs": ["artifact-result", "artifact-self-check", "artifact-trace"],
+        "outputs": ["artifact-review"]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "evidence-synthetic-input",
+        "class": "E3",
+        "artifact_ids": ["input-synthetic"],
+        "retrieved_at": "2026-08-24T20:00:00Z",
+        "source": {
+          "title": "FEVKit synthetic byte fixture",
+          "dataset_id": "FEVKIT-SYNTH-001",
+          "version": "1.0.0",
+          "selection": "The complete three-byte public fixture.",
+          "license": "CC0-1.0"
+        }
+      },
+      {
+        "id": "evidence-copy-output",
+        "class": "E4",
+        "artifact_ids": ["artifact-result", "artifact-self-check"],
+        "retrieved_at": "2026-08-24T20:05:00Z",
+        "source": {
+          "title": "Deterministic replay and digest comparison",
+          "software": "python-copy-smoke-test",
+          "version": "1.0.0",
+          "parameters": {"hash": "SHA-256", "comparison": "exact"}
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-byte-recovery",
+        "text": "Within this synthetic fixture, replay regenerates an output byte-identical to the declared input.",
+        "kind": "observation",
+        "risk": "research",
+        "step_ids": ["step-self-check"],
+        "support": [
+          {"evidence_id": "evidence-synthetic-input", "relation": "observed_in"},
+          {"evidence_id": "evidence-copy-output", "relation": "calculated_from"}
+        ],
+        "uncertainty": "The equality statement is exact only for this fixed three-byte fixture.",
+        "limitations": "This proves replay plumbing, not biological validity, scientific discovery, or model generalization."
+      }
+    ],
+    "human_checkpoints": [
+      {
+        "id": "checkpoint-assurance-review",
+        "role": "assurance reviewer",
+        "status": "approved",
+        "recorded_at": "2026-08-24T20:06:00Z",
+        "decision": "Approved only as a synthetic inspectability and replay demonstration.",
+        "artifact_id": "artifact-review"
+      }
+    ],
+    "validation": {
+      "profile": "differential-expression",
+      "claimed_stage": "V3",
+      "prospective": false,
+      "closed_loop": false,
+      "evaluations": [
+        {
+          "id": "evaluation-synthetic-recovery",
+          "type": "scientific-synthetic-recovery",
+          "method": "Exact content-addressed replay against a predeclared baseline.",
+          "baseline": {"kind": "predeclared-sha256", "expected": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"},
+          "metrics": [{"name": "expected-output hash match", "value": 1.0}],
+          "uncertainty": {"method": "exact deterministic comparison", "level": "fixture-only"},
+          "robustness": {"method": "delete expected output before replay", "result": "output regenerated and matched"},
+          "multiple_testing": "Not applicable to the one predeclared synthetic target; explicitly recorded rather than omitted.",
+          "independent": false,
+          "prospective": false,
+          "closed_loop": false
+        }
+      ]
+    },
+    "replay": {
+      "command": [
+        "python3",
+        "-c",
+        "from pathlib import Path; Path('artifacts/result.txt').write_bytes(Path('artifacts/input.txt').read_bytes())"
+      ],
+      "expected_artifacts": ["artifact-result"],
+      "timeout_seconds": 120,
+      "network": "disabled"
+    }
+  }
+}
