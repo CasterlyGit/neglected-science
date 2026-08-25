@@ -1,0 +1,41 @@
+{
+  "spec_version": "0.1",
+  "run": {
+    "id": "fevkit-synthetic-assurance-v1",
+    "title": "Synthetic trajectory assurance demonstration",
+    "objective": "Demonstrate inspectability, replay, and bounded scientific evaluation without making a biological or clinical claim.",
+    "domain": "biomedical-research/synthetic-assurance",
+    "started_at": "2026-08-24T20:00:00Z",
+    "completed_at": "2026-08-24T20:06:00Z",
+    "status": "completed",
+    "system": {"name": "FEVKit deterministic demonstration", "version": "1.0.0", "agent_framework": "agent-neutral-scripted-workflow"},
+    "inputs": [{"id": "input-synthetic-data", "type": "dataset", "path": "artifacts/input.bin", "media_type": "application/octet-stream", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "version": "FEVKIT-SYNTH-001", "sensitive": false}],
+    "artifacts": [
+      {"id": "artifact-plan", "path": "artifacts/plan.md", "media_type": "text/markdown", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "generated_by": "step-plan"},
+      {"id": "artifact-output", "path": "artifacts/output.bin", "media_type": "application/octet-stream", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "generated_by": "step-analysis"},
+      {"id": "artifact-trace", "path": "artifacts/trace.json", "media_type": "application/json", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "generated_by": "step-trace"},
+      {"id": "artifact-self-check", "path": "artifacts/self_check.json", "media_type": "application/json", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "generated_by": "step-self-check"},
+      {"id": "artifact-review", "path": "artifacts/review.md", "media_type": "text/markdown", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "generated_by": "step-review"}
+    ],
+    "steps": [
+      {"id": "step-plan", "sequence": 1, "function": "F1", "status": "completed", "action": "Bound the synthetic-only objective and freeze the assurance plan.", "inputs": ["input-synthetic-data"], "outputs": ["artifact-plan"]},
+      {"id": "step-analysis", "sequence": 2, "function": "F3", "status": "completed", "action": "Execute a deterministic no-op transformation over a hashed synthetic fixture.", "inputs": ["input-synthetic-data", "artifact-plan"], "outputs": ["artifact-output"], "tool": {"name": "python-standard-library", "version": "3.13.5", "parameters": {"operation": "emit-empty-artifact"}}},
+      {"id": "step-trace", "sequence": 3, "function": "F4", "status": "completed", "action": "Freeze the ordered trajectory and artifact lineage.", "inputs": ["artifact-plan", "artifact-output"], "outputs": ["artifact-trace"]},
+      {"id": "step-self-check", "sequence": 4, "function": "F5", "status": "completed", "action": "Compare the emitted artifact with the predeclared baseline.", "inputs": ["artifact-output", "artifact-trace"], "outputs": ["artifact-self-check"]},
+      {"id": "step-review", "sequence": 5, "function": "F6", "status": "completed", "action": "Escalate the bounded result to a human assurance checkpoint.", "inputs": ["artifact-output", "artifact-self-check", "artifact-trace"], "outputs": ["artifact-review"]}
+    ],
+    "evidence": [
+      {"id": "evidence-synthetic-input", "class": "E3", "retrieved_at": "2026-08-24T20:00:00Z", "artifact_ids": ["input-synthetic-data"], "source": {"title": "FEVKit synthetic assurance fixture", "dataset_id": "FEVKIT-SYNTH-001", "version": "1.0.0", "selection": "The complete zero-byte public fixture; no person, specimen, or clinical record is represented."}},
+      {"id": "evidence-deterministic-output", "class": "E4", "retrieved_at": "2026-08-24T20:03:00Z", "artifact_ids": ["artifact-output", "artifact-self-check"], "source": {"title": "Deterministic output and self-check", "software": "python-standard-library", "version": "3.13.5", "parameters": {"operation": "emit-empty-artifact"}}}
+    ],
+    "claims": [
+      {"id": "claim-output-match", "kind": "calculation", "risk": "research", "text": "Within this synthetic bundle, the replayed output matches the predeclared SHA-256 digest.", "step_ids": ["step-analysis", "step-self-check"], "support": [{"evidence_id": "evidence-synthetic-input", "relation": "derived_from"}, {"evidence_id": "evidence-deterministic-output", "relation": "calculated_from"}], "uncertainty": "The check is exact for the declared bytes; it does not estimate scientific uncertainty.", "limitations": "A deterministic synthetic fixture demonstrates assurance mechanics only and has no biological or clinical meaning."},
+      {"id": "claim-boundary-preserved", "kind": "observation", "risk": "research", "text": "The manifest preserves an explicit non-clinical interpretation boundary.", "step_ids": ["step-plan", "step-review"], "support": [{"evidence_id": "evidence-deterministic-output", "relation": "qualified_by"}], "uncertainty": "This is a document-level observation.", "limitations": "The audit cannot substitute for scientific, clinical, regulatory, or institutional governance."}
+    ],
+    "human_checkpoints": [{"id": "checkpoint-assurance-review", "role": "assurance reviewer", "status": "approved", "recorded_at": "2026-08-24T20:06:00Z", "decision": "Approved only as a synthetic trajectory-assurance demonstration."}],
+    "environment": {"platform": "linux-x86_64", "runtimes": {"python": "3.13.5"}, "lockfiles": [{"path": "artifacts/requirements.lock", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}]},
+    "replay": {"command": ["python3", "-c", "from pathlib import Path; Path('artifacts/output.bin').write_bytes(b'')"], "expected_artifacts": ["artifact-output"], "timeout_seconds": 30, "network": "disabled-by-workflow-declaration"},
+    "validation": {"profile": "differential-expression", "claimed_stage": "V3", "prospective": false, "closed_loop": false, "evaluations": [{"id": "evaluation-synthetic-recovery", "baseline": {"kind": "predeclared-byte-digest"}, "metrics": [{"name": "artifact hash match", "value": 1.0}], "uncertainty": {"method": "exact byte comparison"}, "robustness": {"method": "delete-and-regenerate"}, "independent": false, "prospective": false}]},
+    "privacy": {"contains_personal_data": false, "classification": "synthetic-public"}
+  }
+}
