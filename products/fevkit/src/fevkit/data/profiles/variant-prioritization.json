@@ -1,0 +1,13 @@
+{
+  "id": "variant-prioritization",
+  "title": "Variant prioritization",
+  "description": "Requires literature, structured knowledge, biological data, software outputs, full trajectory capture, and human escalation.",
+  "minimum_stage": "V3",
+  "required_functions": ["F1", "F2", "F3", "F4", "F5", "F6"],
+  "required_evidence": ["E1", "E2", "E3", "E4"],
+  "requires_human_review": true,
+  "requires_statistics": true,
+  "requires_uncertainty": true,
+  "requires_robustness": true,
+  "requires_multiple_testing": false
+}
