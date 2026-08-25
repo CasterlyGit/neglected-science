@@ -1,0 +1,23 @@
+{
+  "spec_version": "0.1",
+  "run": {
+    "id": "broken-clinical-agent-demo",
+    "title": "Intentionally incomplete clinical-style workflow",
+    "objective": "Demonstrate rejection of a persuasive final answer whose trajectory is not defensible.",
+    "domain": "biomedical-research/variant-prioritization",
+    "started_at": "2026-08-24T21:00:00Z",
+    "completed_at": "2026-08-24T20:59:00Z",
+    "status": "completed",
+    "system": {"name": "Unversioned clinical agent"},
+    "inputs": [{"id": "input-patient-like-data", "type": "dataset", "path": "artifacts/unversioned.csv", "media_type": "text/csv", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sensitive": true}],
+    "artifacts": [{"id": "artifact-answer", "path": "artifacts/answer-that-does-not-exist.json", "media_type": "application/json", "sha256": "not-a-hash", "generated_by": "step-answer"}],
+    "steps": [{"id": "step-answer", "sequence": 1, "function": "F3", "status": "completed", "action": "Ask an unversioned model for a treatment recommendation.", "inputs": ["input-patient-like-data"], "outputs": ["artifact-not-declared"], "tool": {"name": "unknown-model", "parameters": "temperature=1"}}],
+    "evidence": [{"id": "evidence-vague-data", "class": "E3", "retrieved_at": "yesterday", "artifact_ids": ["artifact-not-declared"], "source": {"title": "Some uploaded rows"}}],
+    "claims": [{"id": "claim-treatment", "kind": "inference", "risk": "clinical", "text": "This patient should receive a specific treatment.", "step_ids": ["step-answer"], "support": []}],
+    "human_checkpoints": [],
+    "environment": {"platform": "unknown", "runtimes": {}},
+    "replay": {"command": "python analysis.py", "expected_artifacts": [], "network": "unknown"},
+    "validation": {"profile": "variant-prioritization", "claimed_stage": "V4", "evaluations": [], "prospective": false},
+    "privacy": {"contains_personal_data": false, "classification": "unknown"}
+  }
+}
