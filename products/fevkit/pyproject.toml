@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fevkit"
+version = "0.1.0"
+description = "Local-first trajectory assurance for biomedical and scientific agent runs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Tarun S P" }]
+keywords = ["biomedical-ai", "scientific-agents", "provenance", "reproducibility", "ro-crate"]
+dependencies = ["jsonschema>=4.20,<5"]
+
+[project.scripts]
+fevkit = "fevkit.cli:main"
+
+[project.urls]
+Homepage = "https://fevkit.vercel.app"
+Source = "https://github.com/CasterlyGit/neglected-science/tree/main/products/fevkit"
+Issues = "https://github.com/CasterlyGit/neglected-science/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fevkit"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/fevkit/data" = "fevkit/data"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
